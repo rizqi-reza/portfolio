@@ -1,0 +1,14 @@
+$font-path: "./assets/fonts" !default;
+$image-path: "./assets/images" !default;
+$main-color: #283593;
+$second-color: #3949AB;
+$third-color: #3F51B5;
+@import './assets/scss/fontawesome/fontawesome';
+@import './assets/scss/fontawesome/solid';
+@import './assets/scss/fontawesome/brands';
+@import './assets/scss/flaticon';
+@import './assets/scss/animate';
+@import './assets/scss/bootstrap.min.css';
+@import './assets/scss/bootsnav';
+@import './assets/scss/style';
+@import './assets/scss/responsive';
