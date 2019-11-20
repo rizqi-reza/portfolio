@@ -32,8 +32,8 @@ module.exports = merge(common, {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'js/content-service.[name].bundle.js',
-    library: ['content-service', '[name]'],
+    filename: 'js/portfolio.[name].bundle.js',
+    library: ['portfolio', '[name]'],
     libraryTarget: 'umd',
   },
   performance: {
@@ -41,7 +41,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'content-service.css'
+      filename: 'portfolio.css'
     }),
     new CleanWebpackPlugin(),
     new Dotenv(),

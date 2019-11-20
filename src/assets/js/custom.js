@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   'use strict';
 
   /*==================================
@@ -16,16 +16,15 @@ $(document).ready(function() {
 	======================================*/
 
   // 1. Scroll To Top
-  $(window).on('scroll', function() {
+  $(window).on('scroll', function () {
     if ($(this).scrollTop() > 600) {
       $('.return-to-top').fadeIn();
     } else {
       $('.return-to-top').fadeOut();
     }
   });
-  $('.return-to-top').on('click', function() {
-    $('html, body').animate(
-      {
+  $('.return-to-top').on('click', function () {
+    $('html, body').animate({
         scrollTop: 0,
       },
       1500,
@@ -41,15 +40,24 @@ $(document).ready(function() {
 
   //=============
 
-  $('li.smooth-menu a').bind('click', function(event) {
+  $('li.smooth-menu a').bind('click', function (event) {
     event.preventDefault();
     var anchor = $(this);
-    console.log($(anchor.attr('href')).offset().top);
     $('html, body')
       .stop()
-      .animate(
-        {
+      .animate({
           scrollTop: $(anchor.attr('href')).offset().top - 90,
+        },
+        1200,
+      ); //, 'easeInOutExpo');
+  });
+  $('.navbar-brand').bind('click', function (event) {
+    event.preventDefault();
+    var anchor = $(this);
+    $('html, body')
+      .stop()
+      .animate({
+          scrollTop: $(anchor.attr('href')).offset().top,
         },
         1200,
       ); //, 'easeInOutExpo');
@@ -65,13 +73,13 @@ $(document).ready(function() {
   var dataToggleTooTip = $('[data-toggle="tooltip"]');
   var progressBar = $('.progress-bar');
   if (progressBar.length) {
-    progressBar.appear(function() {
+    progressBar.appear(function () {
       dataToggleTooTip
         .tooltip({
           trigger: 'manual',
         })
         .tooltip('show');
-      progressBar.each(function() {
+      progressBar.each(function () {
         var each_bar_width = $(this).attr('aria-valuenow');
         $(this).width(each_bar_width + '%');
       });
@@ -118,7 +126,7 @@ $(document).ready(function() {
 
   // 5. welcome animation support
 
-  $(window).on('load', function() {
+  $(window).on('load', function () {
     $('.header-text h2,.header-text p')
       .removeClass('animated fadeInUp')
       .css({
@@ -131,7 +139,7 @@ $(document).ready(function() {
       });
   });
 
-  $(window).on('load', function() {
+  $(window).on('load', function () {
     $('.header-text h2,.header-text p')
       .addClass('animated fadeInUp')
       .css({
