@@ -7,11 +7,11 @@ const dotenv = require('dotenv');
 const resolveAlias = require('./tsconfig-webpack-alias');
 
 module.exports = () => {
-  const env = dotenv.config().parsed;
-  const envKeys = Object.keys(env).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(env[next]);
-    return prev;
-  }, {});
+  // const env = dotenv.config().parsed;
+  // const envKeys = Object.keys(env).reduce((prev, next) => {
+  //   prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  //   return prev;
+  // }, {});
 
   return {
     devtool: 'inline-source-map',
@@ -73,7 +73,7 @@ module.exports = () => {
         $: 'jquery',
         jQuery: 'jquery',
       }),
-      new webpack.DefinePlugin(envKeys),
+      // new webpack.DefinePlugin(envKeys),
       // new CleanWebpackPlugin(['dist']),
     ],
     resolve: {

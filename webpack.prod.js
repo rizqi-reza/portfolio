@@ -44,7 +44,7 @@ module.exports = merge(common, {
       filename: 'portfolio.css'
     }),
     new CleanWebpackPlugin(),
-    new Dotenv(),
+    // new Dotenv(),
   ],
   resolve: {
     modules: [].concat('src', ['node_modules']),
