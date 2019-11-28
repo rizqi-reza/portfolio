@@ -189,9 +189,12 @@ nav.navbar.bootsnav ul.nav>li>a {
 }
 
 nav.navbar.bootsnav ul.nav>li>a:hover,
-nav.navbar.bootsnav ul.nav>li>a:focus,
 nav.navbar.bootsnav ul.nav>li.active>a {
     color: $main-color;
+}
+
+nav.navbar.bootsnav ul.nav>li.active>a {
+    border-bottom: 2px $main-color solid;
 }
 
 nav.navbar.bootsnav ul.nav>li.dropdown>a.dropdown-toggle:after {
@@ -229,6 +232,7 @@ nav.navbar.bootsnav ul.nav>li.dropdown span {
 }
 
 .menu-ui-design::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 8px #000;
     -webkit-box-shadow: inset 0 0 8px #000;
 }
 
@@ -287,10 +291,6 @@ nav.navbar.bootsnav .navbar-toggle i {
     line-height: 1.5;
     margin-top: 220px;
 }
-
-// .header-text h2 span {
-//     // color: $main-color;
-// }
 
 .header-text p {
     color: #fff;
@@ -1019,9 +1019,6 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 }
 
 /*.contact-add-info */
-
-/*hm-foot-icon*/
-.hm-foot-icon {}
 
 .hm-foot-icon ul li {
     float: left;

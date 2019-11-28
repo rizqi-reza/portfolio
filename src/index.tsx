@@ -1,12 +1,13 @@
+// tslint:disable: no-var-requires
 import { MainPage } from 'pages/main';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import './assets/js/bootsnav.js';
+import './assets/js/bootstrap.min.js';
+import './assets/js/custom.js';
+import './assets/js/jquery.appear.js';
+import './assets/js/jquery.sticky.js';
+import './assets/js/progressbar.js';
 import './index.scss';
-require('./assets/js/jquery.sticky.js');
-require('./assets/js/jquery.appear.js');
-require('./assets/js/bootstrap.min.js');
-require('./assets/js/bootsnav.js');
-require('./assets/js/progressbar.js');
-require('./assets/js/custom.js');
 
 ReactDOM.render(<MainPage />, document.getElementById('root'));

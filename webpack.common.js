@@ -7,6 +7,10 @@ module.exports = {
   },
   module: {
     rules: [{
+        test: /\custom.js$/,
+        use: ['script-loader']
+      },
+      {
         test: /\.html$/,
         use: ['html-loader'],
       },
