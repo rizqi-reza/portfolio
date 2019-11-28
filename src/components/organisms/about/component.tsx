@@ -1,6 +1,6 @@
-import ISection, { ISubSection, ISocialLink } from 'interface/isection';
-import React from 'react';
 import profileImage from 'assets/images/about/profile-about.jpg';
+import ISection, { ISocialLink, ISubSection } from 'interface/isection';
+import React from 'react';
 
 interface IProps {
   dataSource: ISection;
@@ -13,8 +13,8 @@ export const AboutComponent = (props: IProps) => {
       <div className="section-heading text-center">
         <h2>{dataSource.title}</h2>
       </div>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
       <div className="container">
         <div className="about-content">
           <div className="row">
@@ -45,7 +45,7 @@ export const AboutComponent = (props: IProps) => {
                       {dataSource.socialLinks.map((item: ISocialLink, index: number) => (
                         <li key={`about-social-${index}`}>
                           <a href={item.url}>
-                            <i className={item.icon} aria-hidden="true"></i>
+                            <i className={item.icon} aria-hidden="true" />
                           </a>
                         </li>
                       ))}
@@ -57,8 +57,8 @@ export const AboutComponent = (props: IProps) => {
           </div>
         </div>
       </div>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
     </section>
   );
 };

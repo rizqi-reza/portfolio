@@ -1,5 +1,5 @@
-import ISection from "interface/isection";
-import React from "react";
+import ISection from 'interface/isection';
+import React from 'react';
 
 interface IProps {
   sectionID?: number;
@@ -8,7 +8,6 @@ interface IProps {
 }
 
 export const ProfilesComponent = (props: IProps) => {
-  // const { sectionID, dataSource, title } = props;
   return (
     <section id="profiles" className="profiles">
       <div className="profiles-details">
@@ -22,14 +21,14 @@ export const ProfilesComponent = (props: IProps) => {
                 <div className="single-profile">
                   <div className="profile-txt">
                     <a href="">
-                      <i className="flaticon-themeforest"></i>
+                      <i className="flaticon-themeforest" />
                     </a>
                     <div className="profile-icon-name">themeforest</div>
                   </div>
                   <div className="single-profile-overlay">
                     <div className="profile-txt">
                       <a href="">
-                        <i className="flaticon-themeforest"></i>
+                        <i className="flaticon-themeforest" />
                       </a>
                       <div className="profile-icon-name">themeforest</div>
                     </div>
@@ -40,14 +39,14 @@ export const ProfilesComponent = (props: IProps) => {
                 <div className="single-profile">
                   <div className="profile-txt">
                     <a href="">
-                      <i className="flaticon-dribbble"></i>
+                      <i className="flaticon-dribbble" />
                     </a>
                     <div className="profile-icon-name">dribbble</div>
                   </div>
                   <div className="single-profile-overlay">
                     <div className="profile-txt">
                       <a href="">
-                        <i className="flaticon-dribbble"></i>
+                        <i className="flaticon-dribbble" />
                       </a>
                       <div className="profile-icon-name">dribbble</div>
                     </div>
@@ -58,14 +57,14 @@ export const ProfilesComponent = (props: IProps) => {
                 <div className="single-profile">
                   <div className="profile-txt">
                     <a href="">
-                      <i className="flaticon-behance-logo"></i>
+                      <i className="flaticon-behance-logo" />
                     </a>
                     <div className="profile-icon-name">behance</div>
                   </div>
                   <div className="single-profile-overlay">
                     <div className="profile-txt">
                       <a href="">
-                        <i className="flaticon-behance-logo"></i>
+                        <i className="flaticon-behance-logo" />
                       </a>
                       <div className="profile-icon-name">behance</div>
                     </div>
@@ -76,14 +75,14 @@ export const ProfilesComponent = (props: IProps) => {
                 <div className="single-profile profile-no-border">
                   <div className="profile-txt">
                     <a href="">
-                      <i className="flaticon-github-logo"></i>
+                      <i className="flaticon-github-logo" />
                     </a>
                     <div className="profile-icon-name">github</div>
                   </div>
                   <div className="single-profile-overlay">
                     <div className="profile-txt">
                       <a href="">
-                        <i className="flaticon-github-logo"></i>
+                        <i className="flaticon-github-logo" />
                       </a>
                       <div className="profile-icon-name">github</div>
                     </div>
@@ -91,20 +90,20 @@ export const ProfilesComponent = (props: IProps) => {
                 </div>
               </div>
             </div>
-            <div className="profile-border"></div>
+            <div className="profile-border" />
             <div className="row">
               <div className="col-sm-3">
                 <div className="single-profile">
                   <div className="profile-txt">
                     <a href="">
-                      <i className="flaticon-flickr-website-logo-silhouette"></i>
+                      <i className="flaticon-flickr-website-logo-silhouette" />
                     </a>
                     <div className="profile-icon-name">flickR</div>
                   </div>
                   <div className="single-profile-overlay">
                     <div className="profile-txt">
                       <a href="">
-                        <i className="flaticon-flickr-website-logo-silhouette"></i>
+                        <i className="flaticon-flickr-website-logo-silhouette" />
                       </a>
                       <div className="profile-icon-name">flickR</div>
                     </div>
@@ -115,14 +114,14 @@ export const ProfilesComponent = (props: IProps) => {
                 <div className="single-profile">
                   <div className="profile-txt">
                     <a href="">
-                      <i className="flaticon-smug"></i>
+                      <i className="flaticon-smug" />
                     </a>
                     <div className="profile-icon-name">smungMung</div>
                   </div>
                   <div className="single-profile-overlay">
                     <div className="profile-txt">
                       <a href="">
-                        <i className="flaticon-smug"></i>
+                        <i className="flaticon-smug" />
                       </a>
                       <div className="profile-icon-name">smungMung</div>
                     </div>
@@ -133,14 +132,14 @@ export const ProfilesComponent = (props: IProps) => {
                 <div className="single-profile">
                   <div className="profile-txt">
                     <a href="">
-                      <i className="flaticon-squarespace-logo"></i>
+                      <i className="flaticon-squarespace-logo" />
                     </a>
                     <div className="profile-icon-name">squareSpace</div>
                   </div>
                   <div className="single-profile-overlay">
                     <div className="profile-txt">
                       <a href="">
-                        <i className="flaticon-squarespace-logo"></i>
+                        <i className="flaticon-squarespace-logo" />
                       </a>
                       <div className="profile-icon-name">squareSpace</div>
                     </div>
@@ -151,14 +150,14 @@ export const ProfilesComponent = (props: IProps) => {
                 <div className="single-profile profile-no-border">
                   <div className="profile-txt">
                     <a href="">
-                      <i className="flaticon-bitbucket-logotype-camera-lens-in-perspective"></i>
+                      <i className="flaticon-bitbucket-logotype-camera-lens-in-perspective" />
                     </a>
                     <div className="profile-icon-name">bitBucket</div>
                   </div>
                   <div className="single-profile-overlay">
                     <div className="profile-txt">
                       <a href="">
-                        <i className="flaticon-bitbucket-logotype-camera-lens-in-perspective"></i>
+                        <i className="flaticon-bitbucket-logotype-camera-lens-in-perspective" />
                       </a>
                       <div className="profile-icon-name">bitBucket</div>
                     </div>

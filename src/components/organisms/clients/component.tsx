@@ -1,5 +1,5 @@
-import ISection from "interface/isection";
-import React from "react";
+import ISection from 'interface/isection';
+import React from 'react';
 
 interface IProps {
   sectionID?: number;
@@ -8,7 +8,6 @@ interface IProps {
 }
 
 export const ClientsComponent = (props: IProps) => {
-  // const { sectionID, dataSource, title } = props;
   return (
     <section id="clients" className="clients">
       <div className="section-heading text-center">

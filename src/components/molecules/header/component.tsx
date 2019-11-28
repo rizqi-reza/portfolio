@@ -1,5 +1,5 @@
-import React from 'react';
 import { INavigation } from 'interface/ipage';
+import React from 'react';
 
 interface IProps {
   title: string;
@@ -20,7 +20,7 @@ export const HeaderComponent = (props: IProps) => {
                 data-toggle="collapse"
                 data-target="#navbar-menu"
               >
-                <i className="fa fa-bars"></i>
+                <i className="fa fa-bars" />
               </button>
               <a className="navbar-brand" href="#section-1">
                 {title}
@@ -34,7 +34,7 @@ export const HeaderComponent = (props: IProps) => {
                   data-in="fadeInDown"
                   data-out="fadeOutUp"
                 >
-                  <li className="smooth-menu active"></li>
+                  <li className="smooth-menu active" />
                   {dataSource.map((item: INavigation, index: number) => (
                     <li className="smooth-menu" key={`menu-${index}`}>
                       <a href={`#${item.url}`}>{item.title}</a>
@@ -47,7 +47,7 @@ export const HeaderComponent = (props: IProps) => {
         </nav>
       </div>
 
-      <div className="clearfix"></div>
+      <div className="clearfix" />
     </header>
   );
 };

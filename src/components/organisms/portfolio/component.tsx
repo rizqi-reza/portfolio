@@ -15,9 +15,9 @@ export const PortfolioComponent = (props: IProps) => {
           <h2>{dataSource.title}</h2>
         </div>
         <div className="container">
-          <br></br>
-          <br></br>
-          <br></br>
+          <br />
+          <br />
+          <br />
           <div className="portfolio-content">
             <div className="isotope">
               {dataSource.image && (
@@ -36,12 +36,12 @@ export const PortfolioComponent = (props: IProps) => {
               )}
             </div>
           </div>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </div>
     </section>

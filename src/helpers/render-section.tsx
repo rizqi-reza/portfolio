@@ -1,6 +1,3 @@
-import ISection from 'interface/isection';
-import React from 'react';
-import { SectionType } from './constant';
 import {
   About,
   Clients,
@@ -12,6 +9,9 @@ import {
   Profiles,
   Skills,
 } from 'components';
+import ISection from 'interface/isection';
+import React from 'react';
+import { SectionType } from './constant';
 
 export const RenderSection = (section: ISection) => {
   switch (section.type) {

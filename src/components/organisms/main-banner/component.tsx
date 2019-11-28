@@ -1,7 +1,7 @@
-import React from 'react';
+import bannerImage from 'assets/images/banner/main-banner.jpg';
 import ISection from 'interface/isection';
 import { Markup } from 'interweave';
-import bannerImage from 'assets/images/banner/main-banner.jpg';
+import React from 'react';
 
 interface IProps {
   dataSource: ISection;
@@ -15,25 +15,29 @@ export const MainBannerComponent = (props: IProps) => {
       className="welcome-hero"
       style={{
         backgroundImage: `url(${bannerImage})`,
-        backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundSize: 'cover',
       }}
     >
       <div className="container">
         <div className="row">
           <div className="col-md-12 text-center">
-            <div className="header-text">
+            <div className="header-text smooth-menu">
               <h2>
                 <Markup content={dataSource.heading} />
               </h2>
               <p>{dataSource.description}</p>
-              <a href={dataSource.mainLink} download className="btn-download">
+              <a href={dataSource.mainLink} download={true} className="btn-download">
                 download resume
               </a>
-              <br></br>
-              <a href={dataSource.mainLink} className="btn-scroll-down">
-                <i className="fas fa-chevron-down"></i>
-              </a>
+              <br />
+              <ul data-in="fadeInDown" data-out="fadeOutUp">
+                <li className="smooth-menu">
+                  <a href="#section-2" className="btn-scroll-down">
+                    <i className="fas fa-chevron-down" />
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

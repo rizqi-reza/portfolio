@@ -27,7 +27,7 @@ module.exports = {
         },
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.s?css$/i,
         use: [
           // Creates `stclyle` nodes from JS strings
           // 'style-loader', //3. Extract css into files

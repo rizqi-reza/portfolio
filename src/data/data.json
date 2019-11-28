@@ -2,7 +2,7 @@
   "ver": 1,
   "title": "Rizqi Reza",
   "description": "Rizqi Reza Portfolio's",
-  "logoUrl": "http://static.bmdstatic.com/pk/brand/medium/5d458cfc062e7.jpg",
+  "logoUrl": "",
   "navigationMenus": [{
       "title": "About",
       "url": "section-2"
@@ -56,23 +56,19 @@
         }
       ],
       "socialLinks": [{
-          "url": "",
-          "icon": "fab fa-facebook-f"
-        },
-        {
-          "url": "",
+          "url": "https://github.com/rizqi-reza",
           "icon": "fab fa-github"
         },
         {
-          "url": "",
+          "url": "https://twitter.com/rizqirezz",
           "icon": "fab fa-twitter"
         },
         {
-          "url": "",
+          "url": "https://www.linkedin.com/in/rizqi-reza/",
           "icon": "fab fa-linkedin"
         },
         {
-          "url": "",
+          "url": "https://www.instagram.com/rizqirezz/",
           "icon": "fab fa-instagram"
         }
       ]
@@ -199,23 +195,19 @@
         }
       ],
       "socialLinks": [{
-          "url": "",
-          "icon": "fab fa-facebook-f"
-        },
-        {
-          "url": "",
+          "url": "https://github.com/rizqi-reza",
           "icon": "fab fa-github"
         },
         {
-          "url": "",
+          "url": "https://twitter.com/rizqirezz",
           "icon": "fab fa-twitter"
         },
         {
-          "url": "",
+          "url": "https://www.linkedin.com/in/rizqi-reza/",
           "icon": "fab fa-linkedin"
         },
         {
-          "url": "",
+          "url": "https://www.instagram.com/rizqirezz/",
           "icon": "fab fa-instagram"
         }
       ]

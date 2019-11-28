@@ -1,6 +1,6 @@
 import ISection, { ISubSection } from 'interface/isection';
-import React from 'react';
 import { Markup } from 'interweave';
+import React from 'react';
 
 interface IProps {
   dataSource: ISection;
@@ -16,13 +16,13 @@ export const EducationComponent = (props: IProps) => {
       </div>
       <div className="container">
         <div className="education-horizontal-timeline">
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           {dataSource.subSections && (
             <div className="row">
               {dataSource.subSections.map((item: ISubSection, index: number) => (
@@ -35,8 +35,8 @@ export const EducationComponent = (props: IProps) => {
                       </h3>
                     </div>
                     <div className="timeline-horizontal-border">
-                      <i className="fa fa-circle" aria-hidden="true"></i>
-                      <span className="single-timeline-horizontal"></span>
+                      <i className="fa fa-circle" aria-hidden="true" />
+                      <span className="single-timeline-horizontal" />
                     </div>
                     <div className="timeline">
                       <div className="timeline-content">
@@ -50,13 +50,13 @@ export const EducationComponent = (props: IProps) => {
               ))}
             </div>
           )}
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </div>
     </section>

@@ -14,9 +14,9 @@ export const ExperienceComponent = (props: IProps) => {
       </div>
       <div className="container">
         <div className="experience-content">
-          <br></br>
-          <br></br>
-          <br></br>
+          <br />
+          <br />
+          <br />
           <div className="main-timeline">
             {dataSource.subSections && (
               <ul>
@@ -37,7 +37,7 @@ export const ExperienceComponent = (props: IProps) => {
                                 <div className="timeline-content">
                                   <h4 className="title">
                                     <span>
-                                      <i className="fa fa-circle" aria-hidden="true"></i>
+                                      <i className="fa fa-circle" aria-hidden="true" />
                                     </span>
                                     {item.heading}
                                   </h4>
@@ -59,7 +59,7 @@ export const ExperienceComponent = (props: IProps) => {
                               <div className="experience-time">
                                 <h2>
                                   <span>
-                                    <i className="fa fa-circle" aria-hidden="true"></i>
+                                    <i className="fa fa-circle" aria-hidden="true" />
                                   </span>
                                   {item.title}
                                 </h2>
@@ -79,7 +79,7 @@ export const ExperienceComponent = (props: IProps) => {
                               <div className="experience-time">
                                 <h2>
                                   <span>
-                                    <i className="fa fa-circle" aria-hidden="true"></i>
+                                    <i className="fa fa-circle" aria-hidden="true" />
                                   </span>
                                   {item.title}
                                 </h2>
@@ -95,8 +95,8 @@ export const ExperienceComponent = (props: IProps) => {
               </ul>
             )}
           </div>
-          <br></br>
-          <br></br>
+          <br />
+          <br />
         </div>
       </div>
     </section>

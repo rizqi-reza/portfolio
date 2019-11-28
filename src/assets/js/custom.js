@@ -27,7 +27,7 @@ $(document).ready(function () {
     $('html, body').animate({
         scrollTop: 0,
       },
-      1500,
+      1500
     );
     return false;
   });
@@ -48,8 +48,8 @@ $(document).ready(function () {
       .animate({
           scrollTop: $(anchor.attr('href')).offset().top - 90,
         },
-        1200,
-      ); //, 'easeInOutExpo');
+        1200
+      );
   });
   $('.navbar-brand').bind('click', function (event) {
     event.preventDefault();
@@ -59,13 +59,13 @@ $(document).ready(function () {
       .animate({
           scrollTop: $(anchor.attr('href')).offset().top,
         },
-        1200,
-      ); //, 'easeInOutExpo');
+        1200
+      );
   });
 
   $('body').scrollspy({
     target: '.navbar-collapse',
-    offset: 0,
+    offset: 100,
   });
 
   // 3. Progress-bar
@@ -86,45 +86,7 @@ $(document).ready(function () {
     });
   }
 
-  // 4. owl carousel
-
-  // i. client (carousel)
-
-  // $('#client').owlCarousel({
-  // 	items:7,
-  // 	loop:true,
-  // 	smartSpeed: 1000,
-  // 	autoplay:true,
-  // 	dots:false,
-  // 	autoplayHoverPause:true,
-  // 	responsive:{
-  // 			0:{
-  // 				items:2
-  // 			},
-  // 			415:{
-  // 				items:2
-  // 			},
-  // 			600:{
-  // 				items:4
-
-  // 			},
-  // 			1199:{
-  // 				items:4
-  // 			},
-  // 			1200:{
-  // 				items:7
-  // 			}
-  // 		}
-  // 	});
-
-  // 	$('.play').on('click',function(){
-  // 		owl.trigger('play.owl.autoplay',[1000])
-  // 	})
-  // 	$('.stop').on('click',function(){
-  // 		owl.trigger('stop.owl.autoplay')
-  // 	})
-
-  // 5. welcome animation support
+  // 4. welcome animation support
 
   $(window).on('load', function () {
     $('.header-text h2,.header-text p')

@@ -19,10 +19,10 @@ export const SkillsComponent = (props: IProps) => {
           <h2>{dataSource.title}</h2>
         </div>
         <div className="container">
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
+          <br />
+          <br />
+          <br />
+          <br />
           <div className="row">
             {data.map((mainItem: any, index: number) => (
               <div className="col-md-6" key={`data-${index}`}>
@@ -39,7 +39,7 @@ export const SkillsComponent = (props: IProps) => {
                               aria-valuenow={item.value}
                               aria-valuemin={0}
                               aria-valuemax={100}
-                            ></div>
+                            />
                           </div>
                           <h3>{item.value}%</h3>
                         </div>
@@ -49,12 +49,12 @@ export const SkillsComponent = (props: IProps) => {
               </div>
             ))}
           </div>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </div>
     </section>

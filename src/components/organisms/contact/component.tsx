@@ -1,4 +1,4 @@
-import ISection, { ISubSection, ISocialLink } from 'interface/isection';
+import ISection, { ISocialLink, ISubSection } from 'interface/isection';
 import React from 'react';
 
 interface IProps {
@@ -64,7 +64,7 @@ export const ContactComponent = (props: IProps) => {
                             rows={8}
                             id="comment"
                             placeholder="Message"
-                          ></textarea>
+                          />
                         </div>
                       </div>
                     </div>
@@ -105,7 +105,7 @@ export const ContactComponent = (props: IProps) => {
                       {dataSource.socialLinks.map((item: ISocialLink, index: number) => (
                         <li key={`contact-social-${index}`}>
                           <a href={item.url}>
-                            <i className={item.icon} aria-hidden="true"></i>
+                            <i className={item.icon} aria-hidden="true" />
                           </a>
                         </li>
                       ))}

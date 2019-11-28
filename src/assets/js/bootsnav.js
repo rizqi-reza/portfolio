@@ -536,16 +536,17 @@
                     // Scroll
                     var scrollTop = $(window).scrollTop(),
                         $anchor = $(this).find('a'),
-                        $section = $($anchor.attr('href')).offset().top,
+                        $section = $($anchor.attr('href')).offset().top - offset,
                         $window = $(window).width(),
                         $minusDesktop = getNav.data("minus-value-desktop"),
                         $minusMobile = getNav.data("minus-value-mobile"),
                         $speed = getNav.data("speed");
 
+                    var $position;
                     if ($window > 992) {
-                        var $position = $section - $minusDesktop;
+                        $position = $section - $minusDesktop;
                     } else {
-                        var $position = $section - $minusMobile;
+                        $position = $section - $minusMobile;
                     }
 
                     $('html, body').stop().animate({
