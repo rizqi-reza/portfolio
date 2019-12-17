@@ -1,10 +1,10 @@
-import { useEffect, Fragment, useState } from 'react';
-import React from 'react';
-import { Loader, Footer } from 'components';
+import { Footer, Loader } from 'components';
 import { Header } from 'components/molecules/header';
 import data from 'data/data.json';
 import RenderSection from 'helpers/render-section';
 import IPage from 'interface/ipage';
+import { Fragment, useEffect, useState } from 'react';
+import React from 'react';
 
 export const MainPageComponent = (props: any) => {
   const [page, setPage] = useState({} as IPage);
