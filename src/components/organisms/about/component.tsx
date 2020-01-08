@@ -25,7 +25,7 @@ export const AboutComponent = (props: IProps) => {
                 {dataSource.subSections && (
                   <div className="row">
                     {dataSource.subSections.map((item: ISubSection, index: number) => (
-                      <div className="col-sm-4" key={`${item.title}-${index}`}>
+                      <div className="col-sm-6" key={`${item.title}-${index}`}>
                         <div className="single-about-add-info">
                           <h3>{item.title}</h3>
                           <p>{item.description}</p>

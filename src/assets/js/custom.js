@@ -40,7 +40,7 @@ $(document).ready(function () {
 
   //=============
 
-  $('li.smooth-menu a').bind('click', function (event) {
+  $('li.smooth-menu a').on('click', function (event) {
     event.preventDefault();
     var anchor = $(this);
     $('html, body')
@@ -51,7 +51,7 @@ $(document).ready(function () {
         1200
       );
   });
-  $('.navbar-brand').bind('click', function (event) {
+  $('.navbar-brand').on('click', function (event) {
     event.preventDefault();
     var anchor = $(this);
     $('html, body')

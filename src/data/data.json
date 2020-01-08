@@ -34,7 +34,7 @@
       "title": "Main Banner",
       "heading": "hi <span>,</span> i am <br> rizqi reza <span>.</span>",
       "description": "frontend & backend developer",
-      "mainLink": "download-resume"
+      "mainLink": "https://drive.google.com/file/d/1KW6klDGW3HylMmqhqMP76Ngt5tgIPh-y/view?usp=sharing"
     },
     {
       "key": "section-2",
@@ -43,12 +43,8 @@
       "heading": "Hi and welcome to my portfolio. My name is Rizqi Reza, I was born in 1995 in Tegal/Central Java, Indonesia and I currently living in Bekasi, Indonesia.",
       "description": "I'm a experienced Software Developer and System Analyst with a demonstrated history of working in the information technology and services industry for 2.5 years. Skilled in System Analytical, Databases, Backend Development, and  Frontend Development. Graduated from D3 Informatics Management at Politeknik Manufaktur Astra in 2016 and finished studying S1 Information System at Binus University in March 2019.",
       "subSections": [{
-          "title": "Phone",
-          "description": "+62-822-6100-3633"
-        },
-        {
           "title": "Website",
-          "description": "this website"
+          "description": "https://portfolio.rizqireza.now.sh/"
         },
         {
           "title": "Email",
@@ -182,12 +178,12 @@
       "heading": "Rizqi Reza",
       "description": "frontend & backend developer",
       "subSections": [{
-          "title": "Phone",
-          "description": "+62-822-6100-3633"
+          "title": "Address",
+          "description": "Pondok Ungu Permai Blok AK 2, No. 1 RT 002 / RW 013, Babelan, Bekasi, 17610"
         },
         {
           "title": "Website",
-          "description": "this website"
+          "description": "https://portfolio.rizqireza.now.sh/"
         },
         {
           "title": "Email",

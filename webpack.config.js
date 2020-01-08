@@ -16,7 +16,7 @@ module.exports = () => {
   return {
     devtool: 'inline-source-map',
     devServer: {
-      contentBase: path.join(__dirname, 'dist'),
+      contentBase: path.join(__dirname, 'build'),
       compress: true,
       historyApiFallback: true,
       port: 7000,
@@ -63,7 +63,7 @@ module.exports = () => {
     },
     output: {
       filename: 'bundle.js',
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'build'),
     },
     plugins: [
       new HtmlWebpackPlugin({

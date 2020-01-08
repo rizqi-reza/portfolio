@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
@@ -11,6 +12,9 @@ const {
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
+  stats: {
+    children: false
+  },
   mode: 'production',
   devtool: 'source-map',
   devServer: {
@@ -30,6 +34,10 @@ module.exports = merge(common, {
       }),
     ],
   },
+  resolve: {
+    modules: [].concat('src', ['node_modules']),
+    extensions: ['.tsx', '.ts', '.js', 'scss', 'css', 'sass'],
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'js/portfolio.[name].bundle.js',
@@ -44,10 +52,9 @@ module.exports = merge(common, {
       filename: 'portfolio.css'
     }),
     new CleanWebpackPlugin(),
-    // new Dotenv(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
   ],
-  resolve: {
-    modules: [].concat('src', ['node_modules']),
-    extensions: ['.tsx', '.ts', '.js', 'scss', 'css', 'sass'],
-  },
 });
