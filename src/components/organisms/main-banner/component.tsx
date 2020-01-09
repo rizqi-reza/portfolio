@@ -1,4 +1,4 @@
-import bannerImage from 'assets/images/banner/main-banner.jpg';
+import bannerImage from 'assets/images/main-banner.jpg';
 import ISection from 'interface/isection';
 import { Markup } from 'interweave';
 import React from 'react';

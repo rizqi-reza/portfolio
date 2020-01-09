@@ -1,4 +1,4 @@
-import profileImage from 'assets/images/about/profile-about.jpg';
+import profileImage from 'assets/images/profile-about.jpg';
 import ISection, { ISocialLink, ISubSection } from 'interface/isection';
 import React from 'react';
 
