@@ -5,6 +5,7 @@ import RenderSection from 'helpers/render-section';
 import IPage from 'interface/ipage';
 import { Fragment, useEffect, useState } from 'react';
 import React from 'react';
+import Favicon from 'react-favicon';
 
 export const MainPageComponent = (props: any) => {
   const [page, setPage] = useState({} as IPage);
@@ -30,6 +31,7 @@ export const MainPageComponent = (props: any) => {
 
   return (
     <Fragment>
+      <Favicon url="https://drive.google.com/uc?export=view&id=1HFtSQHgkxGnq6iD3d5Q2ggoc8KwJOQco" />
       <Header title={page.title} dataSource={page.navigationMenus} />
       {loader ? (
         <Loader />
