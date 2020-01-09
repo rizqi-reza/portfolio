@@ -26,7 +26,7 @@ module.exports = {
           options: {
             name: '[name].[ext]?[contenthash]',
             limit: 8192,
-            outputPath: 'img',
+            outputPath: 'images',
           },
         },
       },
