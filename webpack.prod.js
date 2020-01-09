@@ -39,7 +39,7 @@ module.exports = merge(common, {
     extensions: ['.tsx', '.ts', '.js', 'scss', 'css', 'sass'],
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'build'),
     filename: 'js/portfolio.[name].bundle.js',
     library: ['portfolio', '[name]'],
     libraryTarget: 'umd',
