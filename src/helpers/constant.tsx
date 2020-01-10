@@ -7,7 +7,7 @@ export enum SectionType {
   Contact = 'Contact',
   Education = 'Education',
   Experience = 'Experience',
-  Portfolio = 'Portfolio',
+  Projects = 'Projects',
   Profiles = 'Profiles',
   Skills = 'Skills',
 }

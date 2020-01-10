@@ -20,7 +20,7 @@
       "url": "section-5"
     },
     {
-      "title": "Portfolio",
+      "title": "Projects",
       "url": "section-6"
     },
     {
@@ -44,7 +44,7 @@
       "description": "I'm a experienced Software Developer and System Analyst with a demonstrated history of working in the information technology and services industry for 2.5 years. Skilled in System Analytical, Databases, Backend Development, and  Frontend Development. Graduated from D3 Informatics Management at Politeknik Manufaktur Astra in 2016 and finished studying S1 Information System at Binus University in March 2019.",
       "subSections": [{
           "title": "Website",
-          "description": "https://portfolio.rizqireza.now.sh/"
+          "description": "https://rizqireza.now.sh/"
         },
         {
           "title": "Email",
@@ -149,8 +149,8 @@
     },
     {
       "key": "section-6",
-      "type": "Portfolio",
-      "title": "Portfolio",
+      "type": "Projects",
+      "title": "Projects",
       "image": [{
           "action": "",
           "url": "https://drive.google.com/uc?export=view&id=1XQdqlRTossKhALAEig8L7wx3u24qxVui",
@@ -183,7 +183,7 @@
         },
         {
           "title": "Website",
-          "description": "https://portfolio.rizqireza.now.sh/"
+          "description": "https://rizqireza.now.sh/"
         },
         {
           "title": "Email",

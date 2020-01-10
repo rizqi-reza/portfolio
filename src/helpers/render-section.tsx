@@ -5,8 +5,8 @@ import {
   Education,
   Experience,
   MainBanner,
-  Portfolio,
   Profiles,
+  Projects,
   Skills,
 } from 'components';
 import ISection from 'interface/isection';
@@ -30,8 +30,8 @@ export const RenderSection = (section: ISection) => {
     case SectionType.Experience: {
       return <Experience key={section.key} dataSource={section} />;
     }
-    case SectionType.Portfolio: {
-      return <Portfolio key={section.key} dataSource={section} />;
+    case SectionType.Projects: {
+      return <Projects key={section.key} dataSource={section} />;
     }
     case SectionType.Contact: {
       return <Contact key={section.key} dataSource={section} />;

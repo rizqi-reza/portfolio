@@ -5,12 +5,12 @@ interface IProps {
   dataSource: ISection;
 }
 
-export const PortfolioComponent = (props: IProps) => {
+export const ProjectsComponent = (props: IProps) => {
   const { dataSource } = props;
   const totalData = dataSource.image ? dataSource.image.length : 0;
   return (
-    <section id={dataSource.key} className="portfolio">
-      <div className="portfolio-details">
+    <section id={dataSource.key} className="projects">
+      <div className="projects-details">
         <div className="section-heading text-center">
           <h2>{dataSource.title}</h2>
         </div>
@@ -18,7 +18,7 @@ export const PortfolioComponent = (props: IProps) => {
           <br />
           <br />
           <br />
-          <div className="portfolio-content">
+          <div className="projects-content">
             <div className="isotope">
               {dataSource.image && (
                 <div className="row">
@@ -48,4 +48,4 @@ export const PortfolioComponent = (props: IProps) => {
   );
 };
 
-export default PortfolioComponent;
+export default ProjectsComponent;

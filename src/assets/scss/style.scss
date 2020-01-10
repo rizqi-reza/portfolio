@@ -18,7 +18,7 @@ font-family: 'Poppins', sans-serif;
 6.  Skill
 7.  Experience
 8.  Profiles
-9.  Portfolio
+9.  Projects
 10. Clients
 11. Contact
 
@@ -141,6 +141,16 @@ body {
 }
 
 @media (min-width: 1024px) {}
+
+@media (max-width: 768px) {
+    nav.navbar.bootsnav.no-background {
+
+        li>a,
+        a {
+            color: $main-color !important;
+        }
+    }
+}
 
 nav.navbar.bootsnav.no-background {
     border: none;
@@ -798,14 +808,14 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 }
 
 /*-------------------------------------
-        9. Portfolio
+        9. Projects
 --------------------------------------*/
-.portfolio {
+.projects {
     padding: 50px 0 100px;
     border: 1px solid #e5ebf2;
 }
 
-.portfolio-content {
+.projects-content {
     padding-top: 100px;
 }
 

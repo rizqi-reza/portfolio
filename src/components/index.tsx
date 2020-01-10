@@ -8,7 +8,7 @@ export { Contact } from './organisms/contact';
 export { Education } from './organisms/education';
 export { Experience } from './organisms/experience';
 export { MainBanner } from './organisms/main-banner';
-export { Portfolio } from './organisms/portfolio';
+export { Projects } from './organisms/projects';
 export { Profiles } from './organisms/profiles';
 export { Skills } from './organisms/skills';
 export { Loader } from './templates/loader';
