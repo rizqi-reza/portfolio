@@ -7,7 +7,19 @@ interface IProps {
 
 export const ProjectsComponent = (props: IProps) => {
   const { dataSource } = props;
-  const totalData = dataSource.image ? dataSource.image.length : 0;
+
+  const card = (image: IImage, index: number) => (
+    <div className="col-sm-6" key={`${image.title}-${index}`}>
+      <div className="item">
+        <img src={image.url} alt={image.imageAlt} />
+        <div className="isotope-overlay">
+          <a href="#">{image.title}</a>
+          <p>{image.subTitle}</p>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <section id={dataSource.key} className="projects">
       <div className="projects-details">
@@ -20,20 +32,18 @@ export const ProjectsComponent = (props: IProps) => {
           <br />
           <div className="projects-content">
             <div className="isotope">
-              {dataSource.image && (
-                <div className="row">
-                  {dataSource.image.map((image: IImage, index: number) => (
-                    <div className={`col-sm-${12 / totalData}`} key={`${image.title}-${index}`}>
-                      <div className="item">
-                        <img src={image.url} alt={image.imageAlt} />
-                        <div className="isotope-overlay">
-                          <a href="#">{image.title}</a>
-                        </div>
+              {dataSource.image &&
+                dataSource.image?.map((image: IImage, index: number) => {
+                  if ((index + 1) % 2 == 0) {
+                    return (
+                      <div className="row" key={`${image.title}-${index}`}>
+                        {card(image, index)}
                       </div>
-                    </div>
-                  ))}
-                </div>
-              )}
+                    );
+                  } else {
+                    return card(image, index);
+                  }
+                })}
             </div>
           </div>
           <br />

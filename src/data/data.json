@@ -42,8 +42,8 @@
       "key": "section-2",
       "type": "About",
       "title": "About Me",
-      "heading": "Hi and welcome to my portfolio. My name is Rizqi Reza, I was born in 1995 in Tegal/Central Java, Indonesia and I currently living in Bekasi, Indonesia.",
-      "description": "I'm a experienced Software Developer and System Analyst with a demonstrated history of working in the information technology and services industry for 2.5 years. Skilled in System Analytical, Databases, Backend Development, and  Frontend Development. Graduated from D3 Informatics Management at Politeknik Manufaktur Astra in 2016 and finished studying S1 Information System at Binus University in March 2019.",
+      "heading": "Hi and welcome to my portfolio. My name is Rizqi Reza, I was born in 1995 on Tegal/Central Java, Indonesia and I currently living on Bekasi, Indonesia.",
+      "description": "I'm a experienced Software Developer and System Analyst with a demonstrated history of working in the information technology and services industry for 2.5 years. Skilled in System Analytical, Databases, Backend Development, and  Frontend Development. Graduated from D3 Informatics Management at Politeknik Manufaktur Astra in 2016 and finished studying S1 Information System at Binus University on March 2019.",
       "subSections": [
         {
           "title": "Website",
@@ -129,7 +129,7 @@
         },
         {
           "title": "Angular Js",
-          "value": 85
+          "value": 75
         }
       ]
     },
@@ -143,7 +143,7 @@
           "subTitle": "Frontend Developer",
           "heading": "Bhinneka.com",
           "subHeading": "Jakarta, Indonesia",
-          "description": "An e-commerce company based on Jakarta, focus on b2b (business to business) and b2g (business to goverment)."
+          "description": "An e-commerce company based on Jakarta, focused on b2b (business to business) and b2g (business to goverment)."
         },
         {
           "title": "2016 - 2019",
@@ -163,19 +163,43 @@
           "action": "",
           "url": "https://drive.google.com/uc?export=view&id=1XQdqlRTossKhALAEig8L7wx3u24qxVui",
           "title": "HSO Staging",
+          "subTitle": "Web portal to maintain several database ",
           "imageAlt": "HSO Staging"
         },
         {
           "action": "",
           "url": "https://drive.google.com/uc?export=view&id=1EouYGzHFdWrVoBSAvOhMiMLxm-qOPCNQ",
           "title": "Slot Management",
+          "subTitle": "Web application to maintain motorcycle service timeline at astra honda motor workshop",
           "imageAlt": "Slot Management"
         },
         {
           "action": "",
           "url": "https://drive.google.com/uc?export=view&id=1XF-SDagFd9EN151SEHZpG_Nb3F_lX73h",
           "title": "Single Astra Motor Account",
+          "subTitle": "Single sign on portal to access several web apps on astra international companies",
           "imageAlt": "Single Astra Motor Account"
+        },
+        {
+          "action": "",
+          "url": "https://drive.google.com/uc?export=view&id=1r18ub3mC6C0TrxjeQQtMfZEF-tPCj1lp",
+          "title": "Bhinneka.com",
+          "subTitle": "Bhinneka store site, built together with bhinneka tech team",
+          "imageAlt": "Bhinneka.com"
+        },
+        {
+          "action": "",
+          "url": "https://drive.google.com/uc?export=view&id=1W6vC0tM-wtVXhMVi-Dn1MrTHEaYT1q4x",
+          "title": "Minofa System",
+          "subTitle": "Minofa CMS to maintain internal company activities",
+          "imageAlt": "Minofa System"
+        },
+        {
+          "action": "",
+          "url": "https://drive.google.com/uc?export=view&id=14qSIJbFju3iia0Rzp9M3ITMIbMvc-s2t",
+          "title": "Self Diagnose - Kawal Covid 19",
+          "subTitle": "Sub site of kawalcovid19.id to self diagnose ourself from covid19",
+          "imageAlt": "Self Diagnose - Kawal Covid 19"
         }
       ]
     },

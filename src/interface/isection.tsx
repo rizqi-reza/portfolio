@@ -14,6 +14,7 @@ export interface IImage {
   action: string;
   url: string;
   title: string;
+  subTitle: string;
   imageAlt: string;
 }
 
