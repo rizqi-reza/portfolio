@@ -40,7 +40,8 @@
       "image": [
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1QsPdkXtD3PS8j27Ksn86gK4Oq6RqDj1J",
+          "url": "https://drive.google.com/uc?export=view&id=1R9EJ_aMcQXx8iHB-7OgNUdE4nqGspZRG",
+          "webpUrl": "https://drive.google.com/uc?export=view&id=1QsPdkXtD3PS8j27Ksn86gK4Oq6RqDj1J",
           "title": "Main Banner",
           "imageAlt": "Main Banner"
         }
@@ -83,7 +84,8 @@
       "image": [
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1kivCR9oK1je7iPO1UJPGT4w-4xwv-X2J",
+          "url": "https://drive.google.com/uc?export=view&id=1VoG05JfoMunQ_ZFsMBIxWIWUcjQBpDrl",
+          "webpUrl": "https://drive.google.com/uc?export=view&id=1kivCR9oK1je7iPO1UJPGT4w-4xwv-X2J",
           "title": "Profile",
           "imageAlt": "Profile"
         }
@@ -177,42 +179,48 @@
       "image": [
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1TjyeWB0zYIXgmfSo_IwSE6QWWX3HAKwj",
+          "url": "https://drive.google.com/uc?export=view&id=1XQdqlRTossKhALAEig8L7wx3u24qxVui",
+          "webpUrl": "https://drive.google.com/uc?export=view&id=1TjyeWB0zYIXgmfSo_IwSE6QWWX3HAKwj",
           "title": "HSO Staging",
           "subTitle": "Web portal to maintain several database ",
           "imageAlt": "HSO Staging"
         },
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1uBbsa_-NIKGATtADG7joCZ4cjjlE8NRh",
+          "url": "https://drive.google.com/uc?export=view&id=1EouYGzHFdWrVoBSAvOhMiMLxm-qOPCNQ",
+          "webpUrl": "https://drive.google.com/uc?export=view&id=1uBbsa_-NIKGATtADG7joCZ4cjjlE8NRh",
           "title": "Slot Management",
           "subTitle": "Web application to maintain motorcycle service timeline at astra honda motor workshop",
           "imageAlt": "Slot Management"
         },
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1R01gsm646rUweUyXaBsGcq4qNYgQKTX9",
+          "url": "https://drive.google.com/uc?export=view&id=1EouYGzHFdWrVoBSAvOhMiMLxm-qOPCNQ",
+          "webpUrl": "https://drive.google.com/uc?export=view&id=1R01gsm646rUweUyXaBsGcq4qNYgQKTX9",
           "title": "Single Astra Motor Account",
           "subTitle": "Single sign on portal to access several web apps on astra international companies",
           "imageAlt": "Single Astra Motor Account"
         },
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1uIo7ey_RHX1JPlR2kEQQgyvtc4oxm8Cc",
+          "url": "https://drive.google.com/uc?export=view&id=1r18ub3mC6C0TrxjeQQtMfZEF-tPCj1lp",
+          "webpUrl": "https://drive.google.com/uc?export=view&id=1uIo7ey_RHX1JPlR2kEQQgyvtc4oxm8Cc",
           "title": "Bhinneka.com",
           "subTitle": "Bhinneka store site, built together with bhinneka tech team",
           "imageAlt": "Bhinneka.com"
         },
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1rVTeiI9LaMzSmIwdev40nKI3sx-FJKTI",
+          "url": "https://drive.google.com/uc?export=view&id=1W6vC0tM-wtVXhMVi-Dn1MrTHEaYT1q4x",
+          "webpUrl": "https://drive.google.com/uc?export=view&id=1rVTeiI9LaMzSmIwdev40nKI3sx-FJKTI",
           "title": "Minofa System",
           "subTitle": "Minofa CMS to maintain internal company activities",
           "imageAlt": "Minofa System"
         },
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1VwdLq7TDkXL6Tt949Ys7an_AUxey7irj",
+          "url": "https://drive.google.com/uc?export=view&id=14qSIJbFju3iia0Rzp9M3ITMIbMvc-s2t",
+          "webpUrl": "https://drive.google.com/uc?export=view&id=1VwdLq7TDkXL6Tt949Ys7an_AUxey7irj",
           "title": "Self Diagnose - Kawal Covid 19",
           "subTitle": "Sub site of kawalcovid19.id to self diagnose ourself from covid19",
           "imageAlt": "Self Diagnose - Kawal Covid 19"

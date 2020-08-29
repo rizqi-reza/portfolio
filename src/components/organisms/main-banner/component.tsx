@@ -1,6 +1,7 @@
 import ISection from 'interface/isection';
 import { Markup } from 'interweave';
 import React from 'react';
+import { isSupportWebp } from 'utils/webp';
 
 interface IProps {
   dataSource: ISection;
@@ -8,7 +9,8 @@ interface IProps {
 
 export const MainBannerComponent = (props: IProps) => {
   const { dataSource } = props;
-  const bannerImage = dataSource?.image ? dataSource?.image[0]?.url : '';
+  const image = dataSource?.image ? dataSource?.image[0] : undefined;
+  const bannerImage = image ? (isSupportWebp() ? image.webpUrl : image.url) : '';
   return (
     <section
       id={dataSource.key}

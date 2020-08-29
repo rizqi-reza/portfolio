@@ -1,4 +1,5 @@
 import ISection, { IImage } from 'interface/isection';
+import Image from 'react-webp-image';
 import React from 'react';
 
 interface IProps {
@@ -11,7 +12,7 @@ export const ProjectsComponent = (props: IProps) => {
   const card = (image: IImage, index: number) => (
     <div className="col-sm-6" key={`${image.title}-${index}`}>
       <div className="item">
-        <img src={image.url} alt={image.imageAlt} />
+        <Image src={image.url} webp={image.webpUrl} alt={image.imageAlt} />;
         <div className="isotope-overlay">
           <a href="#">{image.title}</a>
           <p>{image.subTitle}</p>

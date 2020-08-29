@@ -1,4 +1,5 @@
 import ISection, { ISocialLink, ISubSection } from 'interface/isection';
+import Image from 'react-webp-image';
 import React from 'react';
 
 interface IProps {
@@ -8,6 +9,7 @@ interface IProps {
 export const AboutComponent = (props: IProps) => {
   const { dataSource } = props;
   const profileImage = dataSource?.image ? dataSource?.image[0]?.url : '';
+  const profileImageWebp = dataSource?.image ? dataSource?.image[0]?.webpUrl : '';
   return (
     <section id={dataSource.key} className="about">
       <div className="section-heading text-center">
@@ -44,7 +46,7 @@ export const AboutComponent = (props: IProps) => {
             </div>
             <div className="col-sm-offset-1 col-sm-5 col-xs-12">
               <div className="single-about-img">
-                <img src={profileImage} alt="profile_image" />
+                <Image src={profileImage} webp={profileImageWebp} alt="profile_image" />;
                 {dataSource.socialLinks && (
                   <div className="about-list-icon">
                     <ul>
