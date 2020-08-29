@@ -11,10 +11,10 @@ export default interface ISection {
 }
 
 export interface IImage {
-  action: string;
+  action?: string;
   url: string;
   title: string;
-  subTitle: string;
+  subTitle?: string;
   imageAlt: string;
 }
 

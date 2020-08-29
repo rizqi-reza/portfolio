@@ -1,4 +1,3 @@
-import profileImage from 'assets/images/profile-about.jpg';
 import ISection, { ISocialLink, ISubSection } from 'interface/isection';
 import React from 'react';
 
@@ -8,6 +7,7 @@ interface IProps {
 
 export const AboutComponent = (props: IProps) => {
   const { dataSource } = props;
+  const profileImage = dataSource?.image ? dataSource?.image[0]?.url : '';
   return (
     <section id={dataSource.key} className="about">
       <div className="section-heading text-center">
@@ -28,7 +28,13 @@ export const AboutComponent = (props: IProps) => {
                       <div className="col-sm-6" key={`${item.title}-${index}`}>
                         <div className="single-about-add-info">
                           <h3>{item.title}</h3>
-                          <p>{item.description}</p>
+                          {item.title.toLowerCase() === 'website' ? (
+                            <p>
+                              <a href={item.description}>{item.description}</a>
+                            </p>
+                          ) : (
+                            <p>{item.description}</p>
+                          )}
                         </div>
                       </div>
                     ))}

@@ -1,4 +1,3 @@
-import bannerImage from 'assets/images/main-banner.jpg';
 import ISection from 'interface/isection';
 import { Markup } from 'interweave';
 import React from 'react';
@@ -9,6 +8,7 @@ interface IProps {
 
 export const MainBannerComponent = (props: IProps) => {
   const { dataSource } = props;
+  const bannerImage = dataSource?.image ? dataSource?.image[0]?.url : '';
   return (
     <section
       id={dataSource.key}

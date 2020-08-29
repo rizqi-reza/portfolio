@@ -36,7 +36,15 @@
       "title": "Main Banner",
       "heading": "hi <span>,</span> i am <br> rizqi reza <span>.</span>",
       "description": "frontend & backend developer",
-      "mainLink": "https://drive.google.com/file/d/1KW6klDGW3HylMmqhqMP76Ngt5tgIPh-y/view?usp=sharing"
+      "mainLink": "https://drive.google.com/file/d/1KW6klDGW3HylMmqhqMP76Ngt5tgIPh-y/view?usp=sharing",
+      "image": [
+        {
+          "action": "",
+          "url": "https://drive.google.com/uc?export=view&id=1QsPdkXtD3PS8j27Ksn86gK4Oq6RqDj1J",
+          "title": "Main Banner",
+          "imageAlt": "Main Banner"
+        }
+      ]
     },
     {
       "key": "section-2",
@@ -47,7 +55,7 @@
       "subSections": [
         {
           "title": "Website",
-          "description": "https://rizqi-reza.now.sh/"
+          "description": "https://rizqireza.com/"
         },
         {
           "title": "Email",
@@ -70,6 +78,14 @@
         {
           "url": "https://www.instagram.com/rizqirezz/",
           "icon": "fab fa-instagram"
+        }
+      ],
+      "image": [
+        {
+          "action": "",
+          "url": "https://drive.google.com/uc?export=view&id=1kivCR9oK1je7iPO1UJPGT4w-4xwv-X2J",
+          "title": "Profile",
+          "imageAlt": "Profile"
         }
       ]
     },
@@ -161,42 +177,42 @@
       "image": [
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1XQdqlRTossKhALAEig8L7wx3u24qxVui",
+          "url": "https://drive.google.com/uc?export=view&id=1TjyeWB0zYIXgmfSo_IwSE6QWWX3HAKwj",
           "title": "HSO Staging",
           "subTitle": "Web portal to maintain several database ",
           "imageAlt": "HSO Staging"
         },
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1EouYGzHFdWrVoBSAvOhMiMLxm-qOPCNQ",
+          "url": "https://drive.google.com/uc?export=view&id=1uBbsa_-NIKGATtADG7joCZ4cjjlE8NRh",
           "title": "Slot Management",
           "subTitle": "Web application to maintain motorcycle service timeline at astra honda motor workshop",
           "imageAlt": "Slot Management"
         },
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1XF-SDagFd9EN151SEHZpG_Nb3F_lX73h",
+          "url": "https://drive.google.com/uc?export=view&id=1R01gsm646rUweUyXaBsGcq4qNYgQKTX9",
           "title": "Single Astra Motor Account",
           "subTitle": "Single sign on portal to access several web apps on astra international companies",
           "imageAlt": "Single Astra Motor Account"
         },
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1r18ub3mC6C0TrxjeQQtMfZEF-tPCj1lp",
+          "url": "https://drive.google.com/uc?export=view&id=1uIo7ey_RHX1JPlR2kEQQgyvtc4oxm8Cc",
           "title": "Bhinneka.com",
           "subTitle": "Bhinneka store site, built together with bhinneka tech team",
           "imageAlt": "Bhinneka.com"
         },
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=1W6vC0tM-wtVXhMVi-Dn1MrTHEaYT1q4x",
+          "url": "https://drive.google.com/uc?export=view&id=1rVTeiI9LaMzSmIwdev40nKI3sx-FJKTI",
           "title": "Minofa System",
           "subTitle": "Minofa CMS to maintain internal company activities",
           "imageAlt": "Minofa System"
         },
         {
           "action": "",
-          "url": "https://drive.google.com/uc?export=view&id=14qSIJbFju3iia0Rzp9M3ITMIbMvc-s2t",
+          "url": "https://drive.google.com/uc?export=view&id=1VwdLq7TDkXL6Tt949Ys7an_AUxey7irj",
           "title": "Self Diagnose - Kawal Covid 19",
           "subTitle": "Sub site of kawalcovid19.id to self diagnose ourself from covid19",
           "imageAlt": "Self Diagnose - Kawal Covid 19"
@@ -216,7 +232,7 @@
         },
         {
           "title": "Website",
-          "description": "https://rizqi-reza.now.sh/"
+          "description": "https://rizqireza.com/"
         },
         {
           "title": "Email",

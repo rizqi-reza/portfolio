@@ -34,7 +34,7 @@ export const ContactComponent = (props: IProps) => {
     const templateID = 'template_TILnWElP';
     const userID = 'user_SLv6yXZ8hip8WVe30qqin';
 
-    const promise = new Promise(resolve => {
+    const promise = new Promise((resolve) => {
       setTimeout(() => {
         resolve();
       }, 2000);
@@ -69,7 +69,7 @@ export const ContactComponent = (props: IProps) => {
                             placeholder="Name*"
                             name="name"
                             value={name}
-                            onChange={e => setName(e.target.value)}
+                            onChange={(e) => setName(e.target.value)}
                           />
                         </div>
                       </div>
@@ -82,7 +82,7 @@ export const ContactComponent = (props: IProps) => {
                             placeholder="Email*"
                             name="email"
                             value={email}
-                            onChange={e => setEmail(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                         </div>
                       </div>
@@ -97,7 +97,7 @@ export const ContactComponent = (props: IProps) => {
                             placeholder="Subject"
                             name="subject"
                             value={subject}
-                            onChange={e => setSubject(e.target.value)}
+                            onChange={(e) => setSubject(e.target.value)}
                           />
                         </div>
                       </div>
@@ -112,7 +112,7 @@ export const ContactComponent = (props: IProps) => {
                             id="comment"
                             placeholder="Message"
                             value={message}
-                            onChange={e => setMessage(e.target.value)}
+                            onChange={(e) => setMessage(e.target.value)}
                           />
                         </div>
                       </div>
@@ -145,7 +145,13 @@ export const ContactComponent = (props: IProps) => {
                       {dataSource.subSections.map((item: ISubSection, index: number) => (
                         <div className="single-contact-add-info" key={`${item.title}-${index}`}>
                           <h3>{item.title}</h3>
-                          <p>{item.description}</p>
+                          {item.title.toLowerCase() === 'website' ? (
+                            <p>
+                              <a href={item.description}>{item.description}</a>
+                            </p>
+                          ) : (
+                            <p>{item.description}</p>
+                          )}
                         </div>
                       ))}
                     </div>
