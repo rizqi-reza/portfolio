@@ -46,7 +46,14 @@ export const AboutComponent = (props: IProps) => {
             </div>
             <div className="col-sm-offset-1 col-sm-5 col-xs-12">
               <div className="single-about-img">
-                <Image src={profileImage} webp={profileImageWebp} alt="profile_image" />;
+                <Image
+                  src={profileImage}
+                  webp={profileImageWebp}
+                  alt="profile_image"
+                  width="100%"
+                  height="100%"
+                />
+                ;
                 {dataSource.socialLinks && (
                   <div className="about-list-icon">
                     <ul>
