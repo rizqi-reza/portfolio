@@ -1,7 +1,7 @@
 import { Footer, Loader } from 'components';
 import { Header } from 'components/molecules/header';
 import data from 'data/data.json';
-import RenderSection from 'helpers/render-section';
+import { renderAllSections } from 'helpers/render-section';
 import IPage from 'interface/ipage';
 import { Fragment, useEffect, useState } from 'react';
 import React from 'react';
@@ -15,7 +15,7 @@ export const MainPageComponent = (props: any) => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
+  const fetchData = () => {
     setLoader(true);
     try {
       if (data) {
@@ -25,7 +25,6 @@ export const MainPageComponent = (props: any) => {
     } catch (error) {
       setPage({} as IPage);
     }
-
     setLoader(false);
   };
 
@@ -33,11 +32,7 @@ export const MainPageComponent = (props: any) => {
     <Fragment>
       <Favicon url="https://drive.google.com/uc?export=view&id=1HFtSQHgkxGnq6iD3d5Q2ggoc8KwJOQco" />
       <Header title={page.title} dataSource={page.navigationMenus} />
-      {loader ? (
-        <Loader />
-      ) : (
-        <Fragment>{page && page.sections && page.sections.map(RenderSection)}</Fragment>
-      )}
+      {loader ? <Loader /> : <Fragment>{page && renderAllSections(page?.sections)}</Fragment>}
       <Footer />
     </Fragment>
   );

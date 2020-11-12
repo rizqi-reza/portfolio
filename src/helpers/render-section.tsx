@@ -12,8 +12,9 @@ import {
 import ISection from 'interface/isection';
 import React from 'react';
 import { SectionType } from './constant';
+import LazyLoad from 'react-lazyload';
 
-export const RenderSection = (section: ISection) => {
+export const renderSingleSection = (section: ISection) => {
   switch (section.type) {
     case SectionType.MainBanner: {
       return <MainBanner key={section.key} dataSource={section} />;
@@ -48,4 +49,10 @@ export const RenderSection = (section: ISection) => {
   }
 };
 
-export default RenderSection;
+export const renderAllSections = (sections) =>
+  Array.isArray(sections) &&
+  sections.map((item, index: number) => (
+    <LazyLoad key={index} height={200} offset={100} once>
+      {renderSingleSection(item)}
+    </LazyLoad>
+  ));
