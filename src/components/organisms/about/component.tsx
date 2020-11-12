@@ -53,7 +53,6 @@ export const AboutComponent = (props: IProps) => {
                   width="100%"
                   height="100%"
                 />
-                ;
                 {dataSource.socialLinks && (
                   <div className="about-list-icon">
                     <ul>
