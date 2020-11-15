@@ -68,6 +68,7 @@ export const ContactComponent = (props: IProps) => {
                             id="name"
                             placeholder="Name*"
                             name="name"
+                            aria-label="name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                           />
@@ -81,6 +82,7 @@ export const ContactComponent = (props: IProps) => {
                             id="email"
                             placeholder="Email*"
                             name="email"
+                            aria-label="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                           />
@@ -96,6 +98,7 @@ export const ContactComponent = (props: IProps) => {
                             id="subject"
                             placeholder="Subject"
                             name="subject"
+                            aria-label="subject"
                             value={subject}
                             onChange={(e) => setSubject(e.target.value)}
                           />
@@ -111,6 +114,8 @@ export const ContactComponent = (props: IProps) => {
                             rows={8}
                             id="comment"
                             placeholder="Message"
+                            name="comment"
+                            aria-label="comment"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                           />
