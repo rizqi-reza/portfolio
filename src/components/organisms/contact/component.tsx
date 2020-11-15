@@ -152,7 +152,9 @@ export const ContactComponent = (props: IProps) => {
                           <h3>{item.title}</h3>
                           {item.title.toLowerCase() === 'website' ? (
                             <p>
-                              <a href={item.description}>{item.description}</a>
+                              <a href={item.description} aria-label={`${item.title}-link`}>
+                                {item.description}
+                              </a>
                             </p>
                           ) : (
                             <p>{item.description}</p>
@@ -167,7 +169,7 @@ export const ContactComponent = (props: IProps) => {
                     <ul>
                       {dataSource.socialLinks.map((item: ISocialLink, index: number) => (
                         <li key={`contact-social-${index}`}>
-                          <a href={item.url}>
+                          <a href={item.url} aria-label={`${item.url}-link`}>
                             <i className={item.icon} aria-hidden="true" />
                           </a>
                         </li>

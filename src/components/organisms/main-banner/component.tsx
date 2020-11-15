@@ -29,13 +29,18 @@ export const MainBannerComponent = (props: IProps) => {
                 <Markup content={dataSource.heading} />
               </h2>
               <p>{dataSource.description}</p>
-              <a href={dataSource.mainLink} download={true} className="btn-download">
+              <a
+                href={dataSource.mainLink}
+                download={true}
+                className="btn-download"
+                aria-label="download-link"
+              >
                 download resume
               </a>
               <br />
               <ul data-in="fadeInDown" data-out="fadeOutUp">
                 <li className="smooth-menu">
-                  <a href="#section-2" className="btn-scroll-down">
+                  <a href="#section-2" className="btn-scroll-down" aria-label="scroll-down">
                     <i className="fas fa-chevron-down" />
                   </a>
                 </li>

@@ -7,7 +7,9 @@ export const FooterComponent = (props: any) => {
         <div className="hm-footer-copyright text-center">
           <p>
             &copy; copyright Rizqi Reza Valhevi. design and developed by{' '}
-            <a href="https://github.com/rizqi-reza">rizqi-reza</a>
+            <a href="https://github.com/rizqi-reza" aria-label="github-link">
+              rizqi-reza
+            </a>
           </p>
         </div>
       </div>

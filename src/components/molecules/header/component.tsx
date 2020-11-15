@@ -37,7 +37,9 @@ export const HeaderComponent = (props: IProps) => {
                   <li className="smooth-menu active" />
                   {dataSource.map((item: INavigation, index: number) => (
                     <li className="smooth-menu" key={`menu-${index}`}>
-                      <a href={`#${item.url}`}>{item.title}</a>
+                      <a href={`#${item.url}`} aria-label={`${item.title}-link`}>
+                        {item.title}
+                      </a>
                     </li>
                   ))}
                 </ul>

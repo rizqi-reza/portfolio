@@ -14,7 +14,9 @@ export const ProjectsComponent = (props: IProps) => {
       <div className="item">
         <Image src={image.url} webp={image.webpUrl} alt={image.imageAlt} />
         <div className="isotope-overlay">
-          <a href="#">{image.title}</a>
+          <a href="#" aria-label="project-link">
+            {image.title}
+          </a>
           <p>{image.subTitle}</p>
         </div>
       </div>
