@@ -1,5 +1,5 @@
 // tslint:disable: no-var-requires
-import { MainPage } from 'pages/main';
+import AppComponent from 'pages/app';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import './assets/js/bootsnav.js';
@@ -10,4 +10,4 @@ import './assets/js/jquery.sticky.js';
 import './assets/js/progressbar.js';
 import './index.scss';
 
-ReactDOM.render(<MainPage />, document.getElementById('root'));
+ReactDOM.render(<AppComponent />, document.getElementById('root'));
