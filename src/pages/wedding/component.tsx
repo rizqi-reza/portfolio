@@ -1,9 +1,52 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import React from 'react';
 import Favicon from 'react-favicon';
 import Image from 'react-webp-image';
 
 export const WeddingPageComponent = (props: any) => {
+  const weddingDate = '06/27/2021 09:00:00';
+  const [state, setState] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    setInterval(() => updateCountdown(), 1000);
+  }, []);
+
+  const updateCountdown = () => {
+    const countdownDate = new Date(weddingDate).getTime();
+    if (countdownDate) {
+      // Get the current time
+      const currentTime = new Date().getTime();
+
+      // Get the time remaining until the countdown date
+      const distanceToDate = countdownDate - currentTime;
+
+      // Calculate days, hours, minutes and seconds remaining
+      let days: any = Math.floor(distanceToDate / (1000 * 60 * 60 * 24));
+      let hours: any = Math.floor((distanceToDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes: any = Math.floor((distanceToDate % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds: any = Math.floor((distanceToDate % (1000 * 60)) / 1000);
+
+      // For visual appeal, add a zero to each number that's only one digit
+      const numbersToAddZeroTo = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+      if (numbersToAddZeroTo.includes(hours)) {
+        hours = `0${hours}`;
+      } else if (numbersToAddZeroTo.includes(minutes)) {
+        minutes = `0${minutes}`;
+      } else if (numbersToAddZeroTo.includes(seconds)) {
+        seconds = `0${seconds}`;
+      }
+
+      // Set the state to each new time
+      setState({ days: days, hours: hours, minutes, seconds });
+    }
+  };
+
   return (
     <Fragment>
       <Favicon url="https://drive.google.com/uc?export=view&id=1HFtSQHgkxGnq6iD3d5Q2ggoc8KwJOQco" />
@@ -151,19 +194,30 @@ export const WeddingPageComponent = (props: any) => {
               <div className="timer-wrapper">
                 <span>
                   <div className="timers">
-                    <h2>00</h2> <div>Hari</div>
+                    <h2>{state.days || '00'}</h2> <div>Hari</div>
                   </div>
                   <div className="timers">
-                    <h2>00</h2> <div>Jam</div>
+                    <h2>{state.hours || '00'}</h2> <div>Jam</div>
                   </div>
                   <div className="timers">
-                    <h2>00</h2> <div>Menit</div>
+                    <h2>{state.minutes || '00'}</h2> <div>Menit</div>
                   </div>
                   <div className="timers">
-                    <h2>00</h2> <div>Detik</div>
+                    <h2>{state.seconds || '00'}</h2> <div>Detik</div>
                   </div>
                 </span>
               </div>
+            </div>
+            <div className="wedding-section rsvp">
+              <h1 className="wedding-subtitle">Buku Tamu</h1>
+              <button
+                type="button"
+                className="btn btn-rsvp"
+                data-toggle="modal"
+                data-target="#rsvpModal"
+              >
+                RSVP &amp; Pesan untuk pengantin
+              </button>
             </div>
             <div className="wedding-section thank">
               <h1 className="wedding-subtitle">Terima Kasih!</h1>
@@ -172,6 +226,102 @@ export const WeddingPageComponent = (props: any) => {
               <p className="wedding-mute-text">
                 Made with <i className="fa fa-heart" aria-hidden="true" /> by @rizqirezz
               </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="modal fade"
+          id="rsvpModal"
+          aria-labelledby="rsvpModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="modal-title">
+                  <h5>Buku Tamu</h5>
+                  <hr />
+                </div>
+                <form>
+                  <div className="form-group">
+                    <label>Nama Lengkap *</label>
+                    <input type="text" className="form-control" placeholder="Nama lengkap Anda" />
+                  </div>
+                  <div className="form-group">
+                    <label>Pilih Avatar *</label>
+                    <div className="avatar-radio">
+                      <label>
+                        <input type="radio" name="avatar" value="man1" />
+                        <div className="avatar-wrapper">
+                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773458/Portofolio/Wedding/Avatar/048-muslim_jxinch.svg" />
+                        </div>
+                      </label>
+                      <label>
+                        <input type="radio" name="avatar" value="man2" />
+                        <div className="avatar-wrapper">
+                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773422/Portofolio/Wedding/Avatar/030-man_q0ndjk.svg" />
+                        </div>
+                      </label>
+                      <label>
+                        <input type="radio" name="avatar" value="man3" />
+                        <div className="avatar-wrapper">
+                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773380/Portofolio/Wedding/Avatar/007-man_jppztg.svg" />
+                        </div>
+                      </label>
+                      <label>
+                        <input type="radio" name="avatar" value="woman1" />
+                        <div className="avatar-wrapper">
+                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773410/Portofolio/Wedding/Avatar/009-muslim_cl1xvk.svg" />
+                        </div>
+                      </label>
+                      <label>
+                        <input type="radio" name="avatar" value="woman2" />
+                        <div className="avatar-wrapper">
+                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773436/Portofolio/Wedding/Avatar/049-girl_cz3dui.svg" />
+                        </div>
+                      </label>
+                      <label>
+                        <input type="radio" name="avatar" value="woman3" />
+                        <div className="avatar-wrapper">
+                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773534/Portofolio/Wedding/Avatar/045-woman_aufmgo.svg" />
+                        </div>
+                      </label>
+                    </div>
+                    <label>
+                      Source:
+                      <a href="https://www.flaticon.com/" title="Flaticon">
+                        flaticon
+                      </a>
+                    </label>
+                  </div>
+                  <div className="form-group">
+                    <label>RSVP / Konfirmasi Kehadiran *</label>
+                    <select className="form-control">
+                      <option value="">Pilih konfirmasi kehadiran</option>
+                      <option value="ya">Ya</option>
+                      <option value="mungkin">Mungkin</option>
+                      <option value="tidak">Tidak</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label>Pesan untuk pengantin</label>
+                    <textarea
+                      className="form-control"
+                      rows={4}
+                      placeholder="Pesan atau doa untuk pengantin"
+                    />
+                  </div>
+                  <br />
+                  <button type="button" className="btn btn-rsvp btn-block">
+                    Kirim
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>

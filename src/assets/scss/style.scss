@@ -1090,6 +1090,84 @@ span.single-timeline-horizontal.spacial-horizontal-line {
     letter-spacing: normal;
     margin-bottom: 0;
   }
+
+  .btn-rsvp {
+    background: #ffd700;
+    color: #fff;
+
+    &:hover {
+      color: #1d1135;
+    }
+  }
+
+  .modal {
+    text-align: left;
+    .modal-title {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .modal-dialog {
+      margin-top: 10vh;
+      .modal-header {
+        display: flex;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 1.5rem 1.5rem;
+        border-bottom: none;
+        border-top-left-radius: calc(0.3rem - 1px);
+        border-top-right-radius: calc(0.3rem - 1px);
+
+        .close {
+          padding: 1rem 1rem;
+          margin: -1rem -1rem -1rem auto;
+        }
+      }
+
+      .modal-body {
+        padding: 20px 50px 50px 50px;
+
+        label,
+        a {
+          font-weight: normal;
+          font-size: 12px;
+        }
+        .avatar-radio {
+          margin-bottom: 5px;
+          label {
+            margin: 0 10px;
+            background-color: #fff;
+            border-radius: 50%;
+          }
+          .avatar-wrapper {
+            background-color: #ffd700;
+            border-radius: 50%;
+            img {
+              max-width: 50px;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .avatar-radio [type='radio'] {
+          position: absolute;
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+
+        .avatar-radio [type='radio'] + .avatar-wrapper {
+          cursor: pointer;
+        }
+
+        .avatar-radio [type='radio']:checked + .avatar-wrapper {
+          border: 3px solid #1d1135;
+        }
+      }
+    }
+  }
 }
 
 .wedding-box {
@@ -1148,7 +1226,7 @@ svg {
     padding: 0 40px;
 
     .wedding-and {
-      padding: 8px 30px 0;
+      padding: 8px 35px 0;
       font-size: 44pt;
       position: absolute;
       background: #1d1135;
