@@ -77,7 +77,7 @@ export const WeddingPageComponent = (props: any) => {
               </p>
             </div>
             <br />
-            <div className="wedding-section ">
+            <div className="wedding-section">
               <div className="couples">
                 <h1 className="wedding-subtitle">Mempelai</h1>
                 <span className="wedding-and">&amp;</span>
@@ -175,7 +175,7 @@ export const WeddingPageComponent = (props: any) => {
                   <h1 className="wedding-subtitle">Resepsi Nikah</h1>
                   <p className="wedding-mute-text">Minggu, 27 Juni 2021</p>
                   <p className="wedding-mute-text">09:00 WIB</p>
-                  <p className="wedding-mute-text">Saung Rawa Lele</p>
+                  <p className="wedding-mute-text">SMA IT Almaka</p>
                 </div>
               </div>
             </div>
@@ -218,6 +218,35 @@ export const WeddingPageComponent = (props: any) => {
               >
                 RSVP &amp; Pesan untuk pengantin
               </button>
+              <ul className="list-unstyled">
+                <li className="media">
+                  <div className="avatar-wrapper">
+                    <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773380/Portofolio/Wedding/Avatar/007-man_jppztg.svg" />
+                  </div>
+                  <div className="media-body">
+                    <h5 className="mt-0 mb-1">Riyan</h5>
+                    <p>Selamat yaaa... semoga sakinah, mawaddah, dan warahmah aamiin</p>
+                  </div>
+                </li>
+                <li className="media">
+                  <div className="avatar-wrapper">
+                    <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773436/Portofolio/Wedding/Avatar/049-girl_cz3dui.svg" />
+                  </div>
+                  <div className="media-body">
+                    <h5 className="mt-0 mb-1">Renata</h5>
+                    <p>Congrats ya kija dan fean</p>
+                  </div>
+                </li>
+                <li className="media">
+                  <div className="avatar-wrapper">
+                    <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773458/Portofolio/Wedding/Avatar/048-muslim_jxinch.svg" />
+                  </div>
+                  <div className="media-body">
+                    <h5 className="mt-0 mb-1">Ahmad</h5>
+                    <p>Barakallahu lakuma wa baa raka 'alaika wa jama'a bainakumaa fii khoiir</p>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div className="wedding-section thank">
               <h1 className="wedding-subtitle">Terima Kasih!</h1>
@@ -229,6 +258,7 @@ export const WeddingPageComponent = (props: any) => {
             </div>
           </div>
         </div>
+
         <div
           className="modal fade"
           id="rsvpModal"
