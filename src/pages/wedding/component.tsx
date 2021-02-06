@@ -2,6 +2,16 @@ import { Fragment, useEffect, useState } from 'react';
 import React from 'react';
 import Favicon from 'react-favicon';
 import Image from 'react-webp-image';
+import { Button } from 'reactstrap';
+import { Modal, Form, Carousel, Spinner } from 'react-bootstrap';
+
+interface IRsvp {
+  Nama: string;
+  Avatar: string;
+  Hadir: string;
+  Pesan: string;
+  Tanggal: string;
+}
 
 export const WeddingPageComponent = (props: any) => {
   const weddingDate = '06/27/2021 09:00:00';
@@ -11,10 +21,58 @@ export const WeddingPageComponent = (props: any) => {
     minutes: 0,
     seconds: 0,
   });
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>('');
+  const [validated, setValidated] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const [rsvp, setRsvp] = useState<IRsvp[]>([]);
+  const [nama, setNama] = useState<string>();
+  const [avatar, setAvatar] = useState<string>();
+  const [hadir, setHadir] = useState<string>();
+  const [pesan, setPesan] = useState<string>();
+  const gSheetBaseUrl = 'https://v1.nocodeapi.com/rizqireza/google_sheets/fBLefUqjinIziQrn';
+  const TAB_ID = 'List Tamu';
+  const gSheetUrl = `${gSheetBaseUrl}?tabId=${TAB_ID}`;
+  const avatarBaseUrl =
+    'https://res.cloudinary.com/rizqireza/image/upload/v1611773458/Portofolio/Wedding/Avatar/';
+
+  const avatarList = ['man1', 'man2', 'man3', 'woman1', 'woman2', 'woman3'];
 
   useEffect(() => {
     setInterval(() => updateCountdown(), 1000);
+    getRsvp();
   }, []);
+
+  const chunkRsvp = (size: number, source: IRsvp[]) => {
+    let data = [...source];
+    let result: IRsvp[][] = [];
+
+    while (data.length) {
+      result.push(data.splice(0, size));
+    }
+
+    return result;
+  };
+
+  const getRsvp = async () => {
+    try {
+      setLoading(true);
+      await fetch(gSheetUrl, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).then(async (response) => {
+        const rsvp = await response.json();
+        const data = rsvp?.data?.reverse().filter((v) => v.Pesan !== '');
+        setRsvp(data);
+        setLoading(false);
+      });
+    } catch (error) {
+      console.warn('Error:', error);
+    }
+  };
 
   const updateCountdown = () => {
     const countdownDate = new Date(weddingDate).getTime();
@@ -47,6 +105,67 @@ export const WeddingPageComponent = (props: any) => {
     }
   };
 
+  const handleSubmitRsvp = async (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      setValidated(true);
+      return;
+    }
+
+    const Nama = nama;
+    const Avatar = avatar;
+    const Hadir = hadir;
+    const Pesan = pesan;
+    const currentDate = new Date();
+    const Tanggal = `${currentDate.getDate()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`;
+    const body = [[Nama, Avatar, Hadir, Pesan, Tanggal]];
+    try {
+      await fetch(gSheetUrl, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      clearAllField();
+      getRsvp();
+      setMessage('Alhamdulillah, pesan sudah disampaikan. Terima kasih ^_^');
+    } catch (error) {
+      setMessage('Maaf, pesan gagal terkirim :( Silakan coba lagi yaa...');
+      console.error('Error:', error);
+    }
+  };
+
+  const clearAllField = () => {
+    setNama(undefined);
+    setAvatar(undefined);
+    setHadir(undefined);
+    setPesan(undefined);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setMessage('');
+  };
+
+  const handleChangeName = (e) => {
+    setNama(e.target.value);
+  };
+
+  const handleChangeAvatar = (e) => {
+    setAvatar(e.target.value);
+  };
+
+  const handleChangeRsvp = (e) => {
+    setHadir(e.target.value);
+  };
+
+  const handleChangePesan = (e) => {
+    setPesan(e.target.value);
+  };
+
   return (
     <Fragment>
       <Favicon url="https://drive.google.com/uc?export=view&id=1HFtSQHgkxGnq6iD3d5Q2ggoc8KwJOQco" />
@@ -62,6 +181,7 @@ export const WeddingPageComponent = (props: any) => {
             <div className="wedding-box">
               <Image
                 src="https://res.cloudinary.com/rizqireza/image/upload/v1611598421/Portofolio/Wedding/bg-image_vionle.svg"
+                // src="https://res.cloudinary.com/rizqireza/image/upload/v1612279463/Portofolio/Wedding/couple_v72gly.svg"
                 alt="cover_invitation"
                 width="100%"
                 height="100%"
@@ -69,11 +189,20 @@ export const WeddingPageComponent = (props: any) => {
             </div>
           </div>
           <div className="col-md-6 right-panel">
+            <p className="wedding-mute-text">
+              <i>Bismillahirrahmanirrahim</i>
+            </p>
+            <h1 className="wedding-subtitle">Assalamu'alaykum Wr. Wb.</h1>
             <div className="title">
               <p className="wedding-mute-text">
                 “Dan segala sesuatu Kami ciptakan berpasang-pasangan supaya kamu mengingat kebesaran
                 Allah" <br />
                 (Qs. Az-Zariyat : 49)
+              </p>
+              <br />
+              <p className="wedding-mute-text">
+                Dengan memohon rahmat dan ridho Allah Subhanahu Wata'ala. Kami bermaksud
+                menyelenggarakan acara syukuran dan resepsi pernikahan putra dan putri Kami
               </p>
             </div>
             <br />
@@ -81,34 +210,36 @@ export const WeddingPageComponent = (props: any) => {
               <div className="couples">
                 <h1 className="wedding-subtitle">Mempelai</h1>
                 <span className="wedding-and">&amp;</span>
-                <div className="col-sm-6">
-                  <div className="wedding-gallery">
-                    <Image
-                      src="https://res.cloudinary.com/rizqireza/image/upload/v1611508039/Portofolio/Wedding/fitri.jpg"
-                      alt="pp_fitri"
-                    />
+                <div className="row">
+                  <div className="col-sm-6">
+                    <div className="wedding-gallery">
+                      <Image
+                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611508039/Portofolio/Wedding/fitri.jpg"
+                        alt="pp_fitri"
+                      />
+                    </div>
+                    <div>
+                      <h1 className="wedding-name">Fitri Febriana</h1>
+                      <p className="wedding-mute-text">
+                        Putri ke-2 dari <br />
+                        Bapak Satimin dan Ibu Lamiyem
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h1 className="wedding-name">Fitri Febriana</h1>
-                    <p className="wedding-mute-text">
-                      Putri ke-2 dari <br />
-                      Bapak Satimin dan Ibu Lamiyem
-                    </p>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="wedding-gallery">
-                    <Image
-                      src="https://res.cloudinary.com/rizqireza/image/upload/v1611596646/Portofolio/Wedding/rizqi.jpg"
-                      alt="pp_rizqi"
-                    />
-                  </div>
-                  <div>
-                    <h1 className="wedding-name">Rizqi Reza Valhevi</h1>
-                    <p className="wedding-mute-text">
-                      Putra ke-7 dari <br />
-                      Alm. Bapak H. Saiful Amin dan Almh. Ibu Hj. Umi Nurrokhmah
-                    </p>
+                  <div className="col-sm-6">
+                    <div className="wedding-gallery">
+                      <Image
+                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611596646/Portofolio/Wedding/rizqi.jpg"
+                        alt="pp_rizqi"
+                      />
+                    </div>
+                    <div>
+                      <h1 className="wedding-name">Rizqi Reza Valhevi</h1>
+                      <p className="wedding-mute-text">
+                        Putra ke-7 dari <br />
+                        Alm. Bapak H. Saiful Amin dan Almh. Ibu Hj. Umi Nurrokhmah
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -210,43 +341,34 @@ export const WeddingPageComponent = (props: any) => {
             </div>
             <div className="wedding-section rsvp">
               <h1 className="wedding-subtitle">Buku Tamu</h1>
-              <button
-                type="button"
-                className="btn btn-rsvp"
-                data-toggle="modal"
-                data-target="#rsvpModal"
-              >
+              <Button type="button" className="btn btn-rsvp" onClick={() => setShowModal(true)}>
                 RSVP &amp; Pesan untuk pengantin
-              </button>
-              <ul className="list-unstyled">
-                <li className="media">
-                  <div className="avatar-wrapper">
-                    <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773380/Portofolio/Wedding/Avatar/007-man_jppztg.svg" />
-                  </div>
-                  <div className="media-body">
-                    <h5 className="mt-0 mb-1">Riyan</h5>
-                    <p>Selamat yaaa... semoga sakinah, mawaddah, dan warahmah aamiin</p>
-                  </div>
-                </li>
-                <li className="media">
-                  <div className="avatar-wrapper">
-                    <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773436/Portofolio/Wedding/Avatar/049-girl_cz3dui.svg" />
-                  </div>
-                  <div className="media-body">
-                    <h5 className="mt-0 mb-1">Renata</h5>
-                    <p>Congrats ya kija dan fean</p>
-                  </div>
-                </li>
-                <li className="media">
-                  <div className="avatar-wrapper">
-                    <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773458/Portofolio/Wedding/Avatar/048-muslim_jxinch.svg" />
-                  </div>
-                  <div className="media-body">
-                    <h5 className="mt-0 mb-1">Ahmad</h5>
-                    <p>Barakallahu lakuma wa baa raka 'alaika wa jama'a bainakumaa fii khoiir</p>
-                  </div>
-                </li>
-              </ul>
+              </Button>
+              <br />
+              <br />
+              <br />
+              {loading && <Spinner animation="border" variant="warning" />}
+              {!loading && rsvp?.length > 0 && (
+                <Carousel controls={false}>
+                  {chunkRsvp(3, rsvp)?.map((chunk, index) => (
+                    <Carousel.Item>
+                      <ul className="list-unstyled">
+                        {chunk?.map((data, index) => (
+                          <li className="media" key={index}>
+                            <div className="avatar-wrapper">
+                              <img src={`${avatarBaseUrl}${data.Avatar}.svg`} />
+                            </div>
+                            <div className="media-body">
+                              <h5 className="mt-0 mb-1">{data.Nama}</h5>
+                              <p>{data.Pesan}</p>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
+              )}
             </div>
             <div className="wedding-section thank">
               <h1 className="wedding-subtitle">Terima Kasih!</h1>
@@ -258,104 +380,95 @@ export const WeddingPageComponent = (props: any) => {
             </div>
           </div>
         </div>
-
-        <div
-          className="modal fade"
-          id="rsvpModal"
-          aria-labelledby="rsvpModalLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                <div className="modal-title">
-                  <h5>Buku Tamu</h5>
-                  <hr />
-                </div>
-                <form>
-                  <div className="form-group">
-                    <label>Nama Lengkap *</label>
-                    <input type="text" className="form-control" placeholder="Nama lengkap Anda" />
-                  </div>
-                  <div className="form-group">
-                    <label>Pilih Avatar *</label>
-                    <div className="avatar-radio">
-                      <label>
-                        <input type="radio" name="avatar" value="man1" />
-                        <div className="avatar-wrapper">
-                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773458/Portofolio/Wedding/Avatar/048-muslim_jxinch.svg" />
-                        </div>
-                      </label>
-                      <label>
-                        <input type="radio" name="avatar" value="man2" />
-                        <div className="avatar-wrapper">
-                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773422/Portofolio/Wedding/Avatar/030-man_q0ndjk.svg" />
-                        </div>
-                      </label>
-                      <label>
-                        <input type="radio" name="avatar" value="man3" />
-                        <div className="avatar-wrapper">
-                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773380/Portofolio/Wedding/Avatar/007-man_jppztg.svg" />
-                        </div>
-                      </label>
-                      <label>
-                        <input type="radio" name="avatar" value="woman1" />
-                        <div className="avatar-wrapper">
-                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773410/Portofolio/Wedding/Avatar/009-muslim_cl1xvk.svg" />
-                        </div>
-                      </label>
-                      <label>
-                        <input type="radio" name="avatar" value="woman2" />
-                        <div className="avatar-wrapper">
-                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773436/Portofolio/Wedding/Avatar/049-girl_cz3dui.svg" />
-                        </div>
-                      </label>
-                      <label>
-                        <input type="radio" name="avatar" value="woman3" />
-                        <div className="avatar-wrapper">
-                          <img src="https://res.cloudinary.com/rizqireza/image/upload/v1611773534/Portofolio/Wedding/Avatar/045-woman_aufmgo.svg" />
-                        </div>
-                      </label>
-                    </div>
-                    <label>
-                      Source:
-                      <a href="https://www.flaticon.com/" title="Flaticon">
-                        flaticon
-                      </a>
-                    </label>
-                  </div>
-                  <div className="form-group">
-                    <label>RSVP / Konfirmasi Kehadiran *</label>
-                    <select className="form-control">
-                      <option value="">Pilih konfirmasi kehadiran</option>
-                      <option value="ya">Ya</option>
-                      <option value="mungkin">Mungkin</option>
-                      <option value="tidak">Tidak</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label>Pesan untuk pengantin</label>
-                    <textarea
-                      className="form-control"
-                      rows={4}
-                      placeholder="Pesan atau doa untuk pengantin"
-                    />
-                  </div>
-                  <br />
-                  <button type="button" className="btn btn-rsvp btn-block">
-                    Kirim
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+
+      <Modal show={showModal} onHide={handleCloseModal} size="lg">
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>
+          {message !== '' ? (
+            <h5 style={{ textAlign: 'center' }}>{message}</h5>
+          ) : (
+            <>
+              <div className="modal-title">
+                <h5>Buku Tamu</h5>
+                <hr />
+              </div>
+              <Form noValidate validated={validated} onSubmit={handleSubmitRsvp}>
+                <Form.Group controlId="validation1">
+                  <Form.Label>Nama Lengkap *</Form.Label>
+                  <Form.Control
+                    required
+                    type="text"
+                    placeholder="Nama lengkap Anda"
+                    onChange={handleChangeName}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Nama Lengkap harus diisi
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Pilih Avatar *</Form.Label>
+                  <div className="avatar-radio" id="validation2">
+                    {avatarList.map((avatarName) => (
+                      <Form.Check inline key={avatarName}>
+                        <Form.Check.Label>
+                          <Form.Check.Input
+                            required
+                            type="radio"
+                            name="avatar"
+                            value={avatarName}
+                            onChange={handleChangeAvatar}
+                          />
+                          <div className="avatar-wrapper">
+                            <img src={`${avatarBaseUrl}${avatarName}.svg`} />
+                          </div>
+                        </Form.Check.Label>
+                      </Form.Check>
+                    ))}
+                  </div>
+                  <Form.Control.Feedback
+                    type="invalid"
+                    style={{ display: validated && !avatar ? 'block' : 'none' }}
+                  >
+                    Avatar harus dipilih
+                  </Form.Control.Feedback>
+                  <label>
+                    Source:
+                    <a href="https://www.flaticon.com/" title="Flaticon">
+                      flaticon
+                    </a>
+                  </label>
+                </Form.Group>
+                <Form.Group controlId="validation3">
+                  <Form.Label>RSVP / Konfirmasi Kehadiran *</Form.Label>
+                  <Form.Control required as="select" onChange={handleChangeRsvp}>
+                    <option value="">Pilih konfirmasi kehadiran</option>
+                    <option value="Ya">Ya</option>
+                    <option value="Mungkin">Mungkin</option>
+                    <option value="Tidak">Tidak</option>
+                  </Form.Control>
+                  <Form.Control.Feedback type="invalid">
+                    Konfirmasi Kehadiran harus dipilih
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group controlId="validation4">
+                  <Form.Label>Pesan untuk pengantin</Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    rows={4}
+                    placeholder="Pesan atau doa untuk pengantin"
+                    onChange={handleChangePesan}
+                  />
+                </Form.Group>
+                <br />
+                <Button type="submit" className="btn btn-rsvp btn-block">
+                  Kirim
+                </Button>
+              </Form>
+            </>
+          )}
+        </Modal.Body>
+      </Modal>
     </Fragment>
   );
 };
