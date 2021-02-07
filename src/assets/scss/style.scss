@@ -1079,9 +1079,12 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 }
 
 .wedding-container {
-  background: 'white';
   text-align: center;
   color: #5d5d5d;
+
+  .row {
+    margin: 0px;
+  }
 
   h1 {
     line-height: 1.67;
@@ -1163,6 +1166,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
   line-height: 30px;
   color: #fff;
   border: none;
+  font-size: 1vw;
 
   &:after {
     background: #dfc327;
@@ -1265,7 +1269,7 @@ svg {
     padding: 0 30px;
 
     .masonry {
-      margin: 25px 0;
+      margin: 25px 0 0 0;
       height: auto;
       width: 100%;
 
@@ -1291,10 +1295,13 @@ svg {
         border-radius: 8px;
 
         h2 {
-          color: #fff;
           font-size: 24px;
           font-weight: 700;
           line-height: 1.2;
+        }
+        h2,
+        p {
+          color: #fff;
         }
       }
     }
@@ -1360,7 +1367,7 @@ svg {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: center;
   align-items: center;
 }
@@ -1392,16 +1399,16 @@ svg {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .left-panel {
-    height: 99vh;
-    padding-top: 2px;
-    position: relative;
+    top: 0;
+    height: 100vh;
+    position: fixed;
+    padding-top: 60px;
   }
   .right-panel {
-    left: 0;
-    padding: 40px;
-    padding-left: 55px;
+    left: calc(50% - 15px);
+    padding: 50px;
   }
   .wedding-title {
     font-size: 18vw;
@@ -1414,23 +1421,65 @@ svg {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 540px) {
   .left-panel {
-    height: 60vh;
-  }
-  .couples {
-    .wedding-and {
-      display: none;
+    height: 125vw;
+    padding-top: 0;
+    overflow: hidden;
+    position: relative;
+    .wedding-title {
+      font-size: 15vw;
     }
   }
-  .rsvp {
-    padding: 25px 20px 0 20px !important;
+
+  .right-panel {
+    left: 0;
+    padding: 20px;
+    .wedding-name {
+      font-size: 5vw;
+    }
+    .wedding-section {
+      + .rsvp {
+        padding: 0 30px;
+        .carousel {
+          min-height: 340px;
+        }
+      }
+
+      .couples {
+        .wedding-and {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .btn-rsvp {
+    font-size: 14px;
   }
   .wedding-subtitle {
     font-size: 10vw;
   }
-  .wedding-name {
-    font-size: 5vw;
+}
+
+@media (max-width: 425px) {
+  .right-panel {
+    .wedding-section {
+      .couples,
+      + .gallery,
+      + .rsvp {
+        padding: 0;
+      }
+
+      + .countdown {
+        .timers {
+          margin: 8px;
+          h2 {
+            font-size: 20px;
+          }
+        }
+      }
+    }
   }
 }
 

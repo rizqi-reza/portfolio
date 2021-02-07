@@ -180,8 +180,8 @@ export const WeddingPageComponent = (props: any) => {
             </div>
             <div className="wedding-box">
               <Image
-                src="https://res.cloudinary.com/rizqireza/image/upload/v1611598421/Portofolio/Wedding/bg-image_vionle.svg"
-                // src="https://res.cloudinary.com/rizqireza/image/upload/v1612279463/Portofolio/Wedding/couple_v72gly.svg"
+                // src="https://res.cloudinary.com/rizqireza/image/upload/v1611598421/Portofolio/Wedding/bg-image_vionle.svg"
+                src="https://res.cloudinary.com/rizqireza/image/upload/v1612711316/Portofolio/Wedding/couple_pgi0ut.svg"
                 alt="cover_invitation"
                 width="100%"
                 height="100%"
@@ -325,16 +325,16 @@ export const WeddingPageComponent = (props: any) => {
               <div className="timer-wrapper">
                 <span>
                   <div className="timers">
-                    <h2>{state.days || '00'}</h2> <div>Hari</div>
+                    <h2>{state.days || '00'}</h2> <p>Hari</p>
                   </div>
                   <div className="timers">
-                    <h2>{state.hours || '00'}</h2> <div>Jam</div>
+                    <h2>{state.hours || '00'}</h2> <p>Jam</p>
                   </div>
                   <div className="timers">
-                    <h2>{state.minutes || '00'}</h2> <div>Menit</div>
+                    <h2>{state.minutes || '00'}</h2> <p>Menit</p>
                   </div>
                   <div className="timers">
-                    <h2>{state.seconds || '00'}</h2> <div>Detik</div>
+                    <h2>{state.seconds || '00'}</h2> <p>Detik</p>
                   </div>
                 </span>
               </div>
@@ -350,11 +350,11 @@ export const WeddingPageComponent = (props: any) => {
               {loading && <Spinner animation="border" variant="warning" />}
               {!loading && rsvp?.length > 0 && (
                 <Carousel controls={false}>
-                  {chunkRsvp(3, rsvp)?.map((chunk, index) => (
-                    <Carousel.Item>
+                  {chunkRsvp(3, rsvp)?.map((chunk, indexRsvp) => (
+                    <Carousel.Item key={indexRsvp}>
                       <ul className="list-unstyled">
-                        {chunk?.map((data, index) => (
-                          <li className="media" key={index}>
+                        {chunk?.map((data, indexChunk) => (
+                          <li className="media" key={indexChunk}>
                             <div className="avatar-wrapper">
                               <img src={`${avatarBaseUrl}${data.Avatar}.svg`} />
                             </div>
@@ -462,7 +462,7 @@ export const WeddingPageComponent = (props: any) => {
                 </Form.Group>
                 <br />
                 <Button type="submit" className="btn btn-rsvp btn-block">
-                  Kirim
+                  <b>Kirim Pesan</b>
                 </Button>
               </Form>
             </>
