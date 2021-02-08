@@ -171,7 +171,7 @@ export const WeddingPageComponent = (props: any) => {
       <Favicon url="https://drive.google.com/uc?export=view&id=1HFtSQHgkxGnq6iD3d5Q2ggoc8KwJOQco" />
       <div className="wedding-container">
         <div className="row">
-          <div className="col-md-6 left-panel wedding-background">
+          <div className="col-lg-6 left-panel wedding-background">
             <div className="wedding-box">
               <h1 className="wedding-subtitle">Wedding Invitation</h1>
               <h1 className="wedding-title">
@@ -188,7 +188,7 @@ export const WeddingPageComponent = (props: any) => {
               />
             </div>
           </div>
-          <div className="col-md-6 right-panel">
+          <div className="col-lg-6 right-panel">
             <p className="wedding-mute-text">
               <i>Bismillahirrahmanirrahim</i>
             </p>
@@ -237,7 +237,8 @@ export const WeddingPageComponent = (props: any) => {
                       <h1 className="wedding-name">Rizqi Reza Valhevi</h1>
                       <p className="wedding-mute-text">
                         Putra ke-7 dari <br />
-                        Alm. Bapak H. Saiful Amin dan Almh. Ibu Hj. Umi Nurrokhmah
+                        Alm. Bapak H. Saiful Amin dan <br />
+                        Almh. Ibu Hj. Umi Nurrokhmah
                       </p>
                     </div>
                   </div>
