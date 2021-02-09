@@ -4,6 +4,7 @@ import Favicon from 'react-favicon';
 import Image from 'react-webp-image';
 import { Button } from 'reactstrap';
 import { Modal, Form, Carousel, Spinner } from 'react-bootstrap';
+import fetch from 'node-fetch';
 
 interface IRsvp {
   Nama: string;
@@ -147,6 +148,7 @@ export const WeddingPageComponent = (props: any) => {
 
   const handleCloseModal = () => {
     setShowModal(false);
+    clearAllField();
     setMessage('');
   };
 
