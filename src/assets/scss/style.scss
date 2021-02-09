@@ -1062,10 +1062,6 @@ span.single-timeline-horizontal.spacial-horizontal-line {
         12. Wedding Page
 --------------------------------------*/
 @font-face {
-  font-family: Signatura;
-  src: url('#{$font-path}/signatura/Signatura-Monoline.ttf') format('truetype');
-}
-@font-face {
   font-family: SoulSignature;
   src: url('#{$font-path}/handwritting/soul-signature.ttf') format('truetype');
 }
@@ -1076,6 +1072,10 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 @font-face {
   font-family: Bluster;
   src: url('#{$font-path}/handwritting/bluster.ttf') format('truetype');
+}
+@font-face {
+  font-family: Montserrat;
+  src: url('#{$font-path}/montserrat/Montserrat-Regular.ttf') format('truetype');
 }
 
 .wedding-container {
@@ -1473,6 +1473,9 @@ span.single-timeline-horizontal.spacial-horizontal-line {
           .wedding-and {
             display: none;
           }
+        }
+        .wedding-name {
+          font-size: 5vw;
         }
       }
     }
