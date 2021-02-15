@@ -4,7 +4,6 @@ import Favicon from 'react-favicon';
 import Image from 'react-webp-image';
 import { Button } from 'reactstrap';
 import { Modal, Form, Carousel, Spinner } from 'react-bootstrap';
-import fetch from 'node-fetch';
 
 interface IRsvp {
   Nama: string;
@@ -122,6 +121,7 @@ export const WeddingPageComponent = (props: any) => {
     const currentDate = new Date();
     const Tanggal = `${currentDate.getDate()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`;
     const body = [[Nama, Avatar, Hadir, Pesan, Tanggal]];
+    console.log(body);
     try {
       await fetch(gSheetUrl, {
         method: 'POST',
@@ -131,7 +131,6 @@ export const WeddingPageComponent = (props: any) => {
         },
       });
       clearAllField();
-      getRsvp();
       setMessage('Alhamdulillah, pesan sudah disampaikan. Terima kasih ^_^');
     } catch (error) {
       setMessage('Maaf, pesan gagal terkirim :( Silakan coba lagi yaa...');
@@ -150,6 +149,7 @@ export const WeddingPageComponent = (props: any) => {
     setShowModal(false);
     clearAllField();
     setMessage('');
+    getRsvp();
   };
 
   const handleChangeName = (e) => {
@@ -374,7 +374,7 @@ export const WeddingPageComponent = (props: any) => {
               )}
             </div>
             <div className="wedding-section thank">
-              <h1 className="wedding-subtitle">Terima Kasih!</h1>
+              <h1 className="wedding-subtitle">Wassalamu'alaykum Wr. Wb.</h1>
             </div>
             <div className="wedding-section footer">
               <p className="wedding-mute-text">
