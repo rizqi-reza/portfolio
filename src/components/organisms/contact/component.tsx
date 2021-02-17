@@ -1,8 +1,7 @@
-// tslint:disable: jsx-no-lambda
 import * as emailjs from 'emailjs-com';
 import ISection, { ISocialLink, ISubSection } from 'interface/isection';
 import React, { useState } from 'react';
-import { Button, Form, Input } from 'reactstrap';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 
 interface IProps {
   dataSource: ISection;
@@ -36,9 +35,10 @@ export const ContactComponent = (props: IProps) => {
 
     const promise = new Promise((resolve) => {
       setTimeout(() => {
-        resolve();
+        resolve(null);
       }, 2000);
     });
+
     promise.then(() => {
       emailjs.send('gmail', templateID, templateParams, userID);
       resetForm();
@@ -52,78 +52,75 @@ export const ContactComponent = (props: IProps) => {
       <div className="section-heading text-center">
         <h2>{dataSource.title}</h2>
       </div>
-      <div className="container">
+      <Container>
         <div className="contact-content">
-          <div className="row">
-            <div className="col-md-offset-1 col-md-5 col-sm-6">
+          <Row>
+            <Col md={{ offset: 1, span: 5 }} sm={6}>
               <div className="single-contact-box">
                 <div className="contact-form">
                   <Form>
-                    <div className="row">
-                      <div className="col-sm-6 col-xs-12">
-                        <div className="form-group">
-                          <Input
-                            type="text"
-                            className="form-control"
+                    <Row>
+                      <Col sm={6} xs={12}>
+                        <Form.Group>
+                          <Form.Control
                             id="name"
+                            type="text"
                             placeholder="Name*"
                             name="name"
                             aria-label="name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                           />
-                        </div>
-                      </div>
-                      <div className="col-sm-6 col-xs-12">
-                        <div className="form-group">
-                          <Input
-                            type="email"
-                            className="form-control"
+                        </Form.Group>
+                      </Col>
+                      <Col sm={6} xs={12}>
+                        <Form.Group>
+                          <Form.Control
                             id="email"
+                            type="email"
                             placeholder="Email*"
                             name="email"
                             aria-label="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                           />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <div className="form-group">
-                          <Input
-                            type="text"
-                            className="form-control"
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col sm={12}>
+                        <Form.Group>
+                          <Form.Control
                             id="subject"
+                            type="text"
                             placeholder="Subject"
                             name="subject"
                             aria-label="subject"
                             value={subject}
                             onChange={(e) => setSubject(e.target.value)}
                           />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <div className="form-group">
-                          <Input
-                            type="textarea"
-                            className="form-control"
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col sm={12}>
+                        <Form.Group>
+                          <Form.Control
+                            as="textarea"
                             rows={8}
                             id="comment"
+                            type="textarea"
                             placeholder="Message"
                             name="comment"
                             aria-label="comment"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                           />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-sm-12">
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col sm={12}>
                         <Button
                           className="single-contact-btn"
                           type="submit"
@@ -132,13 +129,13 @@ export const ContactComponent = (props: IProps) => {
                         >
                           {loading ? 'Loading...' : 'Submit'}
                         </Button>
-                      </div>
-                    </div>
+                      </Col>
+                    </Row>
                   </Form>
                 </div>
               </div>
-            </div>
-            <div className="col-md-offset-1 col-md-5 col-sm-6">
+            </Col>
+            <Col md={{ offset: 1, span: 5 }} sm={6}>
               <div className="single-contact-box">
                 <div className="contact-adress">
                   <div className="contact-add-head">
@@ -178,10 +175,10 @@ export const ContactComponent = (props: IProps) => {
                   </div>
                 )}
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

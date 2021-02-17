@@ -1,5 +1,6 @@
 import ISection, { ISubSection } from 'interface/isection';
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 
 interface IProps {
   dataSource: ISection;
@@ -18,14 +19,10 @@ export const SkillsComponent = (props: IProps) => {
         <div className="section-heading text-center">
           <h2>{dataSource.title}</h2>
         </div>
-        <div className="container">
-          <br />
-          <br />
-          <br />
-          <br />
-          <div className="row">
+        <Container>
+          <Row>
             {data.map((mainItem: any, index: number) => (
-              <div className="col-md-6" key={`data-${index}`}>
+              <Col md={6} key={`data-${index}`}>
                 <div className="single-skill-content">
                   {mainItem &&
                     mainItem.map((item: ISubSection, index: number) => (
@@ -46,16 +43,10 @@ export const SkillsComponent = (props: IProps) => {
                       </div>
                     ))}
                 </div>
-              </div>
+              </Col>
             ))}
-          </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </div>
+          </Row>
+        </Container>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import ISection, { ISocialLink, ISubSection } from 'interface/isection';
 import Image from 'react-webp-image';
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 
 interface IProps {
   dataSource: ISection;
@@ -15,19 +16,17 @@ export const AboutComponent = (props: IProps) => {
       <div className="section-heading text-center">
         <h2>{dataSource.title}</h2>
       </div>
-      <br />
-      <br />
-      <div className="container">
+      <Container>
         <div className="about-content">
-          <div className="row">
-            <div className="col-sm-6 col-xs-12">
+          <Row>
+            <Col sm={6} xs={12}>
               <div className="single-about-txt">
                 <h3>{dataSource.heading}</h3>
                 <p>{dataSource.description}</p>
                 {dataSource.subSections && (
-                  <div className="row">
+                  <Row>
                     {dataSource.subSections.map((item: ISubSection, index: number) => (
-                      <div className="col-sm-6" key={`${item.title}-${index}`}>
+                      <Col sm={6} key={`${item.title}-${index}`}>
                         <div className="single-about-add-info">
                           <h3>{item.title}</h3>
                           {item.title.toLowerCase() === 'website' ? (
@@ -40,13 +39,13 @@ export const AboutComponent = (props: IProps) => {
                             <p>{item.description}</p>
                           )}
                         </div>
-                      </div>
+                      </Col>
                     ))}
-                  </div>
+                  </Row>
                 )}
               </div>
-            </div>
-            <div className="col-sm-offset-1 col-sm-5 col-xs-12">
+            </Col>
+            <Col sm={{ offset: 1, span: 5 }} xs={12}>
               <div className="single-about-img">
                 <Image
                   src={profileImage}
@@ -69,12 +68,10 @@ export const AboutComponent = (props: IProps) => {
                   </div>
                 )}
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
-      </div>
-      <br />
-      <br />
+      </Container>
     </section>
   );
 };

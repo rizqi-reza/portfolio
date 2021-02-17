@@ -1,6 +1,7 @@
 import ISection from 'interface/isection';
 import { Markup } from 'interweave';
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import { isSupportWebp } from 'utils/webp';
 
 interface IProps {
@@ -21,10 +22,10 @@ export const MainBannerComponent = (props: IProps) => {
         backgroundSize: 'cover',
       }}
     >
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12 text-center">
-            <div className="header-text smooth-menu">
+      <Container>
+        <Row>
+          <Col md={12} className="text-center">
+            <div className="header-text">
               <h2>
                 <Markup content={dataSource.heading} />
               </h2>
@@ -38,17 +39,19 @@ export const MainBannerComponent = (props: IProps) => {
                 download resume
               </a>
               <br />
-              <ul data-in="fadeInDown" data-out="fadeOutUp">
-                <li className="smooth-menu">
-                  <a href="#section-2" className="btn-scroll-down" aria-label="scroll-down">
-                    <i className="fas fa-chevron-down" />
-                  </a>
-                </li>
-              </ul>
+              <div data-in="fadeInDown" data-out="fadeOutUp">
+                <a
+                  href="#section-2"
+                  className="btn-scroll-down smooth-menu"
+                  aria-label="scroll-down"
+                >
+                  <i className="fas fa-chevron-down" />
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </section>
   );
 };

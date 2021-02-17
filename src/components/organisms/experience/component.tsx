@@ -1,5 +1,6 @@
 import ISection, { ISubSection } from 'interface/isection';
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 
 interface IProps {
   dataSource: ISection;
@@ -12,11 +13,8 @@ export const ExperienceComponent = (props: IProps) => {
       <div className="section-heading text-center">
         <h2>{dataSource.title}</h2>
       </div>
-      <div className="container">
+      <Container>
         <div className="experience-content">
-          <br />
-          <br />
-          <br />
           <div className="main-timeline">
             {dataSource.subSections && (
               <ul>
@@ -25,14 +23,14 @@ export const ExperienceComponent = (props: IProps) => {
                     return (
                       <li key={`${item.title}-${index}`}>
                         <div className="single-timeline-box fix">
-                          <div className="row">
-                            <div className="col-md-5">
+                          <Row>
+                            <Col md={5}>
                               <div className="experience-time text-right">
                                 <h2>{item.title}</h2>
                                 <h3>{item.subTitle}</h3>
                               </div>
-                            </div>
-                            <div className="col-md-offset-1 col-md-5">
+                            </Col>
+                            <Col md={{ offset: 1, span: 5 }}>
                               <div className="timeline">
                                 <div className="timeline-content">
                                   <h4 className="title">
@@ -45,8 +43,8 @@ export const ExperienceComponent = (props: IProps) => {
                                   <p className="description">{item.description}</p>
                                 </div>
                               </div>
-                            </div>
-                          </div>
+                            </Col>
+                          </Row>
                         </div>
                       </li>
                     );
@@ -54,8 +52,8 @@ export const ExperienceComponent = (props: IProps) => {
                     return (
                       <li key={`${item.title}-${index}`}>
                         <div className="single-timeline-box fix">
-                          <div className="row">
-                            <div className="col-md-offset-1 col-md-5 experience-time-responsive">
+                          <Row>
+                            <Col md={{ offset: 1, span: 5 }} className="experience-time-responsive">
                               <div className="experience-time">
                                 <h2>
                                   <span>
@@ -65,8 +63,8 @@ export const ExperienceComponent = (props: IProps) => {
                                 </h2>
                                 <h3>{item.subTitle}</h3>
                               </div>
-                            </div>
-                            <div className="col-md-5">
+                            </Col>
+                            <Col md={5}>
                               <div className="timeline">
                                 <div className="timeline-content text-right">
                                   <h4 className="title">{item.heading}</h4>
@@ -74,8 +72,8 @@ export const ExperienceComponent = (props: IProps) => {
                                   <p className="description">{item.description}</p>
                                 </div>
                               </div>
-                            </div>
-                            <div className="col-md-offset-1 col-md-5 experience-time-main">
+                            </Col>
+                            <Col md={{ offset: 1, span: 5 }} className="experience-time-main">
                               <div className="experience-time">
                                 <h2>
                                   <span>
@@ -85,8 +83,8 @@ export const ExperienceComponent = (props: IProps) => {
                                 </h2>
                                 <h3>{item.subTitle}</h3>
                               </div>
-                            </div>
-                          </div>
+                            </Col>
+                          </Row>
                         </div>
                       </li>
                     );
@@ -95,10 +93,8 @@ export const ExperienceComponent = (props: IProps) => {
               </ul>
             )}
           </div>
-          <br />
-          <br />
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

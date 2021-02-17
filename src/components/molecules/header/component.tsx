@@ -1,5 +1,6 @@
 import { INavigation } from 'interface/ipage';
 import React from 'react';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 
 interface IProps {
   title: string;
@@ -8,47 +9,33 @@ interface IProps {
 
 export const HeaderComponent = (props: IProps) => {
   const { title, dataSource } = props;
+
   return (
     <header className="top-area">
       <div className="header-area">
-        <nav className="navbar navbar-default bootsnav navbar-fixed dark no-background">
-          <div className="container">
-            <div className="navbar-header">
-              <button
-                type="button"
-                className="navbar-toggle"
-                data-toggle="collapse"
-                data-target="#navbar-menu"
-              >
-                <i className="fa fa-bars" />
-              </button>
-              <a className="navbar-brand" href="#section-1">
-                {title}
-              </a>
-            </div>
-
+        <Navbar bg="light" expand="md" fixed="top" className="bootsnav no-background">
+          <Container>
+            <Navbar.Toggle aria-controls="navbar-menu" />
+            <Navbar.Brand href="#section-1">{title}</Navbar.Brand>
             {dataSource && (
-              <div className="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                <ul
-                  className="nav navbar-nav navbar-right"
-                  data-in="fadeInDown"
-                  data-out="fadeOutUp"
-                >
-                  <li className="smooth-menu active" />
+              <Navbar.Collapse id="navbar-menu" className="menu-ui-design">
+                <Nav className="ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                   {dataSource.map((item: INavigation, index: number) => (
-                    <li className="smooth-menu" key={`menu-${index}`}>
-                      <a href={`#${item.url}`} aria-label={`${item.title}-link`}>
-                        {item.title}
-                      </a>
-                    </li>
+                    <Nav.Link
+                      className="smooth-menu"
+                      key={`menu-${index}`}
+                      href={`#${item.url}`}
+                      aria-label={`${item.title}-link`}
+                    >
+                      {item.title}
+                    </Nav.Link>
                   ))}
-                </ul>
-              </div>
+                </Nav>
+              </Navbar.Collapse>
             )}
-          </div>
-        </nav>
+          </Container>
+        </Navbar>
       </div>
-
       <div className="clearfix" />
     </header>
   );

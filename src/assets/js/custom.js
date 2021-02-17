@@ -40,7 +40,7 @@ $(document).ready(function () {
 
   //=============
 
-  $('li.smooth-menu a').on('click', function (event) {
+  $('.smooth-menu').on('click', function (event) {
     event.preventDefault();
     var anchor = $(this);
     $('html, body')

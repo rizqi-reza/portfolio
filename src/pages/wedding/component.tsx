@@ -2,8 +2,7 @@ import { Fragment, useEffect, useState } from 'react';
 import React from 'react';
 import Favicon from 'react-favicon';
 import Image from 'react-webp-image';
-import { Button } from 'reactstrap';
-import { Modal, Form, Carousel, Spinner } from 'react-bootstrap';
+import { Modal, Form, Carousel, Spinner, Button } from 'react-bootstrap';
 
 interface IRsvp {
   Nama: string;
@@ -121,7 +120,7 @@ export const WeddingPageComponent = (props: any) => {
     const currentDate = new Date();
     const Tanggal = `${currentDate.getDate()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`;
     const body = [[Nama, Avatar, Hadir, Pesan, Tanggal]];
-    console.log(body);
+
     try {
       await fetch(gSheetUrl, {
         method: 'POST',

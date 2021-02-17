@@ -1,6 +1,7 @@
 import ISection, { ISubSection } from 'interface/isection';
 import { Markup } from 'interweave';
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 
 interface IProps {
   dataSource: ISection;
@@ -14,19 +15,12 @@ export const EducationComponent = (props: IProps) => {
       <div className="section-heading text-center">
         <h2>{dataSource.title}</h2>
       </div>
-      <div className="container">
+      <Container>
         <div className="education-horizontal-timeline">
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
           {dataSource.subSections && (
-            <div className="row">
+            <Row>
               {dataSource.subSections.map((item: ISubSection, index: number) => (
-                <div className={`column col-sm-${12 / totalColumn}`} key={`${item.title}-${index}`}>
+                <Col sm={12 / totalColumn} key={`${item.title}-${index}`}>
                   <div className="single-horizontal-timeline">
                     <div className="experience-time">
                       <h2>{item.title}</h2>
@@ -46,19 +40,12 @@ export const EducationComponent = (props: IProps) => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Col>
               ))}
-            </div>
+            </Row>
           )}
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

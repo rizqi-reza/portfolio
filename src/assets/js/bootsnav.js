@@ -24,7 +24,7 @@
             // ------------------------------------------------------------------------------ //
             // Variable
             // ------------------------------------------------------------------------------ //
-            var getNav = $("nav.navbar.bootsnav");
+            var getNav = $(".navbar.bootsnav");
 
             // ------------------------------------------------------------------------------ //
             // Navbar Sticky 
@@ -152,9 +152,9 @@
                 $(window).on("scroll", function () {
                     var scrollTop = $(window).scrollTop();
                     if (scrollTop > 34) {
-                        $(".navbar-fixed").removeClass("no-background");
+                        $(".fixed-top").removeClass("no-background");
                     } else {
-                        $(".navbar-fixed").addClass("no-background");
+                        $(".fixed-top").addClass("no-background");
                     }
                 });
             }
@@ -166,9 +166,9 @@
                 $(window).on("scroll", function () {
                     var scrollTop = $(window).scrollTop();
                     if (scrollTop > 34) {
-                        $(".navbar-fixed").removeClass("navbar-transparent");
+                        $(".fixed-top").removeClass("navbar-transparent");
                     } else {
-                        $(".navbar-fixed").addClass("navbar-transparent");
+                        $(".fixed-top").addClass("navbar-transparent");
                     }
                 });
             }
@@ -183,7 +183,7 @@
             // ------------------------------------------------------------------------------ //
             // Toggle Search
             // ------------------------------------------------------------------------------ //
-            $("nav.navbar.bootsnav .attr-nav").each(function () {
+            $(".navbar.bootsnav .attr-nav").each(function () {
                 $("li.search > a", this).on("click", function (e) {
                     e.preventDefault();
                     $(".top-search").slideToggle();
@@ -196,16 +196,16 @@
             // ------------------------------------------------------------------------------ //
             // Toggle Side Menu
             // ------------------------------------------------------------------------------ //
-            $("nav.navbar.bootsnav .attr-nav").each(function () {
+            $(".navbar.bootsnav .attr-nav").each(function () {
                 $("li.side-menu > a", this).on("click", function (e) {
                     e.preventDefault();
-                    $("nav.navbar.bootsnav > .side").toggleClass("on");
+                    $(".navbar.bootsnav > .side").toggleClass("on");
                     $("body").toggleClass("on-side");
                 });
             });
             $(".side .close-side").on("click", function (e) {
                 e.preventDefault();
-                $("nav.navbar.bootsnav > .side").removeClass("on");
+                $(".navbar.bootsnav > .side").removeClass("on");
                 $("body").removeClass("on-side");
             });
 
@@ -222,7 +222,7 @@
         // Change dropdown to hover on dekstop
         // ------------------------------------------------------------------------------ //
         hoverDropdown: function () {
-            var getNav = $("nav.navbar.bootsnav"),
+            var getNav = $(".navbar.bootsnav"),
                 getWindow = $(window).width(),
                 getHeight = $(window).height(),
                 getIn = getNav.find("ul.nav").data("in"),
@@ -507,7 +507,7 @@
         navbarScrollspy: function () {
             var navScrollSpy = $(".navbar-scrollspy"),
                 $body = $('body'),
-                getNav = $('nav.navbar.bootsnav'),
+                getNav = $('.navbar.bootsnav'),
                 offset = getNav.outerHeight();
 
             if (navScrollSpy.length) {
