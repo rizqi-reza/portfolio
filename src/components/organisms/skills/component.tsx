@@ -24,10 +24,17 @@ export const SkillsComponent = (props: IProps) => {
                     <Card.Img
                       variant="top"
                       src={item.url}
-                      style={{ padding: 20, paddingTop: 10, paddingBottom: 0, maxHeight: 110 }}
+                      style={{
+                        padding: 20,
+                        paddingTop: 10,
+                        paddingBottom: 0,
+                        maxHeight: 110,
+                      }}
+                      alt={item.title}
                     />
-                    <Card.Body>
-                      <Card.Text style={{ textAlign: 'center' }}>{item.description}</Card.Text>
+                    <Card.Body style={{ textAlign: 'center' }}>
+                      <Card.Title>{item.title}</Card.Title>
+                      <Card.Text>{item.description}</Card.Text>
                     </Card.Body>
                   </Card>
                 </Col>
