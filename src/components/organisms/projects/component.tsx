@@ -13,9 +13,14 @@ export const ProjectsComponent = (props: IProps) => {
   const card = (image: IImage, index: number) => (
     <Col sm={6} key={`${image.title}-${index}`}>
       <div className="item">
-        <Image src={image.url} webp={image.webpUrl} alt={image.imageAlt} />
+        <Image
+          src={image.url}
+          webp={image.webpUrl}
+          alt={image.imageAlt}
+          style={{ width: '100%', height: '100%' }}
+        />
         <div className="isotope-overlay">
-          <a href="#" aria-label="project-link">
+          <a href={image.action} aria-label="project-link" target="_blank" rel="noreferrer">
             {image.title}
           </a>
           <p>{image.subTitle}</p>

@@ -1054,18 +1054,22 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 @font-face {
   font-family: SoulSignature;
   src: url('#{$font-path}/handwritting/soul-signature.ttf') format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: Rocketto;
   src: url('#{$font-path}/handwritting/rocketto.ttf') format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: Bluster;
   src: url('#{$font-path}/handwritting/bluster.ttf') format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: Montserrat;
   src: url('#{$font-path}/montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 
 .wedding-container {

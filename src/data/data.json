@@ -35,7 +35,7 @@
       "type": "MainBanner",
       "title": "Main Banner",
       "heading": "hi <span>,</span> i am <br> rizqi reza",
-      "description": "frontend & backend developer",
+      "description": "frontend engineer",
       "mainLink": "https://drive.google.com/file/d/1KW6klDGW3HylMmqhqMP76Ngt5tgIPh-y/view?usp=sharing",
       "image": [
         {
@@ -178,7 +178,7 @@
       "title": "Projects",
       "image": [
         {
-          "action": "",
+          "action": "#",
           "url": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636932/Portofolio/Projects/jpeg/project-1_zpfaq3.png",
           "webpUrl": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636910/Portofolio/Projects/webp/project-1_oakvro.webp",
           "title": "HSO Staging",
@@ -186,7 +186,7 @@
           "imageAlt": "HSO Staging"
         },
         {
-          "action": "",
+          "action": "#",
           "url": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636932/Portofolio/Projects/jpeg/project-2_sjx8lm.png",
           "webpUrl": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636910/Portofolio/Projects/webp/project-2_hftyie.webp",
           "title": "Slot Management",
@@ -194,7 +194,7 @@
           "imageAlt": "Slot Management"
         },
         {
-          "action": "",
+          "action": "#",
           "url": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636935/Portofolio/Projects/jpeg/project-3_ocjbjl.png",
           "webpUrl": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636910/Portofolio/Projects/webp/project-3_r5ioa0.webp",
           "title": "Single Astra Motor Account",
@@ -202,7 +202,7 @@
           "imageAlt": "Single Astra Motor Account"
         },
         {
-          "action": "",
+          "action": "https://www.bhinneka.com",
           "url": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636943/Portofolio/Projects/jpeg/Project-5_czgmek.png",
           "webpUrl": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636910/Portofolio/Projects/webp/Project-4_f5xwoa.webp",
           "title": "Bhinneka.com",
@@ -210,7 +210,7 @@
           "imageAlt": "Bhinneka.com"
         },
         {
-          "action": "",
+          "action": "#",
           "url": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636982/Portofolio/Projects/jpeg/Project-6_o6p4nh.png",
           "webpUrl": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636910/Portofolio/Projects/webp/Project-5_mqnz1q.webp",
           "title": "Minofa System",
@@ -218,7 +218,7 @@
           "imageAlt": "Minofa System"
         },
         {
-          "action": "",
+          "action": "#",
           "url": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636935/Portofolio/Projects/jpeg/Project-4_mme0go.png",
           "webpUrl": "https://res.cloudinary.com/rizqireza/image/upload/c_limit,h_700,q_auto:best,w_900/v1603636910/Portofolio/Projects/webp/Project-6_saqsrs.webp",
           "title": "Self Diagnose - Kawal Covid 19",

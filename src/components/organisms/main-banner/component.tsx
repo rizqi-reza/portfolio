@@ -35,6 +35,7 @@ export const MainBannerComponent = (props: IProps) => {
                 download={true}
                 className="btn-download"
                 aria-label="download-link"
+                rel="noreferrer"
               >
                 download resume
               </a>
