@@ -115,39 +115,27 @@
     {
       "key": "section-4",
       "type": "Skills",
-      "title": "Skill",
+      "title": "Skills",
       "subSections": [
         {
-          "title": "SQL Server",
-          "value": 78
-        },
-        {
-          "title": "MySQL",
-          "value": 75
-        },
-        {
-          "title": "HTML 5",
-          "value": 80
-        },
-        {
-          "title": "CSS 3",
-          "value": 78
-        },
-        {
-          "title": ".NET",
-          "value": 85
-        },
-        {
-          "title": "PHP",
-          "value": 80
-        },
-        {
           "title": "React Js",
-          "value": 90
+          "url": "https://res.cloudinary.com/rizqireza/image/upload/v1613781459/Portofolio/Skills/reactjs_atpilq.svg",
+          "description": "Build an responsive web application using react framework"
+        },
+        {
+          "title": "Next Js",
+          "url": "https://res.cloudinary.com/rizqireza/image/upload/v1613781499/Portofolio/Skills/nextjs_kbg9tk.svg",
+          "description": "Build an server side rendered website using next js"
         },
         {
           "title": "Angular Js",
-          "value": 75
+          "url": "https://res.cloudinary.com/rizqireza/image/upload/v1613781547/Portofolio/Skills/angularjs_whghf4.svg",
+          "description": "Build an responsive web application using angular js"
+        },
+        {
+          "title": "Laravel",
+          "url": "https://res.cloudinary.com/rizqireza/image/upload/v1613781585/Portofolio/Skills/laravel_bdc2sq.svg",
+          "description": "Build website and api using laravel framework"
         }
       ]
     },

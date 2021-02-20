@@ -26,6 +26,7 @@ export interface ISubSection {
   heading?: string;
   subHeading?: string;
   value?: number;
+  url?: string;
 }
 
 export interface ISocialLink {
