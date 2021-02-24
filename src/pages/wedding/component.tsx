@@ -1,8 +1,9 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react';
 import Favicon from 'react-favicon';
 import Image from 'react-webp-image';
-import { Modal, Form, Carousel, Spinner, Button } from 'react-bootstrap';
+import { Modal, Form, Carousel, Spinner, Button, Media } from 'react-bootstrap';
+import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox';
 
 interface IRsvp {
   Nama: string;
@@ -33,6 +34,8 @@ export const WeddingPageComponent = (props: any) => {
   const gSheetBaseUrl = 'https://v1.nocodeapi.com/rizqireza/google_sheets/fBLefUqjinIziQrn';
   const TAB_ID = 'List Tamu';
   const gSheetUrl = `${gSheetBaseUrl}?tabId=${TAB_ID}`;
+  const protocolBaseUrl =
+    'https://res.cloudinary.com/rizqireza/image/upload/v1614187116/Portofolio/Wedding/Protocol/';
   const avatarBaseUrl =
     'https://res.cloudinary.com/rizqireza/image/upload/v1611773458/Portofolio/Wedding/Avatar/';
 
@@ -168,7 +171,7 @@ export const WeddingPageComponent = (props: any) => {
   };
 
   return (
-    <Fragment>
+    <SimpleReactLightbox>
       <Favicon url="https://drive.google.com/uc?export=view&id=1HFtSQHgkxGnq6iD3d5Q2ggoc8KwJOQco" />
       <div className="wedding-container">
         <div className="row">
@@ -248,36 +251,38 @@ export const WeddingPageComponent = (props: any) => {
             </div>
             <div className="wedding-section gallery">
               <h1 className="wedding-subtitle">Galeri</h1>
-              <div className="row">
-                <div className="col-sm-6">
-                  <div className="wedding-gallery masonry">
-                    <img
-                      src="https://res.cloudinary.com/rizqireza/image/upload/v1611598634/Portofolio/Wedding/Gallery/fitri_rizqi_1-3_tzprxp.jpg"
-                      alt=""
-                    />
+              <SRLWrapper options={{ buttons: { showDownloadButton: false } }}>
+                <div className="row">
+                  <div className="col-sm-6">
+                    <div className="wedding-gallery masonry">
+                      <img
+                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611598634/Portofolio/Wedding/Gallery/fitri_rizqi_1-3_tzprxp.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div className="wedding-gallery masonry">
+                      <img
+                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611598640/Portofolio/Wedding/Gallery/fitri_rizqi-13_vuuzzc.jpg"
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div className="wedding-gallery masonry">
-                    <img
-                      src="https://res.cloudinary.com/rizqireza/image/upload/v1611598640/Portofolio/Wedding/Gallery/fitri_rizqi-13_vuuzzc.jpg"
-                      alt=""
-                    />
+                  <div className="col-sm-6">
+                    <div className="wedding-gallery masonry">
+                      <img
+                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611598655/Portofolio/Wedding/Gallery/fitri_rizqi-21_xti7pw.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div className="wedding-gallery masonry">
+                      <img
+                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611598649/Portofolio/Wedding/Gallery/fitri_rizqi-17_f4ecy7.jpg"
+                        alt=""
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="col-sm-6">
-                  <div className="wedding-gallery masonry">
-                    <img
-                      src="https://res.cloudinary.com/rizqireza/image/upload/v1611598655/Portofolio/Wedding/Gallery/fitri_rizqi-21_xti7pw.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="wedding-gallery masonry">
-                    <img
-                      src="https://res.cloudinary.com/rizqireza/image/upload/v1611598649/Portofolio/Wedding/Gallery/fitri_rizqi-17_f4ecy7.jpg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
+              </SRLWrapper>
             </div>
             <div className="wedding-section story">
               <h1 className="wedding-subtitle">Kisah Kami</h1>
@@ -339,6 +344,57 @@ export const WeddingPageComponent = (props: any) => {
                     <h2>{state.seconds || '00'}</h2> <p>Detik</p>
                   </div>
                 </span>
+              </div>
+            </div>
+            <div className="wedding-section covid">
+              <h1 className="wedding-subtitle">Protokol Kesehatan</h1>
+              <p className="protocol">
+                Untuk mematuhi himbauan pemerintah dalam pencegahan penyebaran Covid-19, maka
+                diharapkan Bapak/Ibu/Saudara/i tamu undangan untuk:
+              </p>
+              <div className="protocol-content">
+                <ul className="list-unstyled">
+                  <Media as="li">
+                    <div className="avatar-wrapper">
+                      <img width={64} height={64} src={`${protocolBaseUrl}protocol1.svg`} />
+                    </div>
+                    <Media.Body>
+                      <p>Mengecek suhu tubuh sebelum memasuki lokasi acara</p>
+                    </Media.Body>
+                  </Media>
+                  <Media as="li">
+                    <div className="avatar-wrapper">
+                      <img width={64} height={64} src={`${protocolBaseUrl}protocol2.svg`} />
+                    </div>
+                    <Media.Body>
+                      <p>Mencuci tangan sebelum dan sesudah memasuki lokasi acara</p>
+                    </Media.Body>
+                  </Media>
+                  <Media as="li">
+                    <div className="avatar-wrapper">
+                      <img width={64} height={64} src={`${protocolBaseUrl}protocol3.svg`} />
+                    </div>
+                    <Media.Body>
+                      <p>Selalu memakai masker selama acara berlangsung</p>
+                    </Media.Body>
+                  </Media>
+                  <Media as="li">
+                    <div className="avatar-wrapper">
+                      <img width={64} height={64} src={`${protocolBaseUrl}protocol4.svg`} />
+                    </div>
+                    <Media.Body>
+                      <p>Tidak berkerumun, dengan menjaga jarak satu sama lain</p>
+                    </Media.Body>
+                  </Media>
+                  <Media as="li">
+                    <div className="avatar-wrapper">
+                      <img width={64} height={64} src={`${protocolBaseUrl}protocol5.svg`} />
+                    </div>
+                    <Media.Body>
+                      <p>Tidak bersalaman, dapat menggantinya dengan salaman jarak jauh</p>
+                    </Media.Body>
+                  </Media>
+                </ul>
               </div>
             </div>
             <div className="wedding-section rsvp">
@@ -471,7 +527,7 @@ export const WeddingPageComponent = (props: any) => {
           )}
         </Modal.Body>
       </Modal>
-    </Fragment>
+    </SimpleReactLightbox>
   );
 };
 

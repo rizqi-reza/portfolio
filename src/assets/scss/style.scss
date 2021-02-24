@@ -1185,6 +1185,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
           }
         }
       }
+
       + .countdown {
         .timer-wrapper {
           display: flex;
@@ -1209,6 +1210,24 @@ span.single-timeline-horizontal.spacial-horizontal-line {
             h2,
             p {
               color: #fff;
+            }
+          }
+        }
+      }
+
+      + .covid {
+        padding: 25px 5vw 0;
+        .protocol {
+          margin-bottom: 20px;
+        }
+        .protocol-content {
+          .media {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+            .avatar-wrapper {
+              background-color: white;
+              padding: 0px;
             }
           }
         }
