@@ -154,7 +154,14 @@ export const ContactComponent = (props: IProps) => {
                               </a>
                             </p>
                           ) : (
-                            <p>{item.description}</p>
+                            <p>
+                              <a
+                                href={`mailto:${item.description}`}
+                                aria-label={`${item.title}-link`}
+                              >
+                                {item.description}
+                              </a>
+                            </p>
                           )}
                         </div>
                       ))}

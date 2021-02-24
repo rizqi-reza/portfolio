@@ -515,6 +515,12 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 
 .skill-content {
   padding: 50px 0 80px;
+  .card {
+    min-height: 300px;
+    .card-img-top {
+      padding: 10px 20px 0;
+    }
+  }
 }
 
 .single-skill-content {

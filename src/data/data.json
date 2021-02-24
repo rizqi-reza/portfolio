@@ -35,7 +35,7 @@
       "type": "MainBanner",
       "title": "Main Banner",
       "heading": "hi <span>,</span> i am <br> rizqi reza",
-      "description": "frontend engineer",
+      "description": "frontend developer",
       "mainLink": "https://drive.google.com/file/d/1KW6klDGW3HylMmqhqMP76Ngt5tgIPh-y/view?usp=sharing",
       "image": [
         {
@@ -51,7 +51,7 @@
       "key": "section-2",
       "type": "About",
       "title": "About Me",
-      "heading": "Hi and welcome to my portfolio. My name is Rizqi Reza, I was born in 1995 on Tegal/Central Java, Indonesia and I currently living on Bekasi, Indonesia.",
+      "heading": "Hi and welcome to my portfolio. My name is Rizqi Reza, I was born in 1995 on Tegal, Central Java, Indonesia and I currently living on Bekasi, Indonesia.",
       "description": "I'm a experienced Software Developer and System Analyst with a demonstrated history of working in the information technology company (Astra Graphia Information Technology) and e-commerce company (Bhinneka.com) for 4 years. Skilled in Frontend and Backend Development, System Analytical, and Databases.",
       "subSections": [
         {
@@ -220,7 +220,7 @@
       "type": "Contact",
       "title": "Contact Me",
       "heading": "Rizqi Reza",
-      "description": "frontend & backend developer",
+      "description": "frontend developer",
       "subSections": [
         {
           "title": "Address",
