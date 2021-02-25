@@ -1078,9 +1078,25 @@ span.single-timeline-horizontal.spacial-horizontal-line {
   font-display: swap;
 }
 
+.navbar-wedding {
+  a {
+    padding: 5px;
+    font-size: 20pt;
+  }
+  a.active {
+    color: $main-color !important;
+    border-bottom: 2px #283593 solid;
+  }
+}
+
 .wedding-container {
   text-align: center;
   color: #5d5d5d;
+
+  section {
+    min-height: auto;
+    width: 100%;
+  }
 
   .wedding-background {
     background: #1d1135;
@@ -1113,7 +1129,6 @@ span.single-timeline-horizontal.spacial-horizontal-line {
     padding: 5vh 0;
 
     .wedding-box {
-      width: 80%;
       text-align: center;
 
       h3 {
@@ -1209,14 +1224,14 @@ span.single-timeline-horizontal.spacial-horizontal-line {
             }
             h2,
             p {
-              color: #fff;
+              color: #1d1135;
             }
           }
         }
       }
 
-      + .covid {
-        padding: 25px 5vw 0;
+      .covid {
+        padding: 25px 15px 0;
         .protocol {
           margin-bottom: 20px;
         }
@@ -1233,7 +1248,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
         }
       }
 
-      + .rsvp {
+      .rsvp {
         padding: 25px 5vw 0;
         .carousel-indicators li {
           background: #ffd700;
@@ -1252,7 +1267,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
           margin-bottom: 20px;
           .media-body {
             margin-top: 5px;
-            h5 {
+            h2 {
               margin-top: 5px;
               font-size: 10pt;
               font-weight: bold;
@@ -1304,12 +1319,27 @@ span.single-timeline-horizontal.spacial-horizontal-line {
   }
 }
 
+.navbar {
+  display: none;
+  background-color: #fff !important;
+  box-shadow: 0 5px 10px rgb(0, 0, 0);
+
+  .navbar-nav {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+
 .modal {
   text-align: left;
   .modal-title {
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
+    h5 {
+      font-family: 'SoulSignature';
+      font-size: 35pt;
+    }
   }
   .modal-dialog {
     .modal-header {
@@ -1372,7 +1402,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
   cursor: pointer;
   transition: color 0.3s;
   line-height: 30px;
-  color: #fff;
+  color: #1d1135;
   border: none;
   font-size: 14px;
 
@@ -1434,6 +1464,9 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 }
 
 @media (max-width: 800px) {
+  .navbar {
+    display: block;
+  }
   .wedding-background {
     img {
       margin-top: 0;
@@ -1459,6 +1492,9 @@ span.single-timeline-horizontal.spacial-horizontal-line {
         + .rsvp {
           padding: 0 60px;
         }
+        + .footer {
+          margin-bottom: 50px;
+        }
         .wedding-name {
           font-size: 3vw;
         }
@@ -1476,7 +1512,8 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 @media (max-width: 540px) {
   .wedding-container {
     .left-panel {
-      height: 125vw;
+      height: 140vw;
+      padding: 6vw;
     }
     .right-panel {
       padding: 20px;
@@ -1532,7 +1569,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 @media (max-width: 320px) {
   .wedding-container {
     .left-panel {
-      height: 135vw;
+      height: 150vw;
     }
   }
 }

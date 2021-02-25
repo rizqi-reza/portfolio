@@ -2,8 +2,20 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import Favicon from 'react-favicon';
 import Image from 'react-webp-image';
-import { Modal, Form, Carousel, Spinner, Button, Media } from 'react-bootstrap';
+import {
+  Modal,
+  Form,
+  Carousel,
+  Spinner,
+  Button,
+  Media,
+  Row,
+  Col,
+  Navbar,
+  Nav,
+} from 'react-bootstrap';
 import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox';
+import Scrollspy from 'react-scrollspy';
 
 interface IRsvp {
   Nama: string;
@@ -173,26 +185,56 @@ export const WeddingPageComponent = (props: any) => {
   return (
     <SimpleReactLightbox>
       <Favicon url="https://drive.google.com/uc?export=view&id=1HFtSQHgkxGnq6iD3d5Q2ggoc8KwJOQco" />
+      <Navbar expand={true} fixed="bottom" className="navbar-wedding">
+        <Nav fill={true}>
+          <Scrollspy
+            componentTag="div"
+            items={['section-1', 'section-2', 'section-3', 'section-4', 'section-5']}
+            currentClassName="active"
+            className="navbar-nav"
+            offset={-10}
+          >
+            <a href="#section-1" className="smooth-menu-wedding">
+              <i className="uil uil-estate"></i>
+            </a>
+            <a href="#section-2" className="smooth-menu-wedding">
+              <i className="uil uil-heart"></i>
+            </a>
+            <a href="#section-3" className="smooth-menu-wedding">
+              <i className="uil uil-schedule"></i>
+            </a>
+            <a href="#section-4" className="smooth-menu-wedding">
+              <i className="uil uil-shield-plus"></i>
+            </a>
+            <a href="#section-5" className="smooth-menu-wedding">
+              <i className="uil uil-comment-lines"></i>
+            </a>
+          </Scrollspy>
+        </Nav>
+      </Navbar>
       <div className="wedding-container">
-        <div className="row">
-          <div className="col-lg-6 left-panel wedding-background">
-            <div className="wedding-box">
-              <h1 className="wedding-subtitle">Wedding Invitation</h1>
-              <h1 className="wedding-title">
-                Fitri <span className="wedding-and">&amp;</span> Rizqi
-              </h1>
-            </div>
-            <div className="wedding-box">
-              <Image
-                // src="https://res.cloudinary.com/rizqireza/image/upload/v1611598421/Portofolio/Wedding/bg-image_vionle.svg"
-                src="https://res.cloudinary.com/rizqireza/image/upload/v1612711316/Portofolio/Wedding/couple_pgi0ut.svg"
-                alt="cover_invitation"
-                width="100%"
-                height="100%"
-              />
-            </div>
-          </div>
-          <div className="col-lg-6 right-panel">
+        <Row>
+          <Col lg={6} className="left-panel wedding-background">
+            <section id="section-1">
+              <div className="wedding-box">
+                <h1 className="wedding-subtitle">Wedding Invitation</h1>
+                <h1 className="wedding-title">
+                  Fitri <span className="wedding-and">&amp;</span> Rizqi
+                </h1>
+              </div>
+              <div className="wedding-box">
+                <Image
+                  // src="https://res.cloudinary.com/rizqireza/image/upload/v1611598421/Portofolio/Wedding/bg-image_vionle.svg"
+                  src="https://res.cloudinary.com/rizqireza/image/upload/v1612711316/Portofolio/Wedding/couple_pgi0ut.svg"
+                  alt="cover_invitation"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+            </section>
+          </Col>
+          <Col lg={6} className="right-panel">
+            <Row></Row>
             <p className="wedding-mute-text">
               <i>Bismillahirrahmanirrahim</i>
             </p>
@@ -210,234 +252,285 @@ export const WeddingPageComponent = (props: any) => {
               </p>
             </div>
             <br />
-            <div className="wedding-section">
-              <div className="couples">
-                <h1 className="wedding-subtitle">Mempelai</h1>
-                <span className="wedding-and">&amp;</span>
-                <div className="row">
-                  <div className="col-sm-6">
-                    <div className="wedding-gallery">
-                      <Image
-                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611508039/Portofolio/Wedding/fitri.jpg"
-                        alt="pp_fitri"
-                      />
-                    </div>
-                    <div>
-                      <h1 className="wedding-name">Fitri Febriana</h1>
-                      <p className="wedding-mute-text">
-                        Putri ke-2 dari <br />
-                        Bapak Satimin dan Ibu Lamiyem
-                      </p>
-                    </div>
+            <section id="section-2">
+              <div className="wedding-section">
+                <div className="couples">
+                  <h1 className="wedding-subtitle">Mempelai</h1>
+                  <span className="wedding-and">&amp;</span>
+                  <Row>
+                    <Col sm={6}>
+                      <div className="wedding-gallery">
+                        <Image
+                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611508039/Portofolio/Wedding/fitri.jpg"
+                          alt="pp_fitri"
+                        />
+                      </div>
+                      <div>
+                        <h1 className="wedding-name">Fitri Febriana</h1>
+                        <p className="wedding-mute-text">
+                          Putri ke-2 dari <br />
+                          Bapak Satimin dan Ibu Lamiyem
+                        </p>
+                      </div>
+                    </Col>
+                    <Col sm={6}>
+                      <div className="wedding-gallery">
+                        <Image
+                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611596646/Portofolio/Wedding/rizqi.jpg"
+                          alt="pp_rizqi"
+                        />
+                      </div>
+                      <div>
+                        <h1 className="wedding-name">Rizqi Reza Valhevi</h1>
+                        <p className="wedding-mute-text">
+                          Putra ke-7 dari <br />
+                          Alm. Bapak H. Saiful Amin dan <br />
+                          Almh. Ibu Hj. Umi Nurrokhmah
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+              </div>
+              <div className="wedding-section gallery">
+                <h1 className="wedding-subtitle">Galeri</h1>
+                <SRLWrapper options={{ buttons: { showDownloadButton: false } }}>
+                  <Row>
+                    <Col sm={6}>
+                      <div className="wedding-gallery masonry">
+                        <img
+                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611598634/Portofolio/Wedding/Gallery/fitri_rizqi_1-3_tzprxp.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div className="wedding-gallery masonry">
+                        <img
+                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611598640/Portofolio/Wedding/Gallery/fitri_rizqi-13_vuuzzc.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </Col>
+                    <Col sm={6}>
+                      <div className="wedding-gallery masonry">
+                        <img
+                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611598655/Portofolio/Wedding/Gallery/fitri_rizqi-21_xti7pw.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div className="wedding-gallery masonry">
+                        <img
+                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611598649/Portofolio/Wedding/Gallery/fitri_rizqi-17_f4ecy7.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </Col>
+                  </Row>
+                </SRLWrapper>
+              </div>
+              <div className="wedding-section story">
+                <h1 className="wedding-subtitle">Kisah Kami</h1>
+                <p className="p_kisah">
+                  <b>Jadi,</b>
+                  <br />
+                  It is a long established fact that a reader will be distracted by the readable
+                  content of a page when looking at its layout. The point of using Lorem Ipsum is
+                  that it has a more-or-less normal distribution of letters, as opposed to using
+                  'Content here, content here', making it look like readable English. Many desktop
+                  publishing packages and web page editors now use Lorem Ipsum as their default
+                  model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                  their infancy. Various versions have evolved over the years, sometimes by
+                  accident, sometimes on purpose (injected humour and the like).
+                </p>
+              </div>
+            </section>
+            <section id="section-3">
+              <Row>
+                <Col sm={6}>
+                  <div className="wedding-section ceremony">
+                    <h1 className="wedding-subtitle">Akad Nikah</h1>
+                    <p className="wedding-mute-text">Kamis, 17 Juni 2021</p>
+                    <p className="wedding-mute-text">09:00 WIB</p>
+                    <p className="wedding-mute-text">Kediaman Mempelai Wanita</p>
                   </div>
-                  <div className="col-sm-6">
-                    <div className="wedding-gallery">
-                      <Image
-                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611596646/Portofolio/Wedding/rizqi.jpg"
-                        alt="pp_rizqi"
-                      />
+                </Col>
+                <Col sm={6}>
+                  <div className="wedding-section reception">
+                    <h1 className="wedding-subtitle">Resepsi Nikah</h1>
+                    <p className="wedding-mute-text">Minggu, 27 Juni 2021</p>
+                    <p className="wedding-mute-text">09:00 WIB</p>
+                    <p className="wedding-mute-text">SMA IT Almaka</p>
+                  </div>
+                </Col>
+              </Row>
+              <div className="wedding-section maps">
+                <h1 className="wedding-subtitle">Lokasi Resepsi</h1>
+                <iframe
+                  title="wedding-maps"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.819024310843!2d106.70089811529954!3d-6.154987662043638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8147d3a779d%3A0x1f5212d96ffa9acd!2sSMA%20IT%20ALMAKA!5e0!3m2!1sen!2sid!4v1611601818823!5m2!1sen!2sid"
+                  width="100%"
+                  height="400"
+                  aria-hidden="false"
+                  style={{ border: 'none' }}
+                ></iframe>
+              </div>
+              <div className="wedding-section countdown">
+                <h1 className="wedding-subtitle">Datang ya!</h1>
+                <div className="timer-wrapper">
+                  <span>
+                    <div className="timers">
+                      <h2>{state.days || '00'}</h2> <p>Hari</p>
                     </div>
-                    <div>
-                      <h1 className="wedding-name">Rizqi Reza Valhevi</h1>
-                      <p className="wedding-mute-text">
-                        Putra ke-7 dari <br />
-                        Alm. Bapak H. Saiful Amin dan <br />
-                        Almh. Ibu Hj. Umi Nurrokhmah
-                      </p>
+                    <div className="timers">
+                      <h2>{state.hours || '00'}</h2> <p>Jam</p>
                     </div>
+                    <div className="timers">
+                      <h2>{state.minutes || '00'}</h2> <p>Menit</p>
+                    </div>
+                    <div className="timers">
+                      <h2>{state.seconds || '00'}</h2> <p>Detik</p>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </section>
+            <section id="section-4">
+              <div className="wedding-section ">
+                <div className="covid">
+                  <h1 className="wedding-subtitle">Protokol Kesehatan</h1>
+                  <p className="protocol">
+                    Untuk mematuhi himbauan pemerintah dalam pencegahan penyebaran Covid-19, maka
+                    diharapkan Bapak/Ibu/Saudara/i tamu undangan untuk:
+                  </p>
+                  <div className="protocol-content">
+                    <Row>
+                      <Col xl={4} lg={6} md={6}>
+                        <Media>
+                          <div className="avatar-wrapper">
+                            <img
+                              width={64}
+                              height={64}
+                              src={`${protocolBaseUrl}protocol1.svg`}
+                              alt="protocol-1"
+                            />
+                          </div>
+                          <Media.Body>
+                            <p>Mengecek suhu tubuh sebelum memasuki lokasi acara</p>
+                          </Media.Body>
+                        </Media>
+                      </Col>
+                      <Col xl={4} lg={6} md={6}>
+                        <Media>
+                          <div className="avatar-wrapper">
+                            <img
+                              width={64}
+                              height={64}
+                              src={`${protocolBaseUrl}protocol2.svg`}
+                              alt="protocol-2"
+                            />
+                          </div>
+                          <Media.Body>
+                            <p>Mencuci tangan sebelum dan sesudah memasuki lokasi acara</p>
+                          </Media.Body>
+                        </Media>
+                      </Col>
+                      <Col xl={4} lg={6} md={6}>
+                        <Media>
+                          <div className="avatar-wrapper">
+                            <img
+                              width={64}
+                              height={64}
+                              src={`${protocolBaseUrl}protocol3.svg`}
+                              alt="protocol-3"
+                            />
+                          </div>
+                          <Media.Body>
+                            <p>Selalu memakai masker selama acara berlangsung</p>
+                          </Media.Body>
+                        </Media>
+                      </Col>
+                      <Col xl={6} lg={6} md={6}>
+                        <Media>
+                          <div className="avatar-wrapper">
+                            <img
+                              width={64}
+                              height={64}
+                              src={`${protocolBaseUrl}protocol4.svg`}
+                              alt="protocol-4"
+                            />
+                          </div>
+                          <Media.Body>
+                            <p>Tidak berkerumun, dengan menjaga jarak satu sama lain</p>
+                          </Media.Body>
+                        </Media>
+                      </Col>
+                      <Col xl={6} lg={12} md={12}>
+                        <Media>
+                          <div className="avatar-wrapper">
+                            <img
+                              width={64}
+                              height={64}
+                              src={`${protocolBaseUrl}protocol5.svg`}
+                              alt="protocol-5"
+                            />
+                          </div>
+                          <Media.Body>
+                            <p>Tidak bersalaman, dapat menggantinya dengan salaman jarak jauh</p>
+                          </Media.Body>
+                        </Media>
+                      </Col>
+                    </Row>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="wedding-section gallery">
-              <h1 className="wedding-subtitle">Galeri</h1>
-              <SRLWrapper options={{ buttons: { showDownloadButton: false } }}>
-                <div className="row">
-                  <div className="col-sm-6">
-                    <div className="wedding-gallery masonry">
-                      <img
-                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611598634/Portofolio/Wedding/Gallery/fitri_rizqi_1-3_tzprxp.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="wedding-gallery masonry">
-                      <img
-                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611598640/Portofolio/Wedding/Gallery/fitri_rizqi-13_vuuzzc.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div className="col-sm-6">
-                    <div className="wedding-gallery masonry">
-                      <img
-                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611598655/Portofolio/Wedding/Gallery/fitri_rizqi-21_xti7pw.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="wedding-gallery masonry">
-                      <img
-                        src="https://res.cloudinary.com/rizqireza/image/upload/v1611598649/Portofolio/Wedding/Gallery/fitri_rizqi-17_f4ecy7.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </SRLWrapper>
-            </div>
-            <div className="wedding-section story">
-              <h1 className="wedding-subtitle">Kisah Kami</h1>
-              <p className="p_kisah">
-                <b>Jadi,</b>
-                <br />
-                It is a long established fact that a reader will be distracted by the readable
-                content of a page when looking at its layout. The point of using Lorem Ipsum is that
-                it has a more-or-less normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English. Many desktop publishing
-                packages and web page editors now use Lorem Ipsum as their default model text, and a
-                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
-                versions have evolved over the years, sometimes by accident, sometimes on purpose
-                (injected humour and the like).
-              </p>
-            </div>
-            <div className="row">
-              <div className="col-sm-6">
-                <div className="wedding-section ceremony">
-                  <h1 className="wedding-subtitle">Akad Nikah</h1>
-                  <p className="wedding-mute-text">Kamis, 17 Juni 2021</p>
-                  <p className="wedding-mute-text">09:00 WIB</p>
-                  <p className="wedding-mute-text">Kediaman Mempelai Wanita</p>
+            </section>
+            <section id="section-5">
+              <div className="wedding-section">
+                <div className="rsvp">
+                  <h1 className="wedding-subtitle">Buku Tamu</h1>
+                  <Button type="button" className="btn btn-rsvp" onClick={() => setShowModal(true)}>
+                    RSVP &amp; Pesan untuk pengantin
+                  </Button>
+                  <br />
+                  <br />
+                  <br />
+                  {loading && <Spinner animation="border" variant="warning" />}
+                  {!loading && rsvp?.length > 0 && (
+                    <Carousel controls={false}>
+                      {chunkRsvp(3, rsvp)?.map((chunk, indexRsvp) => (
+                        <Carousel.Item key={indexRsvp}>
+                          <ul className="list-unstyled">
+                            {chunk?.map((data, indexChunk) => (
+                              <li className="media" key={indexChunk}>
+                                <div className="avatar-wrapper">
+                                  <img
+                                    src={`${avatarBaseUrl}${data.Avatar}.svg`}
+                                    alt={data.Avatar}
+                                  />
+                                </div>
+                                <div className="media-body">
+                                  <h2 className="mt-0 mb-1">{data.Nama}</h2>
+                                  <p>{data.Pesan}</p>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        </Carousel.Item>
+                      ))}
+                    </Carousel>
+                  )}
                 </div>
               </div>
-              <div className="col-sm-6">
-                <div className="wedding-section reception">
-                  <h1 className="wedding-subtitle">Resepsi Nikah</h1>
-                  <p className="wedding-mute-text">Minggu, 27 Juni 2021</p>
-                  <p className="wedding-mute-text">09:00 WIB</p>
-                  <p className="wedding-mute-text">SMA IT Almaka</p>
-                </div>
+              <div className="wedding-section thank">
+                <h1 className="wedding-subtitle">Wassalamu'alaykum Wr. Wb.</h1>
               </div>
-            </div>
-            <div className="wedding-section maps">
-              <h1 className="wedding-subtitle">Lokasi Resepsi</h1>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.819024310843!2d106.70089811529954!3d-6.154987662043638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8147d3a779d%3A0x1f5212d96ffa9acd!2sSMA%20IT%20ALMAKA!5e0!3m2!1sen!2sid!4v1611601818823!5m2!1sen!2sid"
-                width="100%"
-                height="400"
-                aria-hidden="false"
-                style={{ border: 'none' }}
-              ></iframe>
-            </div>
-            <div className="wedding-section countdown">
-              <h1 className="wedding-subtitle">Datang ya!</h1>
-              <div className="timer-wrapper">
-                <span>
-                  <div className="timers">
-                    <h2>{state.days || '00'}</h2> <p>Hari</p>
-                  </div>
-                  <div className="timers">
-                    <h2>{state.hours || '00'}</h2> <p>Jam</p>
-                  </div>
-                  <div className="timers">
-                    <h2>{state.minutes || '00'}</h2> <p>Menit</p>
-                  </div>
-                  <div className="timers">
-                    <h2>{state.seconds || '00'}</h2> <p>Detik</p>
-                  </div>
-                </span>
+              <div className="wedding-section footer">
+                <p className="wedding-mute-text">
+                  Made with <i className="uil uil-heart"></i> by @rizqirezz
+                </p>
               </div>
-            </div>
-            <div className="wedding-section covid">
-              <h1 className="wedding-subtitle">Protokol Kesehatan</h1>
-              <p className="protocol">
-                Untuk mematuhi himbauan pemerintah dalam pencegahan penyebaran Covid-19, maka
-                diharapkan Bapak/Ibu/Saudara/i tamu undangan untuk:
-              </p>
-              <div className="protocol-content">
-                <ul className="list-unstyled">
-                  <Media as="li">
-                    <div className="avatar-wrapper">
-                      <img width={64} height={64} src={`${protocolBaseUrl}protocol1.svg`} />
-                    </div>
-                    <Media.Body>
-                      <p>Mengecek suhu tubuh sebelum memasuki lokasi acara</p>
-                    </Media.Body>
-                  </Media>
-                  <Media as="li">
-                    <div className="avatar-wrapper">
-                      <img width={64} height={64} src={`${protocolBaseUrl}protocol2.svg`} />
-                    </div>
-                    <Media.Body>
-                      <p>Mencuci tangan sebelum dan sesudah memasuki lokasi acara</p>
-                    </Media.Body>
-                  </Media>
-                  <Media as="li">
-                    <div className="avatar-wrapper">
-                      <img width={64} height={64} src={`${protocolBaseUrl}protocol3.svg`} />
-                    </div>
-                    <Media.Body>
-                      <p>Selalu memakai masker selama acara berlangsung</p>
-                    </Media.Body>
-                  </Media>
-                  <Media as="li">
-                    <div className="avatar-wrapper">
-                      <img width={64} height={64} src={`${protocolBaseUrl}protocol4.svg`} />
-                    </div>
-                    <Media.Body>
-                      <p>Tidak berkerumun, dengan menjaga jarak satu sama lain</p>
-                    </Media.Body>
-                  </Media>
-                  <Media as="li">
-                    <div className="avatar-wrapper">
-                      <img width={64} height={64} src={`${protocolBaseUrl}protocol5.svg`} />
-                    </div>
-                    <Media.Body>
-                      <p>Tidak bersalaman, dapat menggantinya dengan salaman jarak jauh</p>
-                    </Media.Body>
-                  </Media>
-                </ul>
-              </div>
-            </div>
-            <div className="wedding-section rsvp">
-              <h1 className="wedding-subtitle">Buku Tamu</h1>
-              <Button type="button" className="btn btn-rsvp" onClick={() => setShowModal(true)}>
-                RSVP &amp; Pesan untuk pengantin
-              </Button>
-              <br />
-              <br />
-              <br />
-              {loading && <Spinner animation="border" variant="warning" />}
-              {!loading && rsvp?.length > 0 && (
-                <Carousel controls={false}>
-                  {chunkRsvp(3, rsvp)?.map((chunk, indexRsvp) => (
-                    <Carousel.Item key={indexRsvp}>
-                      <ul className="list-unstyled">
-                        {chunk?.map((data, indexChunk) => (
-                          <li className="media" key={indexChunk}>
-                            <div className="avatar-wrapper">
-                              <img src={`${avatarBaseUrl}${data.Avatar}.svg`} />
-                            </div>
-                            <div className="media-body">
-                              <h5 className="mt-0 mb-1">{data.Nama}</h5>
-                              <p>{data.Pesan}</p>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </Carousel.Item>
-                  ))}
-                </Carousel>
-              )}
-            </div>
-            <div className="wedding-section thank">
-              <h1 className="wedding-subtitle">Wassalamu'alaykum Wr. Wb.</h1>
-            </div>
-            <div className="wedding-section footer">
-              <p className="wedding-mute-text">
-                Made with <i className="fa fa-heart" aria-hidden="true" /> by @rizqirezz
-              </p>
-            </div>
-          </div>
-        </div>
+            </section>
+          </Col>
+        </Row>
       </div>
 
       <Modal show={showModal} onHide={handleCloseModal} size="lg">

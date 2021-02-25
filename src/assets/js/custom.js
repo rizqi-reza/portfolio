@@ -51,6 +51,17 @@ $(document).ready(function () {
         1200
       );
   });
+  $('.smooth-menu-wedding').on('click', function (event) {
+    event.preventDefault();
+    var anchor = $(this);
+    $('html, body')
+      .stop()
+      .animate({
+          scrollTop: $(anchor.attr('href')).offset().top,
+        },
+        1200
+      );
+  });
   $('.navbar-brand').on('click', function (event) {
     event.preventDefault();
     var anchor = $(this);
