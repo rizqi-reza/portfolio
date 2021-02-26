@@ -1079,13 +1079,30 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 }
 
 .navbar-wedding {
-  a {
-    padding: 5px;
-    font-size: 20pt;
-  }
-  a.active {
-    color: $main-color !important;
-    border-bottom: 2px #283593 solid;
+  display: none;
+  background-color: #fff !important;
+  box-shadow: 0 5px 10px rgb(0, 0, 0);
+  padding: 5px 0.5rem 10px;
+
+  .navbar-nav {
+    width: 100%;
+    justify-content: space-around;
+
+    a {
+      font-size: 20pt;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      i {
+        margin-bottom: -6px;
+      }
+      label {
+        font-size: 8pt;
+      }
+    }
+    a.active {
+      color: $main-color !important;
+    }
   }
 }
 
@@ -1160,7 +1177,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
     }
 
     .wedding-section {
-      padding-top: 25px;
+      padding-top: 15px;
 
       .wedding-gallery {
         text-align: center;
@@ -1190,6 +1207,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
       }
 
       + .gallery {
+        margin-top: 20px;
         .masonry {
           margin: 25px 0 0 0;
           height: auto;
@@ -1231,7 +1249,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
       }
 
       .covid {
-        padding: 25px 15px 0;
+        padding: 0 15px 0;
         .protocol {
           margin-bottom: 20px;
         }
@@ -1249,7 +1267,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
       }
 
       .rsvp {
-        padding: 25px 5vw 0;
+        padding: 0 5vw 0;
         .carousel-indicators li {
           background: #ffd700;
           border: none;
@@ -1266,7 +1284,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
           text-align: left;
           margin-bottom: 20px;
           .media-body {
-            margin-top: 5px;
+            margin-top: 10px;
             h2 {
               margin-top: 5px;
               font-size: 10pt;
@@ -1316,17 +1334,6 @@ span.single-timeline-horizontal.spacial-horizontal-line {
     font-style: normal;
     letter-spacing: normal;
     margin-bottom: 0;
-  }
-}
-
-.navbar {
-  display: none;
-  background-color: #fff !important;
-  box-shadow: 0 5px 10px rgb(0, 0, 0);
-
-  .navbar-nav {
-    width: 100%;
-    justify-content: space-evenly;
   }
 }
 
@@ -1464,7 +1471,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 }
 
 @media (max-width: 800px) {
-  .navbar {
+  .navbar-wedding {
     display: block;
   }
   .wedding-background {
@@ -1489,7 +1496,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
         + .gallery {
           padding-top: 25px;
         }
-        + .rsvp {
+        .rsvp {
           padding: 0 60px;
         }
         + .footer {
@@ -1518,7 +1525,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
     .right-panel {
       padding: 20px;
       .wedding-section {
-        + .rsvp {
+        .rsvp {
           padding: 0 30px;
           .carousel {
             min-height: 340px;
@@ -1547,7 +1554,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
       .wedding-section {
         .couples,
         + .gallery,
-        + .rsvp {
+        .rsvp {
           padding: 0;
         }
 

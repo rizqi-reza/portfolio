@@ -196,18 +196,23 @@ export const WeddingPageComponent = (props: any) => {
           >
             <a href="#section-1" className="smooth-menu-wedding">
               <i className="uil uil-estate"></i>
+              <label>Beranda</label>
             </a>
             <a href="#section-2" className="smooth-menu-wedding">
               <i className="uil uil-heart"></i>
+              <label>Mempelai</label>
             </a>
             <a href="#section-3" className="smooth-menu-wedding">
               <i className="uil uil-schedule"></i>
+              <label>Acara</label>
             </a>
             <a href="#section-4" className="smooth-menu-wedding">
               <i className="uil uil-shield-plus"></i>
+              <label>Protokol</label>
             </a>
             <a href="#section-5" className="smooth-menu-wedding">
               <i className="uil uil-comment-lines"></i>
+              <label>Pesan</label>
             </a>
           </Scrollspy>
         </Nav>
@@ -505,6 +510,8 @@ export const WeddingPageComponent = (props: any) => {
                                   <img
                                     src={`${avatarBaseUrl}${data.Avatar}.svg`}
                                     alt={data.Avatar}
+                                    width={60}
+                                    height={60}
                                   />
                                 </div>
                                 <div className="media-body">
