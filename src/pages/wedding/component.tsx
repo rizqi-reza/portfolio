@@ -16,6 +16,7 @@ import {
 } from 'react-bootstrap';
 import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox';
 import Scrollspy from 'react-scrollspy';
+import LazyLoad from 'react-lazyload';
 
 interface IRsvp {
   Nama: string;
@@ -46,10 +47,10 @@ export const WeddingPageComponent = (props: any) => {
   const gSheetBaseUrl = 'https://v1.nocodeapi.com/rizqireza/google_sheets/fBLefUqjinIziQrn';
   const TAB_ID = 'List Tamu';
   const gSheetUrl = `${gSheetBaseUrl}?tabId=${TAB_ID}`;
-  const protocolBaseUrl =
-    'https://res.cloudinary.com/rizqireza/image/upload/v1614187116/Portofolio/Wedding/Protocol/';
-  const avatarBaseUrl =
-    'https://res.cloudinary.com/rizqireza/image/upload/v1611773458/Portofolio/Wedding/Avatar/';
+
+  const cloudinaryBaseUrl = 'https://res.cloudinary.com/rizqireza/image/upload/f_auto/';
+  const protocolBaseUrl = `${cloudinaryBaseUrl}v1614187116/Portofolio/Wedding/Protocol/`;
+  const avatarBaseUrl = `${cloudinaryBaseUrl}v1611773458/Portofolio/Wedding/Avatar/`;
 
   const avatarList = ['man1', 'man2', 'man3', 'woman1', 'woman2', 'woman3'];
 
@@ -262,75 +263,79 @@ export const WeddingPageComponent = (props: any) => {
                 <div className="couples">
                   <h1 className="wedding-subtitle">Mempelai</h1>
                   <span className="wedding-and">&amp;</span>
-                  <Row>
-                    <Col sm={6}>
-                      <div className="wedding-gallery">
-                        <Image
-                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611508039/Portofolio/Wedding/fitri.jpg"
-                          alt="pp_fitri"
-                        />
-                      </div>
-                      <div>
-                        <h1 className="wedding-name">Fitri Febriana</h1>
-                        <p className="wedding-mute-text">
-                          Putri ke-2 dari <br />
-                          Bapak Satimin dan Ibu Lamiyem
-                        </p>
-                      </div>
-                    </Col>
-                    <Col sm={6}>
-                      <div className="wedding-gallery">
-                        <Image
-                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611596646/Portofolio/Wedding/rizqi.jpg"
-                          alt="pp_rizqi"
-                        />
-                      </div>
-                      <div>
-                        <h1 className="wedding-name">Rizqi Reza Valhevi</h1>
-                        <p className="wedding-mute-text">
-                          Putra ke-7 dari <br />
-                          Alm. Bapak H. Saiful Amin dan <br />
-                          Almh. Ibu Hj. Umi Nurrokhmah
-                        </p>
-                      </div>
-                    </Col>
-                  </Row>
+                  <LazyLoad height={500}>
+                    <Row>
+                      <Col sm={6}>
+                        <div className="wedding-gallery">
+                          <Image
+                            src={`${cloudinaryBaseUrl}v1611508039/Portofolio/Wedding/fitri.jpg`}
+                            alt="pp_fitri"
+                          />
+                        </div>
+                        <div>
+                          <h1 className="wedding-name">Fitri Febriana</h1>
+                          <p className="wedding-mute-text">
+                            Putri ke-2 dari <br />
+                            Bapak Satimin dan Ibu Lamiyem
+                          </p>
+                        </div>
+                      </Col>
+                      <Col sm={6}>
+                        <div className="wedding-gallery">
+                          <Image
+                            src={`${cloudinaryBaseUrl}v1611596646/Portofolio/Wedding/rizqi.jpg`}
+                            alt="pp_rizqi"
+                          />
+                        </div>
+                        <div>
+                          <h1 className="wedding-name">Rizqi Reza Valhevi</h1>
+                          <p className="wedding-mute-text">
+                            Putra ke-7 dari <br />
+                            Alm. Bapak H. Saiful Amin dan <br />
+                            Almh. Ibu Hj. Umi Nurrokhmah
+                          </p>
+                        </div>
+                      </Col>
+                    </Row>
+                  </LazyLoad>
                 </div>
               </div>
               <div className="wedding-section gallery">
                 <h1 className="wedding-subtitle">Galeri</h1>
-                <SRLWrapper options={{ buttons: { showDownloadButton: false } }}>
-                  <Row>
-                    <Col sm={6}>
-                      <div className="wedding-gallery masonry">
-                        <img
-                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611598634/Portofolio/Wedding/Gallery/fitri_rizqi_1-3_tzprxp.jpg"
-                          alt=""
-                        />
-                      </div>
-                      <div className="wedding-gallery masonry">
-                        <img
-                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611598640/Portofolio/Wedding/Gallery/fitri_rizqi-13_vuuzzc.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </Col>
-                    <Col sm={6}>
-                      <div className="wedding-gallery masonry">
-                        <img
-                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611598655/Portofolio/Wedding/Gallery/fitri_rizqi-21_xti7pw.jpg"
-                          alt=""
-                        />
-                      </div>
-                      <div className="wedding-gallery masonry">
-                        <img
-                          src="https://res.cloudinary.com/rizqireza/image/upload/v1611598649/Portofolio/Wedding/Gallery/fitri_rizqi-17_f4ecy7.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </Col>
-                  </Row>
-                </SRLWrapper>
+                <LazyLoad height={550} offset={50}>
+                  <SRLWrapper options={{ buttons: { showDownloadButton: false } }}>
+                    <Row>
+                      <Col sm={6}>
+                        <div className="wedding-gallery masonry">
+                          <img
+                            src={`${cloudinaryBaseUrl}v1611598634/Portofolio/Wedding/Gallery/fitri_rizqi_1-3_tzprxp.jpg`}
+                            alt="Galeri 1"
+                          />
+                        </div>
+                        <div className="wedding-gallery masonry">
+                          <img
+                            src={`${cloudinaryBaseUrl}v1611598640/Portofolio/Wedding/Gallery/fitri_rizqi-13_vuuzzc.jpg`}
+                            alt="Galeri 2"
+                          />
+                        </div>
+                      </Col>
+                      <Col sm={6}>
+                        <div className="wedding-gallery masonry">
+                          <img
+                            src={`${cloudinaryBaseUrl}v1611598655/Portofolio/Wedding/Gallery/fitri_rizqi-21_xti7pw.jpg`}
+                            alt="Galeri 3"
+                          />
+                        </div>
+                        <div className="wedding-gallery masonry">
+                          <img
+                            src={`${cloudinaryBaseUrl}v1611598649/Portofolio/Wedding/Gallery/fitri_rizqi-17_f4ecy7.jpg`}
+                            alt="Galeri 4"
+                          />
+                        </div>
+                      </Col>
+                    </Row>
+                  </SRLWrapper>
+                </LazyLoad>
               </div>
               <div className="wedding-section story">
                 <h1 className="wedding-subtitle">Kisah Kami</h1>
