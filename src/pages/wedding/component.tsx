@@ -48,7 +48,8 @@ export const WeddingPageComponent = (props: any) => {
   const TAB_ID = 'List Tamu';
   const gSheetUrl = `${gSheetBaseUrl}?tabId=${TAB_ID}`;
 
-  const cloudinaryBaseUrl = 'https://res.cloudinary.com/rizqireza/image/upload/f_auto/';
+  const cloudinaryBaseUrl =
+    'https://cdn.statically.io/img/res.cloudinary.com/rizqireza/image/upload/';
   const protocolBaseUrl = `${cloudinaryBaseUrl}v1614187116/Portofolio/Wedding/Protocol/`;
   const avatarBaseUrl = `${cloudinaryBaseUrl}v1611773458/Portofolio/Wedding/Avatar/`;
 
@@ -231,7 +232,7 @@ export const WeddingPageComponent = (props: any) => {
               <div className="wedding-box">
                 <Image
                   // src="https://res.cloudinary.com/rizqireza/image/upload/v1611598421/Portofolio/Wedding/bg-image_vionle.svg"
-                  src="https://res.cloudinary.com/rizqireza/image/upload/v1612711316/Portofolio/Wedding/couple_pgi0ut.svg"
+                  src={`${cloudinaryBaseUrl}v1612711316/Portofolio/Wedding/couple_pgi0ut.svg`}
                   alt="cover_invitation"
                   width="100%"
                   height="100%"
@@ -270,6 +271,8 @@ export const WeddingPageComponent = (props: any) => {
                           <Image
                             src={`${cloudinaryBaseUrl}v1611508039/Portofolio/Wedding/fitri.jpg`}
                             alt="pp_fitri"
+                            width={252}
+                            height={335}
                           />
                         </div>
                         <div>
@@ -285,6 +288,8 @@ export const WeddingPageComponent = (props: any) => {
                           <Image
                             src={`${cloudinaryBaseUrl}v1611596646/Portofolio/Wedding/rizqi.jpg`}
                             alt="pp_rizqi"
+                            width={252}
+                            height={335}
                           />
                         </div>
                         <div>
@@ -374,14 +379,16 @@ export const WeddingPageComponent = (props: any) => {
               </Row>
               <div className="wedding-section maps">
                 <h1 className="wedding-subtitle">Lokasi Resepsi</h1>
-                <iframe
-                  title="wedding-maps"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.819024310843!2d106.70089811529954!3d-6.154987662043638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8147d3a779d%3A0x1f5212d96ffa9acd!2sSMA%20IT%20ALMAKA!5e0!3m2!1sen!2sid!4v1611601818823!5m2!1sen!2sid"
-                  width="100%"
-                  height="400"
-                  aria-hidden="false"
-                  style={{ border: 'none' }}
-                ></iframe>
+                <LazyLoad height={400} offset={50}>
+                  <iframe
+                    title="wedding-maps"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.819024310843!2d106.70089811529954!3d-6.154987662043638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8147d3a779d%3A0x1f5212d96ffa9acd!2sSMA%20IT%20ALMAKA!5e0!3m2!1sen!2sid!4v1611601818823!5m2!1sen!2sid"
+                    width="100%"
+                    height="400"
+                    aria-hidden="false"
+                    style={{ border: 'none' }}
+                  />
+                </LazyLoad>
               </div>
               <div className="wedding-section countdown">
                 <h1 className="wedding-subtitle">Datang ya!</h1>
