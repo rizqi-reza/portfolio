@@ -424,8 +424,6 @@ export const WeddingPageComponent = (props: any) => {
                             <img
                               width={64}
                               height={64}
-                              https://res.cloudinary.com/rizqireza/image/upload/v1614187116/Portofolio/Wedding/Protocol/protocol1.svg
-                              v1614187116
                               src={`${protocolBaseUrl}protocol1.svg`}
                               alt="protocol-1"
                             />
