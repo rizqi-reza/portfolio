@@ -74,11 +74,6 @@ $(document).ready(function () {
       );
   });
 
-  $('body').scrollspy({
-    target: '.navbar-collapse',
-    offset: 100,
-  });
-
   // 3. Progress-bar
 
   var dataToggleTooTip = $('[data-toggle="tooltip"]');
