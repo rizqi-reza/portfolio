@@ -56,6 +56,7 @@ export const WeddingPageComponent = (props: any) => {
   useEffect(() => {
     setInterval(() => updateCountdown(), 1000);
     getRsvp();
+    document.title = 'Pernikahan Fitri & Rizqi';
   }, []);
 
   const chunkRsvp = (size: number, source: IRsvp[]) => {
@@ -184,7 +185,7 @@ export const WeddingPageComponent = (props: any) => {
 
   return (
     <SimpleReactLightbox>
-      <Favicon url="https://drive.google.com/uc?export=view&id=1HFtSQHgkxGnq6iD3d5Q2ggoc8KwJOQco" />
+      <Favicon url="https://res.cloudinary.com/rizqireza/image/upload/v1614615901/Portofolio/Wedding/favicon_iwtbqz.ico" />
       <Navbar expand={true} fixed="bottom" className="navbar-wedding">
         <Nav fill={true}>
           <Scrollspy
@@ -229,7 +230,6 @@ export const WeddingPageComponent = (props: any) => {
               </div>
               <div className="wedding-box">
                 <Image
-                  // src="https://res.cloudinary.com/rizqireza/image/upload/v1611598421/Portofolio/Wedding/bg-image_vionle.svg"
                   src={`${cloudinaryBaseUrl}v1612711316/Portofolio/Wedding/couple_pgi0ut.svg`}
                   alt="cover_invitation"
                   width="100%"
