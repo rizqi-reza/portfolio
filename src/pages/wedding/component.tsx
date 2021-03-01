@@ -47,9 +47,7 @@ export const WeddingPageComponent = (props: any) => {
   const gSheetBaseUrl = 'https://v1.nocodeapi.com/rizqireza/google_sheets/fBLefUqjinIziQrn';
   const TAB_ID = 'List Tamu';
   const gSheetUrl = `${gSheetBaseUrl}?tabId=${TAB_ID}`;
-
-  const cloudinaryBaseUrl =
-    'https://cdn.statically.io/img/res.cloudinary.com/rizqireza/image/upload/';
+  const cloudinaryBaseUrl = 'https://res.cloudinary.com/rizqireza/image/upload/';
   const protocolBaseUrl = `${cloudinaryBaseUrl}v1614187116/Portofolio/Wedding/Protocol/`;
   const avatarBaseUrl = `${cloudinaryBaseUrl}v1611773458/Portofolio/Wedding/Avatar/`;
 
@@ -426,6 +424,8 @@ export const WeddingPageComponent = (props: any) => {
                             <img
                               width={64}
                               height={64}
+                              https://res.cloudinary.com/rizqireza/image/upload/v1614187116/Portofolio/Wedding/Protocol/protocol1.svg
+                              v1614187116
                               src={`${protocolBaseUrl}protocol1.svg`}
                               alt="protocol-1"
                             />
