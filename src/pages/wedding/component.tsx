@@ -230,7 +230,7 @@ export const WeddingPageComponent = (props: any) => {
               </div>
               <div className="wedding-box">
                 <Image
-                  src={`${cloudinaryBaseUrl}v1612711316/Portofolio/Wedding/couple_pgi0ut.svg`}
+                  src={`${cloudinaryBaseUrl}v1614792570/Portofolio/Wedding/wedding-bg.png`}
                   alt="cover_invitation"
                   width="100%"
                   height="100%"
@@ -274,7 +274,7 @@ export const WeddingPageComponent = (props: any) => {
                           />
                         </div>
                         <div>
-                          <h1 className="wedding-name">Fitri Febriana</h1>
+                          <h1 className="wedding-name">Fitri Febriana, S.E</h1>
                           <p className="wedding-mute-text">
                             Putri ke-2 dari <br />
                             Bapak Satimin dan Ibu Lamiyem
@@ -291,7 +291,7 @@ export const WeddingPageComponent = (props: any) => {
                           />
                         </div>
                         <div>
-                          <h1 className="wedding-name">Rizqi Reza Valhevi</h1>
+                          <h1 className="wedding-name">Rizqi Reza Valhevi, S.Kom</h1>
                           <p className="wedding-mute-text">
                             Putra ke-7 dari <br />
                             Alm. Bapak H. Saiful Amin dan <br />

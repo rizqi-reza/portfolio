@@ -1114,7 +1114,9 @@ span.single-timeline-horizontal.spacial-horizontal-line {
     align-content: center;
     align-items: center;
     img {
-      max-height: 600px;
+      position: absolute;
+      left: 0;
+      bottom: -50px;
     }
   }
 
@@ -1470,7 +1472,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
   }
   .wedding-container {
     .left-panel {
-      height: 105vw;
+      height: 115vw;
       padding-top: 15px;
       overflow: hidden;
       position: relative;
@@ -1506,9 +1508,14 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 }
 
 @media (max-width: 540px) {
+  .wedding-background {
+    img {
+      bottom: -28px !important;
+    }
+  }
   .wedding-container {
     .left-panel {
-      height: 140vw;
+      height: 120vw;
       padding: 6vw;
     }
     .right-panel {
@@ -1565,7 +1572,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 @media (max-width: 320px) {
   .wedding-container {
     .left-panel {
-      height: 150vw;
+      height: 125vw;
     }
   }
 }
