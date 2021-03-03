@@ -230,7 +230,7 @@ export const WeddingPageComponent = (props: any) => {
               </div>
               <div className="wedding-box">
                 <Image
-                  src={`${cloudinaryBaseUrl}v1614792570/Portofolio/Wedding/wedding-bg.png`}
+                  src={`${cloudinaryBaseUrl}v1614794759/Portofolio/Wedding/wedding-bg_lfxsan.png`}
                   alt="cover_invitation"
                   width="100%"
                   height="100%"
