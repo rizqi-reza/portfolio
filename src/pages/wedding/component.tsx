@@ -71,8 +71,6 @@ export const WeddingPageComponent = (props: any) => {
   useEffect(() => {
     if (playAudio) {
       audio.play();
-      audio.muted = false;
-      audio.loop = true;
     } else {
       audio.pause();
     }
