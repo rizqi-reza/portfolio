@@ -197,7 +197,6 @@ export const WeddingPageComponent = (props: any) => {
   };
 
   const handlePlayAudio = (e) => {
-    e.preventDefault();
     setPlayAudio(!playAudio);
   };
 
@@ -563,11 +562,7 @@ export const WeddingPageComponent = (props: any) => {
                 Made with <i className="uil uil-heart"></i> by @rizqirezz
               </p>
 
-              <Button
-                className="wedding-play-audio"
-                onMouseUp={handlePlayAudio}
-                onTouchEnd={handlePlayAudio}
-              >
+              <Button className="wedding-play-audio" onTouchEnd={handlePlayAudio}>
                 {playAudio ? (
                   <i className="uil uil-music-note"></i>
                 ) : (
