@@ -62,19 +62,15 @@ export const WeddingPageComponent = (props: any) => {
     setInterval(() => updateCountdown(), 1000);
     getRsvp();
 
-    // window.addEventListener('touchstart', () => {
-    //   !playAudio && setPlayAudio(true);
-    // });
     audio.addEventListener('ended', () => setPlayAudio(false));
-
     return () => {
       audio.removeEventListener('ended', () => setPlayAudio(false));
-      // window.removeEventListener('touchstart', () => !playAudio && setPlayAudio(true));
     };
   }, []);
 
   useEffect(() => {
     playAudio ? audio.play() : audio.pause();
+    alert('audio changed');
   }, [playAudio]);
 
   const chunkRsvp = (size: number, source: IRsvp[]) => {
