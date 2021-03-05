@@ -62,9 +62,14 @@ export const WeddingPageComponent = (props: any) => {
     setInterval(() => updateCountdown(), 1000);
     getRsvp();
 
+    window.addEventListener('touchstart', () => {
+      !playAudio && setPlayAudio(true);
+    });
     audio.addEventListener('ended', () => setPlayAudio(false));
+
     return () => {
       audio.removeEventListener('ended', () => setPlayAudio(false));
+      window.removeEventListener('touchstart', () => !playAudio && setPlayAudio(true));
     };
   }, []);
 
@@ -558,11 +563,7 @@ export const WeddingPageComponent = (props: any) => {
                 Made with <i className="uil uil-heart"></i> by @rizqirezz
               </p>
 
-              <Button
-                className="wedding-play-audio"
-                onClick={() => setPlayAudio(!playAudio)}
-                onTouchEnd={() => setPlayAudio(!playAudio)}
-              >
+              <Button className="wedding-play-audio" onClick={() => setPlayAudio(!playAudio)}>
                 {playAudio ? (
                   <i className="uil uil-music-note"></i>
                 ) : (
