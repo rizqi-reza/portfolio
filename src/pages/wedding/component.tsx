@@ -41,7 +41,7 @@ export const WeddingPageComponent = (props: any) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const [audio] = useState(new Audio(backsound));
-  const [playAudio, setPlayAudio] = useState<boolean>(true);
+  const [playAudio, setPlayAudio] = useState<boolean>(false);
 
   const [rsvp, setRsvp] = useState<IRsvp[]>([]);
   const [nama, setNama] = useState<string>();
