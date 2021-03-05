@@ -561,7 +561,7 @@ export const WeddingPageComponent = (props: any) => {
               <Button
                 className="wedding-play-audio"
                 onClick={() => setPlayAudio(!playAudio)}
-                onTouchStart={() => setPlayAudio(!playAudio)}
+                onTouchEnd={() => setPlayAudio(!playAudio)}
               >
                 {playAudio ? (
                   <i className="uil uil-music-note"></i>
