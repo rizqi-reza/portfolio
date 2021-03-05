@@ -1302,6 +1302,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
     }
 
     .wedding-play-audio {
+      touch-action: manipulation;
       bottom: 90px;
       position: fixed;
       right: 20px;

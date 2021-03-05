@@ -40,7 +40,7 @@ export const WeddingPageComponent = (props: any) => {
   const [validated, setValidated] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const [audio] = useState(new Audio(backsound));
+  const [audio] = useState<HTMLAudioElement>(new Audio(backsound));
   const [playAudio, setPlayAudio] = useState<boolean>(false);
 
   const [rsvp, setRsvp] = useState<IRsvp[]>([]);
@@ -203,7 +203,6 @@ export const WeddingPageComponent = (props: any) => {
   };
 
   const handlePlayAudio = (e) => {
-    e.preventDefault();
     setPlayAudio(!playAudio);
   };
 
