@@ -69,8 +69,13 @@ export const WeddingPageComponent = (props: any) => {
   }, []);
 
   useEffect(() => {
-    playAudio ? audio.play() : audio.pause();
-    alert(`audio changed ${playAudio}`);
+    if (playAudio) {
+      audio.play();
+      audio.muted = false;
+      audio.loop = true;
+    } else {
+      audio.pause();
+    }
   }, [playAudio]);
 
   const chunkRsvp = (size: number, source: IRsvp[]) => {
