@@ -61,7 +61,6 @@ export const WeddingPageComponent = (props: any) => {
     document.title = 'Pernikahan Fitri & Rizqi';
     setInterval(() => updateCountdown(), 1000);
     getRsvp();
-    setPlayAudio(true);
 
     audio.addEventListener('ended', () => setPlayAudio(false));
     return () => {
