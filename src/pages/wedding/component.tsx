@@ -197,6 +197,7 @@ export const WeddingPageComponent = (props: any) => {
   };
 
   const handlePlayAudio = (e) => {
+    e.preventDefault();
     setPlayAudio(!playAudio);
   };
 
