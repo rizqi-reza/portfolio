@@ -69,11 +69,7 @@ export const WeddingPageComponent = (props: any) => {
   }, []);
 
   useEffect(() => {
-    if (playAudio) {
-      audio.play();
-    } else {
-      audio.pause();
-    }
+    playAudio ? audio.play() : audio.pause();
   }, [playAudio]);
 
   const chunkRsvp = (size: number, source: IRsvp[]) => {
@@ -566,7 +562,11 @@ export const WeddingPageComponent = (props: any) => {
                 Made with <i className="uil uil-heart"></i> by @rizqirezz
               </p>
 
-              <Button className="wedding-play-audio" onClick={handlePlayAudio}>
+              <Button
+                className="wedding-play-audio"
+                onMouseUp={handlePlayAudio}
+                onTouchEnd={handlePlayAudio}
+              >
                 {playAudio ? (
                   <i className="uil uil-music-note"></i>
                 ) : (
