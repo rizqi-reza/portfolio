@@ -31,6 +31,14 @@ module.exports = {
         },
       },
       {
+        test: /\.mp3$/,
+        loader: 'file-loader',
+        options:{
+          name: '[name].[ext]',
+          outputPath: 'music',
+        }
+      },
+      {
         test: /\.s?css$/i,
         use: [
           // Creates `stclyle` nodes from JS strings

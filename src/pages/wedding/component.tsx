@@ -17,6 +17,7 @@ import {
 import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox';
 import Scrollspy from 'react-scrollspy';
 import LazyLoad from 'react-lazyload';
+const backsound = require('assets/music/perfect.mp3');
 
 interface IRsvp {
   Nama: string;
@@ -39,6 +40,9 @@ export const WeddingPageComponent = (props: any) => {
   const [validated, setValidated] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
+  const [audio] = useState(new Audio(backsound));
+  const [playAudio, setPlayAudio] = useState<boolean>(true);
+
   const [rsvp, setRsvp] = useState<IRsvp[]>([]);
   const [nama, setNama] = useState<string>();
   const [avatar, setAvatar] = useState<string>();
@@ -54,10 +58,19 @@ export const WeddingPageComponent = (props: any) => {
   const avatarList = ['man1', 'man2', 'man3', 'woman1', 'woman2', 'woman3'];
 
   useEffect(() => {
+    document.title = 'Pernikahan Fitri & Rizqi';
     setInterval(() => updateCountdown(), 1000);
     getRsvp();
-    document.title = 'Pernikahan Fitri & Rizqi';
+
+    audio.addEventListener('ended', () => setPlayAudio(false));
+    return () => {
+      audio.removeEventListener('ended', () => setPlayAudio(false));
+    };
   }, []);
+
+  useEffect(() => {
+    playAudio ? audio.play() : audio.pause();
+  }, [playAudio]);
 
   const chunkRsvp = (size: number, source: IRsvp[]) => {
     let data = [...source];
@@ -239,7 +252,6 @@ export const WeddingPageComponent = (props: any) => {
             </section>
           </Col>
           <Col lg={6} className="right-panel">
-            <Row></Row>
             <p className="wedding-mute-text">
               <i>Bismillahirrahmanirrahim</i>
             </p>
@@ -537,15 +549,27 @@ export const WeddingPageComponent = (props: any) => {
                   )}
                 </div>
               </div>
-              <div className="wedding-section thank">
-                <h1 className="wedding-subtitle">Wassalamu'alaykum Wr. Wb.</h1>
-              </div>
-              <div className="wedding-section footer">
-                <p className="wedding-mute-text">
-                  Made with <i className="uil uil-heart"></i> by @rizqirezz
-                </p>
-              </div>
             </section>
+            <div className="wedding-section thank">
+              <h1 className="wedding-subtitle">Wassalamu'alaykum Wr. Wb.</h1>
+            </div>
+            <div className="wedding-section footer">
+              <p className="wedding-mute-text">
+                Made with <i className="uil uil-heart"></i> by @rizqirezz
+              </p>
+              {/* <audio controls autoPlay>
+                <source src={backsound} type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio> */}
+
+              <Button className="wedding-play-audio" onClick={() => setPlayAudio(!playAudio)}>
+                {playAudio ? (
+                  <i className="uil uil-music-note"></i>
+                ) : (
+                  <i className="uil uil-music-tune-slash"></i>
+                )}
+              </Button>
+            </div>
           </Col>
         </Row>
       </div>
