@@ -557,12 +557,12 @@ export const WeddingPageComponent = (props: any) => {
               <p className="wedding-mute-text">
                 Made with <i className="uil uil-heart"></i> by @rizqirezz
               </p>
-              {/* <audio controls autoPlay>
-                <source src={backsound} type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio> */}
 
-              <Button className="wedding-play-audio" onClick={() => setPlayAudio(!playAudio)}>
+              <Button
+                className="wedding-play-audio"
+                onClick={() => setPlayAudio(!playAudio)}
+                onTouchStart={() => setPlayAudio(!playAudio)}
+              >
                 {playAudio ? (
                   <i className="uil uil-music-note"></i>
                 ) : (
