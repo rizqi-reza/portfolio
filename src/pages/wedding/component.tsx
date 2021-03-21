@@ -17,6 +17,7 @@ import {
 import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox';
 import Scrollspy from 'react-scrollspy';
 import LazyLoad from 'react-lazyload';
+import { GoogleSpreadsheet } from 'google-spreadsheet';
 const backsound = require('assets/music/perfect.mp3');
 
 interface IRsvp {
@@ -44,13 +45,15 @@ export const WeddingPageComponent = (props: any) => {
   const [playAudio, setPlayAudio] = useState<boolean>(false);
 
   const [rsvp, setRsvp] = useState<IRsvp[]>([]);
-  const [nama, setNama] = useState<string>();
-  const [avatar, setAvatar] = useState<string>();
-  const [hadir, setHadir] = useState<string>();
-  const [pesan, setPesan] = useState<string>();
-  const gSheetBaseUrl = 'https://v1.nocodeapi.com/rizqireza/google_sheets/fBLefUqjinIziQrn';
-  const TAB_ID = 'List Tamu';
-  const gSheetUrl = `${gSheetBaseUrl}?tabId=${TAB_ID}`;
+  const [Nama, setNama] = useState<string>();
+  const [Avatar, setAvatar] = useState<string>();
+  const [Hadir, setHadir] = useState<string>();
+  const [Pesan, setPesan] = useState<string>();
+  const gSpreadsheetId = '14hqIMy6yn31-DA0PjRiQRgPej-0B7MHtuxGPktQRzAQ';
+  const gSheetClientEmail = 'rsvp-account@wedding-302818.iam.gserviceaccount.com';
+  const gSheetPrivateKey =
+    '-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCJJARmX2O/1JHn\nQIagIBGmOCRl8eGV0hUSHD6vGrIv+TfyLhhGiDwCnRTdJ4hbiGLdxwWC1SX0tbLn\ntSCeNNEDH9mcNR4Y9UWPN35CMF+uaE+kiHd5QJPqdTTNSoIKopzuY64iDNTLpuwI\n0OPieRBs2SZEtKJvQvjq5ihm/2SEt6vTJsYKdNrmRfxTaPlnKrHEYO6nU4kM55XV\nQqse5VJvglBCVOEg6lbgm6PkcweG5LW95McEZZXzELXHx8eEzeyWA/g5K3j009bU\nHN49fcy8xwPUzpD87PUvCB0olgOhvvmzk7hRaetAkRWnIlygmgzSN6Ra/zry3Hqp\nKwVUTpofAgMBAAECggEABG6bjctrZ9mw1W5qa2Zd66dI1dqZVcQyViF/jR0pwQ8m\n1bbTpgPlHJiDAhqy93JS76Ps86t7zIrKu15JLZO7ZYRz/e5hiKD0nIpIlE8H6JUK\nbeDTK6IApcUf7bqItVtIAxRJnmQXxHUij65gjwMmmr3x1KqZzUq2zLCfgaSjVP6m\ne8E6Qm/NIclpKDH2K9t2DFDBA81BO92rjQfGPMEzpQLjl2VeuyppNWePeaCQk7R8\nuyDx+NVFznBLpTc6Wx2u0JDqVkN4LHPVFCAjrZXBM7arzz+NoJ8aq5R6rXCzqALv\nIcXXTkhELwtpza3LWfvR52N3MwY31vUTfFXK+8md4QKBgQC/lbM+DCnUj5uD4fUw\nLoH87tyBpuI6RVriPIw+ERfuXeDTTEvwHuN24j9vq7rpVFkj8oH/UnliF9W29tVQ\ntCX2UDslK2+g7c0syLPD6p0xsk8CiUHlwJFoYpWCJ1Rbq8hkX2ZGSVurtxj8E365\nRi0fVKaXTYmmMTwPt+BMZ3TqeQKBgQC3QCU04E9tnDh/gE4H2m0CN5DV2T+gWe7q\n3qgCoB8MxqCwqJAOrUfbbEH9cgGU26H/lvfMjnqCNtYuQX3Btk1RnojlhmJZH+yc\n/u9Kdns49bHWhG9QFGHruAC3TEUmTaR/AOb4Lk1JDEw+MFVurmiXC00NPC9fbpmY\nddnpzo+DVwKBgG1gIqeOvCbdIbTGQHuUYaOsHnlqdAc+Zyd317zrd1UfhWY8TbI1\ngDjz67FuQlRJUmbCYVMJm8DTyLAe9SOQ5YdcwJd019LxUEx7/J0iCUJBAPh6sgNf\nz+PfPGnE2FVJmisrh7Ei2lILQxlOa++MT+BuLHl+y9H0k8yJdmVIPyhJAoGAFstL\n1X/xYVkFThbPnfp1hMkUowUa/P8y0NRRYcI5GoW6hz7wbGLxhUG6E6SSvcl0JS7K\nNA+k/X2Etsw+sFHU3Eo0DRjiMuPdssmjSkfim/sz29MtZXCjnYaN0D8Ueuc9hu69\nzDE2O9fjw/iPJ+1Z5S/qrbLG0cAYKva93G9tOpECgYAGF886/53aCJtF2SwkOTwd\n+OSMKn03FEzjFoaG97uBYVxwBx/UvykEMaCx9WcBVJfRWl8b39jC/atuz3oDzpti\n3doupyLG/gwN5Ky/2pFFrtlwj1gaU2TuDci69A97D6Qod9nH/Pdv8CUhywkrMbjQ\noIG3X41ekZZp1RdSoHv8GQ==\n-----END PRIVATE KEY-----\n';
+
   const cloudinaryBaseUrl = 'https://res.cloudinary.com/rizqireza/image/upload/';
   const protocolBaseUrl = `${cloudinaryBaseUrl}v1614187116/Portofolio/Wedding/Protocol/`;
   const avatarBaseUrl = `${cloudinaryBaseUrl}v1611773458/Portofolio/Wedding/Avatar/`;
@@ -83,22 +86,33 @@ export const WeddingPageComponent = (props: any) => {
     return result;
   };
 
+  const getSheet = async () => {
+    const doc = new GoogleSpreadsheet(gSpreadsheetId);
+    // await doc.useApiKey('AIzaSyBEFDMPkR4t3a8r8lOdpPTyOKXLXSMyAxQ');
+    await doc.useServiceAccountAuth({
+      client_email: gSheetClientEmail,
+      private_key: gSheetPrivateKey,
+    });
+    await doc.loadInfo(); // loads sheets
+    const sheet = doc.sheetsByIndex[0];
+    return sheet;
+  };
+
   const getRsvp = async () => {
+    setLoading(true);
+    const sheet = await getSheet();
+    const rows = await sheet.getRows();
+    setRsvp(rows);
+    setLoading(false);
+  };
+
+  const addRsvp = async (row) => {
     try {
-      setLoading(true);
-      await fetch(gSheetUrl, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }).then(async (response) => {
-        const rsvp = await response.json();
-        const data = rsvp?.data?.reverse().filter((v) => v.Pesan !== '');
-        setRsvp(data);
-        setLoading(false);
-      });
-    } catch (error) {
-      console.warn('Error:', error);
+      const sheet = await getSheet();
+      await sheet.addRow(row);
+    } catch (e) {
+      console.error('Error: ', e);
+      alert(e);
     }
   };
 
@@ -142,28 +156,10 @@ export const WeddingPageComponent = (props: any) => {
       return;
     }
 
-    const Nama = nama;
-    const Avatar = avatar;
-    const Hadir = hadir;
-    const Pesan = pesan;
     const currentDate = new Date();
     const Tanggal = `${currentDate.getDate()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`;
-    const body = [[Nama, Avatar, Hadir, Pesan, Tanggal]];
-
-    try {
-      await fetch(gSheetUrl, {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      clearAllField();
-      setMessage('Alhamdulillah, pesan sudah disampaikan. Terima kasih ^_^');
-    } catch (error) {
-      setMessage('Maaf, pesan gagal terkirim :( Silakan coba lagi yaa...');
-      console.error('Error:', error);
-    }
+    const row = { Nama, Avatar, Hadir, Pesan, Tanggal };
+    await addRsvp(row);
   };
 
   const clearAllField = () => {
@@ -202,7 +198,7 @@ export const WeddingPageComponent = (props: any) => {
 
   return (
     <SimpleReactLightbox>
-      <Favicon url="https://res.cloudinary.com/rizqireza/image/upload/v1614615901/Portofolio/Wedding/favicon_iwtbqz.ico" />
+      <Favicon url={`${cloudinaryBaseUrl}v1614615901/Portofolio/Wedding/favicon_iwtbqz.ico`} />
       <Navbar expand={true} fixed="bottom" className="navbar-wedding">
         <Nav fill={true}>
           <Scrollspy
@@ -247,7 +243,7 @@ export const WeddingPageComponent = (props: any) => {
               </div>
               <div className="wedding-box">
                 <Image
-                  src={`${cloudinaryBaseUrl}v1614794759/Portofolio/Wedding/wedding-bg_lfxsan.png`}
+                  src={`${cloudinaryBaseUrl}v1616266843/Portofolio/Wedding/wedding-bg-v2_boeome.png`}
                   alt="cover_invitation"
                   width="100%"
                   height="100%"
@@ -620,7 +616,7 @@ export const WeddingPageComponent = (props: any) => {
                   </div>
                   <Form.Control.Feedback
                     type="invalid"
-                    style={{ display: validated && !avatar ? 'block' : 'none' }}
+                    style={{ display: validated && !Avatar ? 'block' : 'none' }}
                   >
                     Avatar harus dipilih
                   </Form.Control.Feedback>
@@ -646,8 +642,8 @@ export const WeddingPageComponent = (props: any) => {
                 <Form.Group controlId="validation4">
                   <Form.Label>Pesan untuk pengantin</Form.Label>
                   <Form.Control
-                    as="textarea"
                     rows={4}
+                    as="textarea"
                     placeholder="Pesan atau doa untuk pengantin"
                     onChange={handleChangePesan}
                   />

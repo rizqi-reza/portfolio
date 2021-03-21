@@ -8,6 +8,12 @@ const resolveAlias = require('./tsconfig-webpack-alias');
 
 module.exports = () => {
   return {
+    node: {
+      fs: 'empty',
+      child_process : 'empty',
+      net : 'empty',
+      tls: 'empty',
+    },
     devtool: 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'build'),
