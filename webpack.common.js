@@ -2,6 +2,12 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  node: {
+    fs: 'empty',
+    child_process : 'empty',
+    net : 'empty',
+    tls: 'empty',
+  },
   entry: {
     main: path.join(__dirname, '/src/index.tsx'),
   },
