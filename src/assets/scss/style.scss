@@ -1116,7 +1116,8 @@ span.single-timeline-horizontal.spacial-horizontal-line {
     img {
       position: absolute;
       left: 0;
-      bottom: -7vw;
+      bottom: -10px;
+      padding: 11vw 11vw 0;
       -webkit-filter: drop-shadow(2px 1px 0 white) drop-shadow(-1px -1px 0 white);
       filter: drop-shadow(3px 1px 0 white) drop-shadow(-3px -3px 0 white);
     }
@@ -1455,6 +1456,11 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 }
 
 @media (max-width: 1024px) {
+  .wedding-background {
+    img {
+      padding: 2vw 2vw 0 !important;
+    }
+  }
   .wedding-container {
     .left-panel {
       padding: 5vh 0;
@@ -1478,7 +1484,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {
 @media (max-width: 800px) {
   .wedding-background {
     img {
-      bottom: -13vw !important;
+      padding: 12vw 12vw 0 !important;
     }
   }
   .navbar-wedding {

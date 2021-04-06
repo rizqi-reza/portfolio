@@ -44,11 +44,14 @@ export const WeddingPageComponent = (props: any) => {
   const [audio] = useState<HTMLAudioElement>(new Audio(backsound));
   const [playAudio, setPlayAudio] = useState<boolean>(false);
 
+  const [sheet, setSheet] = useState<any>();
+
   const [rsvp, setRsvp] = useState<IRsvp[]>([]);
   const [Nama, setNama] = useState<string>();
   const [Avatar, setAvatar] = useState<string>();
   const [Hadir, setHadir] = useState<string>();
   const [Pesan, setPesan] = useState<string>();
+
   const gSpreadsheetId = '14hqIMy6yn31-DA0PjRiQRgPej-0B7MHtuxGPktQRzAQ';
   const gSheetClientEmail = 'rsvp-account@wedding-302818.iam.gserviceaccount.com';
   const gSheetPrivateKey =
@@ -63,7 +66,14 @@ export const WeddingPageComponent = (props: any) => {
   useEffect(() => {
     document.title = 'Pernikahan Fitri & Rizqi';
     setInterval(() => updateCountdown(), 1000);
-    getRsvp();
+
+    const prepareSheet = async () => {
+      const sheet = await getSheet();
+      setSheet(sheet);
+      getRsvp(sheet);
+    };
+
+    prepareSheet();
 
     audio.addEventListener('ended', () => setPlayAudio(false));
     return () => {
@@ -87,32 +97,34 @@ export const WeddingPageComponent = (props: any) => {
   };
 
   const getSheet = async () => {
-    const doc = new GoogleSpreadsheet(gSpreadsheetId);
-    // await doc.useApiKey('AIzaSyBEFDMPkR4t3a8r8lOdpPTyOKXLXSMyAxQ');
-    await doc.useServiceAccountAuth({
-      client_email: gSheetClientEmail,
-      private_key: gSheetPrivateKey,
-    });
-    await doc.loadInfo(); // loads sheets
-    const sheet = doc.sheetsByIndex[0];
-    return sheet;
+    try {
+      const doc = new GoogleSpreadsheet(gSpreadsheetId);
+      await doc.useServiceAccountAuth({
+        client_email: gSheetClientEmail,
+        private_key: gSheetPrivateKey,
+      });
+
+      await doc.loadInfo(); // loads sheets
+
+      const sheet = doc.sheetsByIndex[0];
+      return sheet;
+    } catch (e) {
+      console.error('Error get Sheet: ', e);
+    }
   };
 
-  const getRsvp = async () => {
+  const getRsvp = async (sheet) => {
     setLoading(true);
-    const sheet = await getSheet();
-    const rows = await sheet.getRows();
+    const rows = await sheet?.getRows();
     setRsvp(rows);
     setLoading(false);
   };
 
   const addRsvp = async (row) => {
     try {
-      const sheet = await getSheet();
-      await sheet.addRow(row);
+      await sheet?.addRow(row);
     } catch (e) {
       console.error('Error: ', e);
-      alert(e);
     }
   };
 
@@ -173,7 +185,7 @@ export const WeddingPageComponent = (props: any) => {
     setShowModal(false);
     clearAllField();
     setMessage('');
-    getRsvp();
+    getRsvp(sheet);
   };
 
   const handleChangeName = (e) => {
@@ -243,7 +255,7 @@ export const WeddingPageComponent = (props: any) => {
               </div>
               <div className="wedding-box">
                 <Image
-                  src={`${cloudinaryBaseUrl}v1616266843/Portofolio/Wedding/wedding-bg-v2_boeome.png`}
+                  src={`${cloudinaryBaseUrl}v1616347403/Portofolio/Wedding/wedding-bg-illustrate_redesign_v2_ecdnpx.svg`}
                   alt="cover_invitation"
                   width="100%"
                   height="100%"
@@ -538,7 +550,7 @@ export const WeddingPageComponent = (props: any) => {
                                 </div>
                                 <div className="media-body">
                                   <h2 className="mt-0 mb-1">{data.Nama}</h2>
-                                  <p>{data.Pesan}</p>
+                                  <p>{data.Pesan || '-'}</p>
                                 </div>
                               </li>
                             ))}
