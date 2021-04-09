@@ -18,6 +18,15 @@ import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox';
 import Scrollspy from 'react-scrollspy';
 import LazyLoad from 'react-lazyload';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import {
+  UilHeart,
+  UilMusicNote,
+  UilMusicTuneSlash,
+  UilEstate,
+  UilSchedule,
+  UilShieldPlus,
+  UilCommentMessage,
+} from '@iconscout/react-unicons';
 const backsound = require('assets/music/perfect.mp3');
 
 interface IRsvp {
@@ -221,23 +230,23 @@ export const WeddingPageComponent = (props: any) => {
             offset={-10}
           >
             <a href="#section-1" className="smooth-menu-wedding">
-              <i className="uil uil-estate"></i>
+              <UilEstate />
               <label>Beranda</label>
             </a>
             <a href="#section-2" className="smooth-menu-wedding">
-              <i className="uil uil-heart"></i>
+              <UilHeart />
               <label>Mempelai</label>
             </a>
             <a href="#section-3" className="smooth-menu-wedding">
-              <i className="uil uil-schedule"></i>
+              <UilSchedule />
               <label>Acara</label>
             </a>
             <a href="#section-4" className="smooth-menu-wedding">
-              <i className="uil uil-shield-plus"></i>
+              <UilShieldPlus />
               <label>Protokol</label>
             </a>
             <a href="#section-5" className="smooth-menu-wedding">
-              <i className="uil uil-comment-lines"></i>
+              <UilCommentMessage />
               <label>Pesan</label>
             </a>
           </Scrollspy>
@@ -367,16 +376,36 @@ export const WeddingPageComponent = (props: any) => {
               <div className="wedding-section story">
                 <h1 className="wedding-subtitle">Kisah Kami</h1>
                 <p className="p_kisah">
-                  <b>Jadi,</b>
+                  <b>&#8226; Juni 2020 &#8226;</b>
                   <br />
-                  It is a long established fact that a reader will be distracted by the readable
-                  content of a page when looking at its layout. The point of using Lorem Ipsum is
-                  that it has a more-or-less normal distribution of letters, as opposed to using
-                  'Content here, content here', making it look like readable English. Many desktop
-                  publishing packages and web page editors now use Lorem Ipsum as their default
-                  model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                  their infancy. Various versions have evolved over the years, sometimes by
-                  accident, sometimes on purpose (injected humour and the like).
+                  Kisah Kami berawal dari sosial media, dari salah satu mutual teman Kami. Pada saat
+                  itu PSBB di jakarta sedang berlangsung dengan ketat, sehingga mengharuskan Kami
+                  saling mengenal lebih jauh hanya sebatas chat whatsapp.
+                  <br />
+                  <br />
+                  <b>&#8226; Juli 2020 &#8226;</b>
+                  <br />
+                  Akhirnya PSBB berakhir dan berganti menjadi PSBB transisi, ini adalah kali pertama
+                  Kami bisa bertemu dan saling mengenalkan dengan keluarga masing-masing.
+                  <br />
+                  <br />
+                  <b>&#8226; September 2020 &#8226;</b>
+                  <br />
+                  Kami sudah sepakat untuk melanjutkan ke jenjang pernikahan. Kedua keluarga bertemu
+                  sebagai simbol "perkenalan" dan meminta izin untuk dapat mengenal lebih jauh.
+                  <br />
+                  <br />
+                  <b>&#8226; Januari 2021 &#8226;</b>
+                  <br />
+                  Akhirnya kami melangsungkan prosesi lamaran dan menentukan hari baik untuk
+                  melakukan akad nikah.
+                  <br />
+                  <br />
+                  <b>&#8226; Juni 2021 &#8226;</b>
+                  <br />
+                  Akhirnya waktu yang dinantikan segera tiba untuk mengikat hubungan Kami dalam tali
+                  pernikahan. Semoga Allah SWT meridhai niat baik Kami, dan memudahkan rencana Kami.
+                  Aamiin.
                 </p>
               </div>
             </section>
@@ -567,15 +596,15 @@ export const WeddingPageComponent = (props: any) => {
             </div>
             <div className="wedding-section footer">
               <p className="wedding-mute-text">
-                Made with <i className="uil uil-heart"></i> by @rizqirezz
+                Made with <UilHeart /> by @rizqirezz
               </p>
 
-              <Button className="wedding-play-audio" onMouseUp={handlePlayAudio}>
-                {playAudio ? (
-                  <i className="uil uil-music-note"></i>
-                ) : (
-                  <i className="uil uil-music-tune-slash"></i>
-                )}
+              <Button
+                className="wedding-play-audio"
+                aria-label="play-audio"
+                onMouseUp={handlePlayAudio}
+              >
+                {playAudio ? <UilMusicNote /> : <UilMusicTuneSlash />}
               </Button>
             </div>
           </Col>

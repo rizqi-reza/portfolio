@@ -42,6 +42,13 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.4.tgz"
   integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
 
+"@iconscout/react-unicons@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@iconscout/react-unicons/-/react-unicons-1.1.6.tgz#4137afb831666f9c6d3b45a410610b9db9507f3a"
+  integrity sha512-BnyVvBew7Vm1lvL8+qyqjchUbkVHlDyNAlN+r5b+0P0KrkQ66BHPBuJEJ2faT89L8qRu+TohE7dHMV+bndje3Q==
+  dependencies:
+    react ">=15.0.0 <17.0.0"
+
 "@jest/types@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-24.9.0.tgz"
@@ -5930,7 +5937,7 @@ react-zoom-pan-pinch@^1.6.1:
   resolved "https://registry.yarnpkg.com/react-zoom-pan-pinch/-/react-zoom-pan-pinch-1.6.1.tgz"
   integrity sha512-J2eM0gZ04XiUWvmKZrOhSAB2zjyoK7kw2POIeN1X0yTTlmp6HPGV0zYfjnlkhgt8nQwpvXAbsF/oAnkuiwk1kA==
 
-react@^16.12.0:
+"react@>=15.0.0 <17.0.0", react@^16.12.0:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz"
   integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
