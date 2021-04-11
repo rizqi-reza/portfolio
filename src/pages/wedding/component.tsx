@@ -90,10 +90,6 @@ export const WeddingPageComponent = (props: any) => {
     };
   }, []);
 
-  useEffect(() => {
-    playAudio ? audio.play() : audio.pause();
-  }, [playAudio]);
-
   const chunkRsvp = (size: number, source: IRsvp[]) => {
     let data = [...source];
     let result: IRsvp[][] = [];
@@ -215,10 +211,12 @@ export const WeddingPageComponent = (props: any) => {
 
   const handlePlayAudio = (e) => {
     setPlayAudio(true);
+    audio.play();
   };
 
   const handleStopAudio = (e) => {
     setPlayAudio(false);
+    audio.pause();
   };
 
   return (
