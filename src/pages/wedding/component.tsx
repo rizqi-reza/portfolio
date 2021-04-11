@@ -214,7 +214,11 @@ export const WeddingPageComponent = (props: any) => {
   };
 
   const handlePlayAudio = (e) => {
-    setPlayAudio(!playAudio);
+    setPlayAudio(true);
+  };
+
+  const handleStopAudio = (e) => {
+    setPlayAudio(false);
   };
 
   return (
@@ -611,7 +615,7 @@ export const WeddingPageComponent = (props: any) => {
                 <Button
                   className="wedding-play-audio"
                   aria-label="play-audio"
-                  onMouseUp={handlePlayAudio}
+                  onClick={handleStopAudio}
                 >
                   <UilMusicTuneSlash />
                 </Button>
