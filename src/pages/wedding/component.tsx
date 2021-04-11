@@ -435,7 +435,7 @@ export const WeddingPageComponent = (props: any) => {
                   <div className="wedding-section reception">
                     <h1 className="wedding-subtitle">Resepsi Nikah</h1>
                     <p className="wedding-mute-text">Minggu, 27 Juni 2021</p>
-                    <p className="wedding-mute-text">13:00 WIB</p>
+                    <p className="wedding-mute-text">14:00 WIB</p>
                     <p className="wedding-mute-text">SMA IT Almaka</p>
                   </div>
                 </Col>
