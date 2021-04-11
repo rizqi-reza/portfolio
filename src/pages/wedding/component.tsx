@@ -165,6 +165,7 @@ export const WeddingPageComponent = (props: any) => {
   };
 
   const handleSubmitRsvp = async (event) => {
+    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
