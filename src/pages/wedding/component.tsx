@@ -27,6 +27,7 @@ import {
   UilShieldPlus,
   UilCommentMessage,
 } from '@iconscout/react-unicons';
+import DocumentMeta from 'react-document-meta';
 const backsound = require('assets/music/perfect.mp3');
 
 interface IRsvp {
@@ -72,8 +73,14 @@ export const WeddingPageComponent = (props: any) => {
 
   const avatarList = ['man1', 'man2', 'man3', 'woman1', 'woman2', 'woman3'];
 
+  const pageTitle = 'Pernikahan Fitri & Rizqi';
+  const meta = {
+    pageTitle,
+    description: 'Undangan pernikahan Fitri & Rizqi',
+  };
+
   useEffect(() => {
-    document.title = 'Pernikahan Fitri & Rizqi';
+    document.title = pageTitle;
     setInterval(() => updateCountdown(), 1000);
 
     const prepareSheet = async () => {
@@ -224,6 +231,7 @@ export const WeddingPageComponent = (props: any) => {
   return (
     <SimpleReactLightbox>
       <Favicon url={`${cloudinaryBaseUrl}v1614615901/Portofolio/Wedding/favicon_iwtbqz.ico`} />
+      <DocumentMeta {...meta} />
       <Navbar expand={true} fixed="bottom" className="navbar-wedding">
         <Nav fill={true}>
           <Scrollspy
@@ -380,14 +388,14 @@ export const WeddingPageComponent = (props: any) => {
               <div className="wedding-section story">
                 <h1 className="wedding-subtitle">Kisah Kami</h1>
                 <p className="p_kisah">
-                  <b>&#8226; Juni 2020 &#8226;</b>
+                  <b>&#8226; Mei 2020 &#8226;</b>
                   <br />
                   Kisah kami berawal dari sosial media, dari salah satu mutual teman kami. Pada saat
                   itu PSBB di jakarta sedang berlangsung dengan ketat, sehingga mengharuskan kami
                   saling mengenal via whatsapp.
                   <br />
                   <br />
-                  <b>&#8226; Juli 2020 &#8226;</b>
+                  <b>&#8226; Juni 2020 &#8226;</b>
                   <br />
                   Akhirnya PSBB berakhir dan berganti menjadi PSBB transisi, ini adalah kali pertama
                   kami bisa bertemu dan saling mengenalkan dengan keluarga masing-masing.
@@ -419,7 +427,7 @@ export const WeddingPageComponent = (props: any) => {
                   <div className="wedding-section ceremony">
                     <h1 className="wedding-subtitle">Akad Nikah</h1>
                     <p className="wedding-mute-text">Kamis, 17 Juni 2021</p>
-                    <p className="wedding-mute-text">09:00 WIB</p>
+                    <p className="wedding-mute-text">13:00 WIB</p>
                     <p className="wedding-mute-text">Kediaman Mempelai Wanita</p>
                   </div>
                 </Col>
@@ -427,7 +435,7 @@ export const WeddingPageComponent = (props: any) => {
                   <div className="wedding-section reception">
                     <h1 className="wedding-subtitle">Resepsi Nikah</h1>
                     <p className="wedding-mute-text">Minggu, 27 Juni 2021</p>
-                    <p className="wedding-mute-text">09:00 WIB</p>
+                    <p className="wedding-mute-text">13:00 WIB</p>
                     <p className="wedding-mute-text">SMA IT Almaka</p>
                   </div>
                 </Col>
