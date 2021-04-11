@@ -395,7 +395,7 @@ export const WeddingPageComponent = (props: any) => {
                   <br />
                   <b>&#8226; September 2020 &#8226;</b>
                   <br />
-                  kami sudah sepakat untuk melanjutkan ke jenjang pernikahan. Kedua keluarga bertemu
+                  Kami sudah sepakat untuk melanjutkan ke jenjang pernikahan. Kedua keluarga bertemu
                   sebagai simbol "perkenalan" dan meminta izin untuk dapat mengenal lebih jauh.
                   <br />
                   <br />
