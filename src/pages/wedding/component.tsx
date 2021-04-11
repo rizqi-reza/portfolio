@@ -178,6 +178,7 @@ export const WeddingPageComponent = (props: any) => {
     const Tanggal = `${currentDate.getDate()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`;
     const row = { Nama, Avatar, Hadir, Pesan, Tanggal };
     await addRsvp(row);
+    handleCloseModal();
   };
 
   const clearAllField = () => {
