@@ -605,7 +605,7 @@ export const WeddingPageComponent = (props: any) => {
                   aria-label="stop-audio"
                   onClick={handlePlayAudio}
                 >
-                  <UilMusicTuneSlash />
+                  <UilMusicNote />
                 </Button>
               ) : (
                 <Button
@@ -613,7 +613,7 @@ export const WeddingPageComponent = (props: any) => {
                   aria-label="play-audio"
                   onMouseUp={handlePlayAudio}
                 >
-                  <UilMusicNote />
+                  <UilMusicTuneSlash />
                 </Button>
               )}
             </div>
