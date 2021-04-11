@@ -607,17 +607,17 @@ export const WeddingPageComponent = (props: any) => {
                 <Button
                   className="wedding-play-audio"
                   aria-label="stop-audio"
-                  onClick={handlePlayAudio}
+                  onClick={handleStopAudio}
                 >
-                  <UilMusicNote />
+                  <UilMusicTuneSlash />
                 </Button>
               ) : (
                 <Button
                   className="wedding-play-audio"
                   aria-label="play-audio"
-                  onClick={handleStopAudio}
+                  onClick={handlePlayAudio}
                 >
-                  <UilMusicTuneSlash />
+                  <UilMusicNote />
                 </Button>
               )}
             </div>
