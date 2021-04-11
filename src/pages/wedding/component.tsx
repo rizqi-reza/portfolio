@@ -378,20 +378,20 @@ export const WeddingPageComponent = (props: any) => {
                 <p className="p_kisah">
                   <b>&#8226; Juni 2020 &#8226;</b>
                   <br />
-                  Kisah Kami berawal dari sosial media, dari salah satu mutual teman Kami. Pada saat
-                  itu PSBB di jakarta sedang berlangsung dengan ketat, sehingga mengharuskan Kami
-                  saling mengenal lebih jauh hanya sebatas chat whatsapp.
+                  Kisah kami berawal dari sosial media, dari salah satu mutual teman kami. Pada saat
+                  itu PSBB di jakarta sedang berlangsung dengan ketat, sehingga mengharuskan kami
+                  saling mengenal via whatsapp.
                   <br />
                   <br />
                   <b>&#8226; Juli 2020 &#8226;</b>
                   <br />
                   Akhirnya PSBB berakhir dan berganti menjadi PSBB transisi, ini adalah kali pertama
-                  Kami bisa bertemu dan saling mengenalkan dengan keluarga masing-masing.
+                  kami bisa bertemu dan saling mengenalkan dengan keluarga masing-masing.
                   <br />
                   <br />
                   <b>&#8226; September 2020 &#8226;</b>
                   <br />
-                  Kami sudah sepakat untuk melanjutkan ke jenjang pernikahan. Kedua keluarga bertemu
+                  kami sudah sepakat untuk melanjutkan ke jenjang pernikahan. Kedua keluarga bertemu
                   sebagai simbol "perkenalan" dan meminta izin untuk dapat mengenal lebih jauh.
                   <br />
                   <br />
@@ -403,8 +403,8 @@ export const WeddingPageComponent = (props: any) => {
                   <br />
                   <b>&#8226; Juni 2021 &#8226;</b>
                   <br />
-                  Akhirnya waktu yang dinantikan segera tiba untuk mengikat hubungan Kami dalam tali
-                  pernikahan. Semoga Allah SWT meridhai niat baik Kami, dan memudahkan rencana Kami.
+                  Akhirnya waktu yang dinantikan segera tiba untuk mengikat hubungan kami dalam tali
+                  pernikahan. Semoga Allah SWT meridhai niat baik kami, dan memudahkan rencana kami.
                   Aamiin.
                 </p>
               </div>
@@ -599,13 +599,23 @@ export const WeddingPageComponent = (props: any) => {
                 Made with <UilHeart /> by @rizqirezz
               </p>
 
-              <Button
-                className="wedding-play-audio"
-                aria-label="play-audio"
-                onMouseUp={handlePlayAudio}
-              >
-                {playAudio ? <UilMusicNote /> : <UilMusicTuneSlash />}
-              </Button>
+              {playAudio ? (
+                <Button
+                  className="wedding-play-audio"
+                  aria-label="stop-audio"
+                  onClick={handlePlayAudio}
+                >
+                  <UilMusicTuneSlash />
+                </Button>
+              ) : (
+                <Button
+                  className="wedding-play-audio"
+                  aria-label="play-audio"
+                  onMouseUp={handlePlayAudio}
+                >
+                  <UilMusicNote />
+                </Button>
+              )}
             </div>
           </Col>
         </Row>
