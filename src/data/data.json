@@ -145,7 +145,14 @@
       "title": "Experience",
       "subSections": [
         {
-          "title": "2019 - Present",
+          "title": "2021 - Present",
+          "subTitle": "Senior Frontend Engineer",
+          "heading": "TaniHub",
+          "subHeading": "Jakarta, Indonesia",
+          "description": "TaniHub is e-commerce focused on B2B & B2C with app based. Sells almost all farmer's good. The concept was to help farmers sells their harvest goods. I have responsibility to handle technical limitation of junior engineers by teach them related knowledge, help defining and splitting tasks of each sprints to each engineers and design and create software architecture documents of the application."
+        },
+        {
+          "title": "2019 - 2021",
           "subTitle": "Frontend Developer",
           "heading": "Bhinneka.com",
           "subHeading": "Jakarta, Indonesia",
