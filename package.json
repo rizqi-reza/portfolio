@@ -51,7 +51,6 @@
     "react-loader-spinner": "^3.1.5",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
-    "react-scrollspy": "^3.4.3",
     "react-webp-image": "^1.0.8",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",

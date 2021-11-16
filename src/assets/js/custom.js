@@ -24,10 +24,11 @@ $(document).ready(function () {
     }
   });
   $('.return-to-top').on('click', function () {
-    $('html, body').animate({
+    $('html, body').animate(
+      {
         scrollTop: 0,
       },
-      1500
+      1500,
     );
     return false;
   });
@@ -45,21 +46,11 @@ $(document).ready(function () {
     var anchor = $(this);
     $('html, body')
       .stop()
-      .animate({
+      .animate(
+        {
           scrollTop: $(anchor.attr('href')).offset().top - 90,
         },
-        1200
-      );
-  });
-  $('.smooth-menu-wedding').on('click', function (event) {
-    event.preventDefault();
-    var anchor = $(this);
-    $('html, body')
-      .stop()
-      .animate({
-          scrollTop: $(anchor.attr('href')).offset().top,
-        },
-        1200
+        1200,
       );
   });
   $('.navbar-brand').on('click', function (event) {
@@ -67,11 +58,17 @@ $(document).ready(function () {
     var anchor = $(this);
     $('html, body')
       .stop()
-      .animate({
+      .animate(
+        {
           scrollTop: $(anchor.attr('href')).offset().top,
         },
-        1200
+        1200,
       );
+  });
+
+  $('body').scrollspy({
+    target: '.navbar-collapse',
+    offset: 100,
   });
 
   // 3. Progress-bar
@@ -95,28 +92,20 @@ $(document).ready(function () {
   // 4. welcome animation support
 
   $(window).on('load', function () {
-    $('.header-text h2,.header-text p')
-      .removeClass('animated fadeInUp')
-      .css({
-        opacity: '0',
-      });
-    $('.header-text a')
-      .removeClass('animated fadeInDown')
-      .css({
-        opacity: '0',
-      });
+    $('.header-text h2,.header-text p').removeClass('animated fadeInUp').css({
+      opacity: '0',
+    });
+    $('.header-text a').removeClass('animated fadeInDown').css({
+      opacity: '0',
+    });
   });
 
   $(window).on('load', function () {
-    $('.header-text h2,.header-text p')
-      .addClass('animated fadeInUp')
-      .css({
-        opacity: '0',
-      });
-    $('.header-text a')
-      .addClass('animated fadeInDown')
-      .css({
-        opacity: '0',
-      });
+    $('.header-text h2,.header-text p').addClass('animated fadeInUp').css({
+      opacity: '0',
+    });
+    $('.header-text a').addClass('animated fadeInDown').css({
+      opacity: '0',
+    });
   });
 });

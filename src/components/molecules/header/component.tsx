@@ -1,7 +1,6 @@
 import { INavigation } from 'interface/ipage';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import Scrollspy from 'react-scrollspy';
 
 interface IProps {
   title: string;
@@ -20,32 +19,18 @@ export const HeaderComponent = (props: IProps) => {
             <Navbar.Brand href="#section-1">{title}</Navbar.Brand>
             {dataSource && (
               <Navbar.Collapse id="navbar-menu" className="menu-ui-design">
-                <Scrollspy
-                  componentTag="div"
-                  items={[
-                    'section-1',
-                    'section-2',
-                    'section-3',
-                    'section-4',
-                    'section-5',
-                    'section-6',
-                    'section-7',
-                  ]}
-                  currentClassName="active"
-                  className="ml-auto navbar-nav"
-                  offset={-100}
-                >
+                <Nav className="ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                   {dataSource.map((item: INavigation, index: number) => (
                     <Nav.Link
-                      key={`menu-${index}`}
                       className="smooth-menu"
+                      key={`menu-${index}`}
                       href={`#${item.url}`}
                       aria-label={`${item.title}-link`}
                     >
                       {item.title}
                     </Nav.Link>
                   ))}
-                </Scrollspy>
+                </Nav>
               </Navbar.Collapse>
             )}
           </Container>
