@@ -35,9 +35,6 @@ export const HeaderComponent = (props: IProps) => {
                   className="ml-auto navbar-nav"
                   offset={-100}
                 >
-                  <Nav.Link className="smooth-menu" href="#section-1" style={{ display: 'none' }}>
-                    Home
-                  </Nav.Link>
                   {dataSource.map((item: INavigation, index: number) => (
                     <Nav.Link
                       key={`menu-${index}`}

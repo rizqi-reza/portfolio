@@ -1,6 +1,5 @@
 import { Footer, Loader } from 'components';
 import { Header } from 'components/molecules/header';
-import data from 'data/data.json';
 import { renderAllSections } from 'helpers/render-section';
 import IPage from 'interface/ipage';
 import { Fragment, useEffect, useState } from 'react';
@@ -16,13 +15,12 @@ export const MainPageComponent = (props: any) => {
     fetchData();
   }, []);
 
-  const fetchData = () => {
+  const fetchData = async () => {
     setLoader(true);
     try {
-      if (data) {
-        const pageData: IPage = data;
-        setPage(pageData);
-      }
+      const res = await fetch('https://api.npoint.io/20fb878cd3fc2b685b9b');
+      const pageData: IPage = await res.json();
+      setPage(pageData);
     } catch (error) {
       setPage({} as IPage);
     }
@@ -32,7 +30,7 @@ export const MainPageComponent = (props: any) => {
   const pageTitle = 'Rizqi Reza';
   const meta = {
     pageTitle,
-    description: `I'm a experienced Software Developer and System Analyst. Skilled in Frontend and Backend Development, System Analytical, and Databases.`,
+    description: `I'm a experienced Software Developer and System Analyst. Focused on frontend engineering, web engineering, and design system.`,
   };
 
   return (

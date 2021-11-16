@@ -48,5 +48,5 @@ export const renderSingleSection = (section: ISection) => {
   }
 };
 
-export const renderAllSections = (sections) =>
-  Array.isArray(sections) && sections.map((item, index: number) => renderSingleSection(item));
+export const renderAllSections = (sections: ISection[]) =>
+  Array.isArray(sections) && sections.map((item) => renderSingleSection(item));
